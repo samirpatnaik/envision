@@ -1,0 +1,477 @@
+/* You can add global styles to this file, and also import other style files */
+        section {
+    padding: 50px 0;
+    position: relative;
+}
+ .section-heading {
+    margin-bottom: 20px;
+}
+  
+
+        .select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: #333;
+  width: 220px;
+  height: 40px;
+}
+
+.select-styled {
+      background-color: #fff;
+    background-image: linear-gradient(to bottom, #fff, #f1f1f1);
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 0.25em;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+    color: #709AD0;
+    /*font-family: sans-serif;*/
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.75em 2em 0.75em 0.75em;
+    position: relative;
+  /*border-radius:10px;*/
+}
+.select-styled:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: #999 transparent transparent transparent;
+  position: absolute;
+  top: 16px;
+  right: 10px;
+}
+.select-styled:hover {
+  background-color:#fff;
+}
+.select-styled:active, .select-styled.active {
+  background-color: #fafafa;
+}
+.select-styled:active:after, .select-styled.active:after {
+  top: 9px;
+  border-color: transparent transparent #666 transparent;
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fafafa;
+  
+}
+.select-options li {
+  margin: 0;
+  padding: 12px 0;
+  text-indent: 15px;
+  border-top: 1px solid #ddd;
+  -moz-transition: all 0.15s ease-in;
+  -o-transition: all 0.15s ease-in;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+.select-options li:hover {
+  color:#666;
+  background:#ccf4e8;
+}
+.select-options li[rel="hide"] {
+  display: none;
+}
+
+
+.control-group {
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+  text-align: left;
+  width: 200px;
+  /*margin: 10px;*/
+}
+.control {
+  display: block;
+    position: relative;
+    padding-left: 20px;
+    /*margin-bottom: 15px;*/
+    cursor: pointer;
+    float: left;
+    padding-right: 10px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  background: #fff;
+  border: 1px solid #ccc;
+/*
+  .control:hover input:not([disabled]):checked ~ &,
+  .control input:checked:focus ~ &
+    border-color: #666
+    */
+}
+.control--checkbox .control__indicator {
+  border-radius: 3px;
+}
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+.control:hover input:not([disabled]) ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  border-color: #666;
+}
+.control input:checked ~ .control__indicator {
+  background: #fff;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--checkbox .control__indicator:after {
+  left: 5px;
+  top: 0px;
+  width: 5px;
+  height: 12px;
+  border: solid #34bb92;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+}
+.control--radio .control__indicator:after {
+  left: 4px;
+    top: 4px;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: #34bb92;
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}
+
+
+/*---------------------------------
+    Installation page
+-------------------------------*/
+
+.form-installation,
+.form-settings,
+.form-packages {
+    padding: 40px 0;
+}
+
+.form-installation .page-header,
+.form-settings .page-header {
+    text-align: center;
+}
+
+.form-installation h1,
+.form-settings h1,
+.form-packages h1 {
+    color: #666666;
+    font-size: 25px;
+}
+
+.form-installation h6,
+.form-packages h6 {
+    font-size: 16px;
+}
+
+
+/*installation steps*/
+
+
+/* Timeline Bar*/
+
+.installation-steps {
+    background-color: #ffffff;
+    -webkit-box-shadow: 2px 3px 20px 0px rgba(1, 1, 1, 0.05);
+    box-shadow: 2px 3px 20px 0px rgba(1, 1, 1, 0.05);
+    max-width: 689px;
+    /* margin: auto; */
+    border-radius: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+.installation-steps .installation-link {
+    display: block;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 900;
+    position: relative;
+    padding: 12px 20px;
+    text-align: left;
+}
+
+.installation-steps .installation-link:hover {
+    text-decoration: none;
+    color: #4786ff;
+}
+
+.installation-steps .installation-link.active {
+    background-color: #0DBDBD;
+    color: #fff;
+}
+
+.installation-link li:first-child a,
+.installation-steps li:first-child .installation-link.active {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.installation-link li:last-child a,
+.installation-steps li:last-child .installation-link.active {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.installation-steps .installation-link.active .fa {
+    color: #fff;
+}
+
+.installation-link .fa {
+    margin-right: 10px;
+    color: #999999;
+}
+
+
+/*Installation process*/
+
+
+/*progress bar*/
+
+.progress {
+    position: relative;
+    height: 11px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.07);
+}
+
+.amount {
+    background: -webkit-gradient(linear, left top, right top, from(#5b86e5), to(#36d1dc));
+    background: linear-gradient(90deg, #5b86e5 0%, #36d1dc 100%);
+    height: 100%;
+    border-radius: 16px;
+    -webkit-animation-name: increase;
+    animation-name: increase;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    /* -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;*/
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+}
+
+.amount1 {
+    -webkit-animation-name: progress25;
+    animation-name: progress25;
+    width: 25%;
+}
+
+.amout2 {
+    -webkit-animation-name: progress50;
+    animation-name: progress50;
+    width: 50%;
+}
+
+.amout3 {
+    -webkit-animation-name: progress75;
+    animation-name: progress75;
+    width: 75%;
+}
+
+.amount4 {
+    -webkit-animation-name: progress100;
+    animation-name: progress100;
+    width: 100%;
+}
+
+@-webkit-keyframes progress25 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 25%
+    }
+}
+
+@keyframes progress25 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 25%
+    }
+}
+
+@-webkit-keyframes progress50 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 50%
+    }
+}
+
+@keyframes progress50 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 50%
+    }
+}
+
+@-webkit-keyframes progress75 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 75%
+    }
+}
+
+@keyframes progress75 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 75%
+    }
+}
+
+@-webkit-keyframes progress100 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 100%
+    }
+}
+
+@keyframes progress100 {
+    from {
+        width: 1%
+    }
+    to {
+        width: 100%
+    }
+}
+
+
+/* Card*/
+
+.content-card {
+    margin-left: 10px;
+}
+
+.card {
+    margin-bottom: 30px;
+    border: 0;
+    -webkit-box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.07);
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+}
+
+.card-header,
+.card-header h5 {
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 400;
+    background: #0DBDBD;
+    padding: 11px 30px;
+    font-size: 22px;
+}
+
+.form-installation .card-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-header h5 {
+    padding: 8px 30px;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.card-body {
+    padding: 25px 30px;
+}
+
+.card-body h3 {
+    color: #000;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.card-body h4 {
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-body p,
+.card-body ul li {
+    color: #5e5e5e;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.card-body hr {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.card-header.bordered {
+    border-bottom: 1px solid #f2f2f2
+}
+
+.card-header .fa {
+    color: #a3a3a3;
+}
+
+.card-body .form-check-input {
+    margin-left: 0;
+    margin-top: 7px;
+}
+        .card {
+            padding: 0;
+        }
+
+
+        header {
+            border-bottom: 2px solid #34bb92;
+        }
