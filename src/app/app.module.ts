@@ -9,13 +9,17 @@ import { CommonLayoutModule} from  './common-layout/common-layout.module';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
 import { ListmodelComponent } from './listmodel/listmodel.component';
 import { MultiSiteCERCLAComponent } from './multi-site-cercla/multi-site-cercla.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginSignupComponent,
     ListmodelComponent,
-    MultiSiteCERCLAComponent
+    MultiSiteCERCLAComponent,
+    HomepageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

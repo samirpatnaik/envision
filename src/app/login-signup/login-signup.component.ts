@@ -64,7 +64,8 @@ export class LoginSignupComponent implements OnInit {
       if (this.loginForm.invalid) {
         return;
       } else {
-        this.router.navigate(['/listmodel']);
+        this.session.set('currentUser', 'testname');
+        this.router.navigate(['/dashboard']);
       }
   }
 

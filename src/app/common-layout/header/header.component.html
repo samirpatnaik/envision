@@ -125,75 +125,67 @@
 <header>
     <div class="tw-head">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <a class="navbar-brand tw-nav-brand" href="index.html">
+             <div class="row">
+             
+            <div class="col-sm-3">
+                <a class="" routerLink="/">
                     <img src="assets/images/logo/logo.png" alt="envision" width="260px">
                 </a>
+
+             </div>   
+
+        <div class="col-sm-4">
+        
+        
+            <div class="mainnav_topheader">
+                
+                <nav class="navbar navbar-expand-lg navbar-light bg-white">
+                
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent" *ngIf="this.session.get('currentUser')">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">
-                                Home
-                            </a>
-                        </li>
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" data-toggle="dropdown">
-                                Services
-                            </a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" routerLink='/listmodel' data-toggle="dropdown">
-                                Models
-                            </a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" data-toggle="dropdown">
-                                Forms
-                            </a>
-                            <ul class="dropdown-menu tw-dropdown-menu">
-                                <li><a href="form-one.html">Multi-Site CERCLA 5 Year Review</a></li>
-                                <li><a href="form-two.html">Pump & Treat</a></li>
-                                <li><a href="excavation.html">Excavation with Off-Site Disposal</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" data-toggle="dropdown">
-                                News
-                            </a>
-
-                        </li>
-
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link" routerLink='/login' >Login</a></li>
+                        <li class="nav-item"><a class="nav-link" routerLink="dashboard">Estimates</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Models</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Docs</a></li>
                     </ul>
 
                 </div>
 
-                <div class="tw-off-search">
-                    <div class="tw-search">
-                        <i class="fa fa-search"></i>
-                    </div>
-                    <div class="tw-menu-bar">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
+               
 
             </nav>
-
+                
+                
+            </div>
+        
+        
+        
         </div>
+         <div class="col-sm-3 searchbox">
+             
+            
+     <form action="" class="search-formtopheader">
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" name="search" id="search" placeholder="search">
+            <button type="button" class="btn"><span class="fa fa-search"></span></button>
+        </div>
+    </form>
+            
+            
+            
+         </div>
+
+        <div class="col-sm-2 afterlogin_top" *ngIf="this.session.get('currentUser')"> <a href="#">Account</a>  &nbsp;&nbsp;  / &nbsp;&nbsp;  <a href="#"  (click)="logout()">Logout</a></div>
+        
+        <div class="col-sm-2 loginbtn" *ngIf="!this.session.get('currentUser')"><a routerLink="login" class="loginbtn1"><i class="fa fa-lock"></i> Login</a></div>
+        
+        
+        </div></div>
 
     </div>
 
