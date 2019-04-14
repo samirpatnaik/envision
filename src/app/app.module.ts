@@ -7,19 +7,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonLayoutModule} from  './common-layout/common-layout.module';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
-import { ListmodelComponent } from './listmodel/listmodel.component';
-import { MultiSiteCERCLAComponent } from './multi-site-cercla/multi-site-cercla.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreateProjectComponent } from './create-project/create-project.component';
+import { ProjectReportComponent } from './project-report/project-report.component';
+import { ProjectmodelComponent } from './projectmodel/projectmodel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginSignupComponent,
-    ListmodelComponent,
-    MultiSiteCERCLAComponent,
     HomepageComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateProjectComponent,
+    ProjectReportComponent,
+    ProjectmodelComponent
   ],
   imports: [
     BrowserModule,

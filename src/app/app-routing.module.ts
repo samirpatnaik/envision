@@ -2,17 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import {LoginSignupComponent} from './login-signup/login-signup.component';
-import {ListmodelComponent} from './listmodel/listmodel.component';
-import {MultiSiteCERCLAComponent} from './multi-site-cercla/multi-site-cercla.component';
+import {CreateProjectComponent} from './create-project/create-project.component';
 import {HomepageComponent} from './homepage/homepage.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {ProjectReportComponent} from './project-report/project-report.component';
+import {ProjectmodelComponent} from './projectmodel/projectmodel.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'login', component: LoginSignupComponent},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'listmodel', component: ListmodelComponent},
-  {path: 'MultiSiteCERCLA', component: MultiSiteCERCLAComponent}
+  {path: 'createproject', component: CreateProjectComponent},
+  {path: 'projectmodel', component: ProjectmodelComponent},
+  {path: 'projectreport', component: ProjectReportComponent},
 ];
 
 @NgModule({
