@@ -1,0 +1,1326 @@
+{   "displayString": "<div><h2>Multi-Site CERCLA 5 Year Review</h2><div class=\"model-problem\"><p>Run with no errors on Apr 19, 2019 at 11:40 UTC</p></div><div class=\"model-input\"><p>Using all default values.</p></div><div class=\"model-cost\"><table class=\"table table-striped table-hover table-condensed\"><thead><tr><th>Total Cost</th><th></th><th>Direct Cost</th><th>Markup</th></tr><tr><td class=\"cost\">$319,740.00</td><td class=\"d0\">i02.10 Multi-Site CERCLA 5 Year Review<a href=\"https://www.epa.gov/superfund/superfund-five-year-reviews\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td class=\"cost\">$200,414.00</td><td class=\"cost\">$119,326.00</td></tr></thead><tbody><tr><td class=\"cost\">$189,795.00</td><td class=\"d0\"><a href=\"#5.02.10\">5.02.10 CERCLA 5Yr Rev during RAO</a></td><td class=\"cost\">$118,964.00</td><td class=\"cost\">$70,831.00</td></tr><tr><td class=\"cost\">$129,945.00</td><td class=\"d0\"><a href=\"#6.02.10b\">6.02.10b CERCLA 5Yr Review</a></td><td class=\"cost\">$81,450.00</td><td class=\"cost\">$48,495.00</td></tr></tbody></table><p class=\"fine\"><strong>Disclaimer: No Warranty</strong></p><p class=\"fine\">USE OF THE ENVISION COST MODELS, ENVISION COST MODEL REPORTS OR ENVISION SITE IS ENTIRELY AT YOUR OWN RISK. ENVISION COST SOLUTIONS LLC BEARS NO RESPONSIBILITY FOR THE CONSEQUENCES OF RELIANCE ON, OR ANY INACCURACY IN, ANY INFORMATION CONTAINED IN THE ENVISION COST MODELS OR ENVISION COST MODEL REPORTS. THESE MATERIALS ARE PROVIDED \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. ENVISION COST SOLUTIONS LLC SHALL NOT BE LIABLE FOR ANY DIRECT, SPECIAL, INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOST REVENUES OR LOST PROFITS, WHICH MAY RESULT FROM THE USE OF, ACCESS TO, OR INABILITY TO USE THESE MATERIALS.</p></div><div class=\"model-detail\"><!doctype html><div id=\"i02.10\"><table class=\"table table-striped table-hover table-condensed\"><thead><tr><th>WBS</th><th>Description</th><th>Total Cost</th></tr><tr><th>i02.10</th><th>Multi-Site CERCLA 5 Year Review</th><th>$319,740.00</th></tr><tr><th colspan=\"2\">Parameter</th><th>Value</th></tr></thead><tbody><tr><td colspan=\"3\"><strong>Required Parameters</strong></td></tr><tr><td colspan=\"2\">Interim Remedial Action<a href=\"http://10.0.0.23:8080/help/parm/_IRA.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>N</td></tr><tr><td colspan=\"2\">Number of 5 Year Reviews During RAO</td><td>5 Ea</td></tr><tr><td colspan=\"2\">Number of 5 Year Reviews During LTMgt</td><td>5 Ea</td></tr><tr><td colspan=\"2\">Number of Sites included in 5 Year Review</td><td>5 Each</td></tr><tr><td colspan=\"2\">Average Number of Acres per Site</td><td>5 Acres</td></tr><tr><td colspan=\"2\">Number of Site Sampling Media (GW, SW, Sed, Soil) Addressed in Plan</td><td>2 Ea</td></tr><tr><td colspan=\"2\">Number of Process Sampling Media (Gas, Liq, Solid)</td><td>1.5 Ea</td></tr><tr><td colspan=\"2\">Is this a Professional Labor using Cost Basis? (Y/N)</td><td>N</td></tr><tr><td colspan=\"2\">Management Complexity</td><td>M [Moderate]</td></tr><tr><td colspan=\"3\"><strong>Productivity Factors</strong></td></tr><tr><td colspan=\"2\">Personal Protection Equipment (PPE) Level</td><td>D [D]</td></tr><tr><td colspan=\"2\">Cost Adjustment Factor<a href=\"http://10.0.0.23:8080/help/parm/_CAF.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1 </td></tr><tr><td colspan=\"3\"><strong>Calculation Data</strong></td></tr><tr><td colspan=\"3\"><strong>Cost Summary</strong></td></tr><tr><td colspan=\"3\"><strong>Cost Element Summary</strong></td></tr><tr><td colspan=\"3\"><strong>Area Cost Factor</strong></td></tr><tr><td colspan=\"2\">Area Cost Factor - Value</td><td>1.00 </td></tr><tr><td colspan=\"3\"><strong>Markups</strong></td></tr><tr><td colspan=\"2\">Prime Markup (CLEAN)<a href=\"http://10.0.0.23:8080/help/parm/_MK_01.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Prime Markup (RAC)<a href=\"http://10.0.0.23:8080/help/parm/_MK_02.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Program Office<a href=\"http://10.0.0.23:8080/help/parm/_MK_03.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.08 </td></tr><tr><td colspan=\"2\">PCAS<a href=\"http://10.0.0.23:8080/help/parm/_MK_04.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.02 </td></tr><tr><td colspan=\"2\">SIOH<a href=\"http://10.0.0.23:8080/help/parm/_MK_05.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.03 </td></tr><tr><td colspan=\"2\">Remedial Quality Assurance</td><td>1.0 </td></tr><tr><td colspan=\"2\">Contingency<a href=\"http://10.0.0.23:8080/help/parm/_MK_07.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.05 </td></tr><tr><td colspan=\"2\">Closure Report<a href=\"http://10.0.0.23:8080/help/parm/_MK_08.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.02 </td></tr><tr><td colspan=\"2\">User Markup<a href=\"http://10.0.0.23:8080/help/parm/_MK_09.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Area Cost Factor</td><td>1.00 </td></tr><tr><td colspan=\"2\">Escalation Factor</td><td>1.00 </td></tr><tr><td colspan=\"2\">Other Markups<a href=\"http://10.0.0.23:8080/help/parm/_MK_12.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"3\"><strong>Copyright 1999-2015 Envision Cost Solutions LLC [All nodes and parameters]</strong></td></tr><tr><td colspan=\"2\">Year to which Base Year Cost is to be Escalated and Reported</td><td>2019 </td></tr></tbody></table></div><!doctype html><div id=\"5.02.10\"><table class=\"table table-striped table-hover table-condensed\"><thead><tr><th>WBS</th><th>Description</th><th>Total Cost</th></tr><tr><th>5.02.10</th><th>CERCLA 5Yr Rev during RAO</th><th>$189,795.00</th></tr><tr><th colspan=\"2\">Parameter</th><th>Value</th></tr></thead><tbody><tr><td colspan=\"3\"><strong>Required Parameters</strong></td></tr><tr><td colspan=\"2\">Interim Remedial Action<a href=\"http://10.0.0.23:8080/help/parm/_IRA.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>N</td></tr><tr><td colspan=\"2\">Number of 5 Year Reviews During RAO</td><td>5 Ea</td></tr><tr><td colspan=\"2\">Number of Sites included in 5 Year Review</td><td>5 Each</td></tr><tr><td colspan=\"2\">Average Number of Acres per Site</td><td>5 Acres</td></tr><tr><td colspan=\"2\">Number of Site Sampling Media (GW, SW, Sed, Soil) Addressed in Plan</td><td>2 Ea</td></tr><tr><td colspan=\"2\">Number of Process Sampling Media (Gas, Liq, Solid) Addressed in Plan</td><td>1.5 Ea</td></tr><tr><td colspan=\"2\">Is this a Professional Labor using Cost Basis? (Y/N)</td><td>N</td></tr><tr><td colspan=\"2\">Edit Unit Cost Value<a href=\"http://10.0.0.23:8080/help/parm/_Usr_Input.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>N</td></tr><tr><td colspan=\"3\"><strong>Base Year of Unit Cost ==></strong></td></tr><tr><td colspan=\"2\">5 Yr Review Complexity During O&M</td><td>M [Moderate]</td></tr><tr><td colspan=\"2\">Project Management/Support/Administration</td><td>11220 $</td></tr><tr><td colspan=\"2\">Community Relations</td><td>1585 $</td></tr><tr><td colspan=\"2\">Regulatory Interaction</td><td>7790 $</td></tr><tr><td colspan=\"2\">Review Documentation</td><td>10750 $</td></tr><tr><td colspan=\"2\">Workplan - Five Year Review</td><td>8415 $</td></tr><tr><td colspan=\"2\">Five Year Review - Record</td><td>25080 $</td></tr><tr><td colspan=\"2\">Five Year Review - Material and ODC</td><td>20000 $</td></tr><tr><td colspan=\"2\">Travel</td><td>7500 $</td></tr><tr><td colspan=\"2\">Site Sample Management/Data Evaluation/Reporting</td><td>20905.0 $</td></tr><tr><td colspan=\"2\">RAO Process Sample Management/Data Evaluation/Reporting</td><td>5719 $</td></tr><tr><td colspan=\"3\"><strong>Calculation Data</strong></td></tr><tr><td colspan=\"2\">Initialization Parameter</td><td>1 </td></tr><tr><td colspan=\"3\"><strong>Direct Cost Summary</strong></td></tr><tr><td colspan=\"3\"><strong>Economics</strong></td></tr><tr><td colspan=\"2\">Year for which the Estimate or Actual Cost is Based</td><td>1999 </td></tr><tr><td colspan=\"2\">Base Year Escalation Factor Value</td><td>1.0510 </td></tr><tr><td colspan=\"2\">Year to which Base Year Cost is to be Escalated and Reported</td><td>2019 </td></tr><tr><td colspan=\"2\">Year of Economics Escalation Factor Value</td><td>1.4356 </td></tr><tr><td colspan=\"2\">Escalation from Base Year to Year of Economics</td><td>1.366 </td></tr><tr><td colspan=\"2\">Area Cost Factor - Value</td><td>1.00 </td></tr><tr><td colspan=\"3\"><strong>Productivity Factors</strong></td></tr><tr><td colspan=\"2\">Personal Protection Equipment (PPE) Level</td><td>D [D]</td></tr><tr><td colspan=\"2\">Cost Adjustment Factor<a href=\"http://10.0.0.23:8080/help/parm/_CAF.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1 </td></tr><tr><td colspan=\"2\">Professional Labor Base Cost</td><td>91464 $</td></tr><tr><td colspan=\"2\">Labor Cost Adjustment Factor - Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Implementation Equipment Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Equipment Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Implementation Equipment Protection Level - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Implementation Material Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Material Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Professional Subcontract Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Subcontractor Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Professional Other Direct Cost Base Cost</td><td>27500 $</td></tr><tr><td colspan=\"2\">Other Direct Cost - Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Professional Composite Cost Adjustment Factor - Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Composite Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Consumable Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Consumable Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Utility Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Utility Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"3\"><strong>Static non-changing parameters within phase</strong></td></tr><tr><td colspan=\"3\"><strong>Markups</strong></td></tr><tr><td colspan=\"2\">Prime Markup (CLEAN)<a href=\"http://10.0.0.23:8080/help/parm/_MK_01.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Prime Markup (RAC)<a href=\"http://10.0.0.23:8080/help/parm/_MK_02.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Program Office<a href=\"http://10.0.0.23:8080/help/parm/_MK_03.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.08 </td></tr><tr><td colspan=\"2\">PCAS<a href=\"http://10.0.0.23:8080/help/parm/_MK_04.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.02 </td></tr><tr><td colspan=\"2\">SIOH<a href=\"http://10.0.0.23:8080/help/parm/_MK_05.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.03 </td></tr><tr><td colspan=\"2\">Contingency<a href=\"http://10.0.0.23:8080/help/parm/_MK_07.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.05 </td></tr><tr><td colspan=\"2\">Closure Report<a href=\"http://10.0.0.23:8080/help/parm/_MK_08.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.02 </td></tr><tr><td colspan=\"2\">User Markup<a href=\"http://10.0.0.23:8080/help/parm/_MK_09.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Area Cost Factor</td><td>1.00 </td></tr><tr><td colspan=\"2\">Escalation Factor</td><td>1.37 </td></tr><tr><td colspan=\"2\">Other Markups<a href=\"http://10.0.0.23:8080/help/parm/_MK_12.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">1999 Year Escalation Factor Value</td><td>1.0510 </td></tr><tr><td colspan=\"2\">Descalation from Base Year to 1999</td><td>1.000 </td></tr><tr><td colspan=\"3\"><strong>Copyright 1999-2015 Envision Cost Solutions LLC [All nodes and parameters]</strong></td></tr></tbody></table></div><table class=\"table table-striped table-hover table-condensed\"><thead><tr><th>Cost Element</th><th>Direct Cost</th><th>Markup</th><th>Burdened Cost</th></tr></thead><tbody><tr><td>Phase 6 Operations/Maintenance</td><td>118964.0</td><td>70831.0</td><td>189795.0</td></tr><tr><td>Phase 5d IRA Operations/Maintenance</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Applicable Phase Markup</td><td>0.0</td><td>5.0</td><td>5.0</td></tr><tr><td>Professional Labor - Direct Cost</td><td>91464.0</td><td>54458.0</td><td>145922.0</td></tr><tr><td>Professional Labor Subcontract - Direct Cost</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Professional Labor Other Direct Cost</td><td>27500.0</td><td>16373.0</td><td>43873.0</td></tr><tr><td>Professional Labor Composite Cost</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Professional Labor Phase Summary</td><td>118964.0</td><td>70831.0</td><td>189795.0</td></tr><tr><td>Total Cost Estimate</td><td>118964.0</td><td>70831.0</td><td>189795.0</td></tr></tbody></table></div><!doctype html><div id=\"6.02.10b\"><table class=\"table table-striped table-hover table-condensed\"><thead><tr><th>WBS</th><th>Description</th><th>Total Cost</th></tr><tr><th>6.02.10b</th><th>CERCLA 5Yr Review</th><th>$129,945.00</th></tr><tr><th colspan=\"2\">Parameter</th><th>Value</th></tr></thead><tbody><tr><td colspan=\"3\"><strong>Required Parameters</strong></td></tr><tr><td colspan=\"2\">Number of 5 Year Reviews During LTMgt</td><td>5 Ea</td></tr><tr><td colspan=\"2\">Number of Sites included in 5 Year Review</td><td>5 Each</td></tr><tr><td colspan=\"2\">Average Number of Acres per Site</td><td>5 Acres</td></tr><tr><td colspan=\"2\">Number of Site Sampling Media (GW, SW, Sed, Soil) Addressed in 5 Year Review</td><td>2 Ea</td></tr><tr><td colspan=\"2\">Is this a Professional Labor using Cost Basis? (Y/N)</td><td>N</td></tr><tr><td colspan=\"2\">Edit Unit Cost Value<a href=\"http://10.0.0.23:8080/help/parm/_Usr_Input.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>N</td></tr><tr><td colspan=\"2\">5 Year Review Complexity During LTMgt</td><td>L [Low]</td></tr><tr><td colspan=\"2\">Project Management/Support/Administration</td><td>7510 $</td></tr><tr><td colspan=\"2\">Community Relations</td><td>1060 $</td></tr><tr><td colspan=\"2\">Regulatory Interaction</td><td>5215 $</td></tr><tr><td colspan=\"2\">Review Documentation</td><td>7195 $</td></tr><tr><td colspan=\"2\">Workplan - Five Year Review</td><td>5635 $</td></tr><tr><td colspan=\"2\">Five Year Review - Record</td><td>16790 $</td></tr><tr><td colspan=\"2\">Five Year Review - Material and ODC</td><td>13390 $</td></tr><tr><td colspan=\"2\">Travel</td><td>5000 $</td></tr><tr><td colspan=\"2\">Site Sample Management, Data Evaluation, and Reporting</td><td>19655 $</td></tr><tr><td colspan=\"2\">RAO Process Sample Management, Data Evaluation, and Reporting</td><td>0 $</td></tr><tr><td colspan=\"3\"><strong>Calculation Data</strong></td></tr><tr><td colspan=\"2\">Initialization Parameter</td><td>1 </td></tr><tr><td colspan=\"3\"><strong>Economics</strong></td></tr><tr><td colspan=\"2\">Year for which the Estimate or Actual Cost is Based</td><td>1999 </td></tr><tr><td colspan=\"2\">Base Year Escalation Factor Value</td><td>1.0510 </td></tr><tr><td colspan=\"2\">Year to which Base Year Cost is to be Escalated and Reported</td><td>2019 </td></tr><tr><td colspan=\"2\">Year of Economics Escalation Factor Value</td><td>1.4356 </td></tr><tr><td colspan=\"2\">Escalation from Base Year to Year of Economics</td><td>1.366 </td></tr><tr><td colspan=\"2\">Area Cost Factor - Value</td><td>1.00 </td></tr><tr><td colspan=\"3\"><strong>Productivity Factors</strong></td></tr><tr><td colspan=\"2\">Personal Protection Equipment (PPE) Level</td><td>D [D]</td></tr><tr><td colspan=\"2\">Cost Adjustment Factor<a href=\"http://10.0.0.23:8080/help/parm/_CAF.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1 </td></tr><tr><td colspan=\"2\">Professional Labor Base Cost</td><td>63060 $</td></tr><tr><td colspan=\"2\">Labor Cost Adjustment Factor - Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Implementation Equipment Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Equipment Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Implementation Equipment Protection Level - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Implementation Material Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Material Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Professional Subcontract Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Subcontractor Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Professional Other Direct Cost Base Cost</td><td>18390 $</td></tr><tr><td colspan=\"2\">Other Direct Cost - Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Professional Composite Cost Adjustment Factor - Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Composite Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Consumable Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Consumable Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"2\">Utility Base Cost</td><td>0 $</td></tr><tr><td colspan=\"2\">Utility Cost Adjustment Factor - Cost Value</td><td>0 $</td></tr><tr><td colspan=\"3\"><strong>Static non-changing parameters within phase</strong></td></tr><tr><td colspan=\"3\"><strong>Markups</strong></td></tr><tr><td colspan=\"2\">Prime Markup (CLEAN)<a href=\"http://10.0.0.23:8080/help/parm/_MK_01.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Prime Markup (RAC)<a href=\"http://10.0.0.23:8080/help/parm/_MK_02.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Program Office<a href=\"http://10.0.0.23:8080/help/parm/_MK_03.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.08 </td></tr><tr><td colspan=\"2\">PCAS<a href=\"http://10.0.0.23:8080/help/parm/_MK_04.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.02 </td></tr><tr><td colspan=\"2\">SIOH<a href=\"http://10.0.0.23:8080/help/parm/_MK_05.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.03 </td></tr><tr><td colspan=\"2\">Contingency<a href=\"http://10.0.0.23:8080/help/parm/_MK_07.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.05 </td></tr><tr><td colspan=\"2\">Closure Report<a href=\"http://10.0.0.23:8080/help/parm/_MK_08.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.02 </td></tr><tr><td colspan=\"2\">User Markup<a href=\"http://10.0.0.23:8080/help/parm/_MK_09.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Area Cost Factor</td><td>1.00 </td></tr><tr><td colspan=\"2\">Escalation Factor</td><td>1.37 </td></tr><tr><td colspan=\"2\">Other Markups<a href=\"http://10.0.0.23:8080/help/parm/_MK_12.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>1.00 </td></tr><tr><td colspan=\"2\">Interim Remedial Action<a href=\"http://10.0.0.23:8080/help/parm/_IRA.html\">&nbsp;<span class=\"glyphicon\">&#xe086;</span></a></td><td>N</td></tr><tr><td colspan=\"2\">1999 Year Escalation Factor Value</td><td>1.0510 </td></tr><tr><td colspan=\"2\">Descalation from Base Year to 1999</td><td>1.000 </td></tr><tr><td colspan=\"3\"><strong>Copyright 1999-2015 Envision Cost Solutions LLC [All nodes and parameters]</strong></td></tr></tbody></table></div><table class=\"table table-striped table-hover table-condensed\"><thead><tr><th>Cost Element</th><th>Direct Cost</th><th>Markup</th><th>Burdened Cost</th></tr></thead><tbody><tr><td>Phase 7 Long-Term Management</td><td>81450.0</td><td>48495.0</td><td>129945.0</td></tr><tr><td>Applicable Phase Markup</td><td>0.0</td><td>6.0</td><td>6.0</td></tr><tr><td>Professional Labor - Direct Cost</td><td>63060.0</td><td>37546.0</td><td>100606.0</td></tr><tr><td>Professional Labor Subcontract - Direct Cost</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Professional Labor Other Direct Cost</td><td>18390.0</td><td>10949.0</td><td>29339.0</td></tr><tr><td>Professional Labor Composite Cost</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>Professional Labor Phase Summary</td><td>81450.0</td><td>48495.0</td><td>129945.0</td></tr><tr><td>Total Cost Estimate</td><td>81450.0</td><td>48495.0</td><td>129945.0</td></tr></tbody></table></div></div></div></div>",
+    "run": {
+        "link": [
+            {
+                "rel": "create",
+                "type": "application/json"
+            }
+        ],
+        "id": "a4cad7a71fd69f28e86001d729795194-20190419114035",
+        "runTime": "2019-04-19T11:40:35.464Z",
+        "modelName": "i02.10",
+        "description": "Multi-Site CERCLA 5 Year Review",
+        "msg": [],
+        "estimate": {
+            "workBreakdown": "i02.10",
+            "description": "Multi-Site CERCLA 5 Year Review",
+            "costValue": 319740,
+            "group": [
+                {
+                    "name": "Required",
+                    "input": [
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_IRA.html"
+                                }
+                            ],
+                            "id": "_IRA",
+                            "code": "boolean",
+                            "name": "Interim Remedial Action",
+                            "value": "N"
+                        },
+                        {
+                            "id": "_Num_5_Yr_Rev_Ops",
+                            "code": "number",
+                            "name": "Number of 5 Year Reviews During RAO",
+                            "value": "5",
+                            "units": "Ea"
+                        },
+                        {
+                            "id": "_Num_5_Yr_Rev_LTM",
+                            "code": "number",
+                            "name": "Number of 5 Year Reviews During LTMgt",
+                            "value": "5",
+                            "units": "Ea"
+                        },
+                        {
+                            "id": "_Num_Sites",
+                            "code": "number",
+                            "name": "Number of Sites included in 5 Year Review",
+                            "value": "5",
+                            "units": "Each"
+                        },
+                        {
+                            "id": "_Avg_Area",
+                            "code": "number",
+                            "name": "Average Number of Acres per Site",
+                            "value": "5",
+                            "units": "Acres"
+                        },
+                        {
+                            "id": "_Site_Smpl_Count",
+                            "code": "number",
+                            "name": "Number of Site Sampling Media (GW, SW, Sed, Soil) Addressed in Plan",
+                            "value": "2",
+                            "units": "Ea"
+                        },
+                        {
+                            "id": "_Proc_Smpl_Count",
+                            "code": "number",
+                            "name": "Number of Process Sampling Media (Gas, Liq, Solid)",
+                            "value": "1.5",
+                            "units": "Ea"
+                        }
+                    ]
+                },
+                {
+                    "name": "Secondary",
+                    "input": [
+                        {
+                            "id": "_PL_w_Cost_Basis",
+                            "code": "boolean",
+                            "name": "Is this a Professional Labor using Cost Basis? (Y/N)",
+                            "value": "N"
+                        },
+                        {
+                            "id": "_Treat_Cmplx",
+                            "code": "number-select",
+                            "name": "Management Complexity",
+                            "value": "M [Moderate]"
+                        },
+                        {
+                            "id": "_Prot_All",
+                            "code": "number-select",
+                            "name": "Personal Protection Equipment (PPE) Level",
+                            "value": "D [D]"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_CAF.html"
+                                }
+                            ],
+                            "id": "_CAF",
+                            "code": "number",
+                            "name": "Cost Adjustment Factor",
+                            "value": "1"
+                        },
+                        {
+                            "id": "_E_Yr",
+                            "code": "number",
+                            "name": "Year to which Base Year Cost is to be Escalated and Reported",
+                            "value": "2019"
+                        }
+                    ]
+                },
+                {
+                    "name": "Tertiary",
+                    "input": [
+                        {
+                            "id": "_ACF_Val",
+                            "code": "number",
+                            "name": "Area Cost Factor - Value",
+                            "value": "1.00"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_01.html"
+                                }
+                            ],
+                            "id": "_MK_01",
+                            "code": "number",
+                            "name": "Prime Markup (CLEAN)",
+                            "value": "1.00"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_02.html"
+                                }
+                            ],
+                            "id": "_MK_02",
+                            "code": "number",
+                            "name": "Prime Markup (RAC)",
+                            "value": "1.00"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_03.html"
+                                }
+                            ],
+                            "id": "_MK_03",
+                            "code": "number",
+                            "name": "Program Office",
+                            "value": "1.08"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_04.html"
+                                }
+                            ],
+                            "id": "_MK_04",
+                            "code": "number",
+                            "name": "PCAS",
+                            "value": "1.02"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_05.html"
+                                }
+                            ],
+                            "id": "_MK_05",
+                            "code": "number",
+                            "name": "SIOH",
+                            "value": "1.03"
+                        },
+                        {
+                            "id": "_MK_06",
+                            "code": "number",
+                            "name": "Remedial Quality Assurance",
+                            "value": "1.0"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_07.html"
+                                }
+                            ],
+                            "id": "_MK_07",
+                            "code": "number",
+                            "name": "Contingency",
+                            "value": "1.05"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_08.html"
+                                }
+                            ],
+                            "id": "_MK_08",
+                            "code": "number",
+                            "name": "Closure Report",
+                            "value": "1.02"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_09.html"
+                                }
+                            ],
+                            "id": "_MK_09",
+                            "code": "number",
+                            "name": "User Markup",
+                            "value": "1.00"
+                        },
+                        {
+                            "id": "_MK_10",
+                            "code": "number",
+                            "name": "Area Cost Factor",
+                            "value": "1.00"
+                        },
+                        {
+                            "id": "_MK_11",
+                            "code": "number",
+                            "name": "Escalation Factor",
+                            "value": "1.00"
+                        },
+                        {
+                            "link": [
+                                {
+                                    "rel": "about",
+                                    "type": "text/html",
+                                    "href": "http://10.0.0.23:8080/help/parm/_MK_12.html"
+                                }
+                            ],
+                            "id": "_MK_12",
+                            "code": "number",
+                            "name": "Other Markups",
+                            "value": "1.00"
+                        }
+                    ]
+                }
+            ],
+            "estimate": [
+                {
+                    "workBreakdown": "101",
+                    "description": "CERCLA 5Yr Rev during RAO",
+                    "costValue": 189795,
+                    "group": [
+                        {
+                            "name": "Required",
+                            "input": [
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_IRA.html"
+                                        }
+                                    ],
+                                    "id": "_IRA",
+                                    "code": "boolean",
+                                    "name": "Interim Remedial Action",
+                                    "value": "N"
+                                },
+                                {
+                                    "id": "_Num_5_Yr_Rev_Ops",
+                                    "code": "number",
+                                    "name": "Number of 5 Year Reviews During RAO",
+                                    "value": "5",
+                                    "units": "Ea"
+                                },
+                                {
+                                    "id": "_Num_Sites",
+                                    "code": "number",
+                                    "name": "Number of Sites included in 5 Year Review",
+                                    "value": "5",
+                                    "units": "Each"
+                                },
+                                {
+                                    "id": "_Avg_Area",
+                                    "code": "number",
+                                    "name": "Average Number of Acres per Site",
+                                    "value": "5",
+                                    "units": "Acres"
+                                },
+                                {
+                                    "id": "_Site_Smpl_Count",
+                                    "code": "number",
+                                    "name": "Number of Site Sampling Media (GW, SW, Sed, Soil) Addressed in Plan",
+                                    "value": "2",
+                                    "units": "Ea"
+                                },
+                                {
+                                    "id": "_Proc_Smpl_Count",
+                                    "code": "number",
+                                    "name": "Number of Process Sampling Media (Gas, Liq, Solid) Addressed in Plan",
+                                    "value": "1.5",
+                                    "units": "Ea"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Secondary",
+                            "input": [
+                                {
+                                    "id": "_PL_w_Cost_Basis",
+                                    "code": "boolean",
+                                    "name": "Is this a Professional Labor using Cost Basis? (Y/N)",
+                                    "value": "N"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_Usr_Input.html"
+                                        }
+                                    ],
+                                    "id": "_Usr_Input",
+                                    "code": "boolean",
+                                    "name": "Edit Unit Cost Value",
+                                    "value": "N"
+                                },
+                                {
+                                    "id": "_Treat_Cmplx",
+                                    "code": "number-select",
+                                    "name": "5 Yr Review Complexity During O&M",
+                                    "value": "M [Moderate]"
+                                },
+                                {
+                                    "id": "_PM_Est",
+                                    "code": "number",
+                                    "name": "Project Management/Support/Administration",
+                                    "value": "11220",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_CR_Est",
+                                    "code": "number",
+                                    "name": "Community Relations",
+                                    "value": "1585",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_RI_Est",
+                                    "code": "number",
+                                    "name": "Regulatory Interaction",
+                                    "value": "7790",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_RDoc_Est",
+                                    "code": "number",
+                                    "name": "Review Documentation",
+                                    "value": "10750",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_5Yr_WP_Est",
+                                    "code": "number",
+                                    "name": "Workplan - Five Year Review",
+                                    "value": "8415",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_5Yr_Rpt_Est",
+                                    "code": "number",
+                                    "name": "Five Year Review - Record",
+                                    "value": "25080",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_5Yr_ODC_Est",
+                                    "code": "number",
+                                    "name": "Five Year Review - Material and ODC",
+                                    "value": "20000",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Travl_Est",
+                                    "code": "number",
+                                    "name": "Travel",
+                                    "value": "7500",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Rev_SM",
+                                    "code": "number",
+                                    "name": "Site Sample Management/Data Evaluation/Reporting",
+                                    "value": "20905.0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Rev_Pr_SM",
+                                    "code": "number",
+                                    "name": "RAO Process Sample Management/Data Evaluation/Reporting",
+                                    "value": "5719",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Initilz",
+                                    "code": "number",
+                                    "name": "Initialization Parameter",
+                                    "value": "1"
+                                },
+                                {
+                                    "id": "_B_Yr",
+                                    "code": "number",
+                                    "name": "Year for which the Estimate or Actual Cost is Based",
+                                    "value": "1999"
+                                },
+                                {
+                                    "id": "_B_Yr_Val",
+                                    "code": "number",
+                                    "name": "Base Year Escalation Factor Value",
+                                    "value": "1.0510"
+                                },
+                                {
+                                    "id": "_E_Yr",
+                                    "code": "number",
+                                    "name": "Year to which Base Year Cost is to be Escalated and Reported",
+                                    "value": "2019"
+                                },
+                                {
+                                    "id": "_E_Yr_Val",
+                                    "code": "number",
+                                    "name": "Year of Economics Escalation Factor Value",
+                                    "value": "1.4356"
+                                },
+                                {
+                                    "id": "_ESC_Val",
+                                    "code": "number",
+                                    "name": "Escalation from Base Year to Year of Economics",
+                                    "value": "1.366"
+                                },
+                                {
+                                    "id": "_Prot_All",
+                                    "code": "number-select",
+                                    "name": "Personal Protection Equipment (PPE) Level",
+                                    "value": "D [D]"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_CAF.html"
+                                        }
+                                    ],
+                                    "id": "_CAF",
+                                    "code": "number",
+                                    "name": "Cost Adjustment Factor",
+                                    "value": "1"
+                                },
+                                {
+                                    "id": "_Labor_Base",
+                                    "code": "number",
+                                    "name": "Professional Labor Base Cost",
+                                    "value": "91464",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Labor_CAF",
+                                    "code": "number",
+                                    "name": "Labor Cost Adjustment Factor - Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Equip_Base",
+                                    "code": "number",
+                                    "name": "Implementation Equipment Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Equip_CAF",
+                                    "code": "number",
+                                    "name": "Equipment Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Equip_Prot",
+                                    "code": "number",
+                                    "name": "Implementation Equipment Protection Level - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Matl_Base",
+                                    "code": "number",
+                                    "name": "Implementation Material Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Matl_CAF",
+                                    "code": "number",
+                                    "name": "Material Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Sub_Base",
+                                    "code": "number",
+                                    "name": "Professional Subcontract Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Sub_CAF",
+                                    "code": "number",
+                                    "name": "Subcontractor Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_ODC_Base",
+                                    "code": "number",
+                                    "name": "Professional Other Direct Cost Base Cost",
+                                    "value": "27500",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_ODC_CAF",
+                                    "code": "number",
+                                    "name": "Other Direct Cost - Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Comp_Base",
+                                    "code": "number",
+                                    "name": "Professional Composite Cost Adjustment Factor - Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Comp_CAF",
+                                    "code": "number",
+                                    "name": "Composite Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Consum_Base",
+                                    "code": "number",
+                                    "name": "Consumable Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Consum_CAF",
+                                    "code": "number",
+                                    "name": "Consumable Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Util_Base",
+                                    "code": "number",
+                                    "name": "Utility Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Util_CAF",
+                                    "code": "number",
+                                    "name": "Utility Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_FY99_Yr_Val",
+                                    "code": "number",
+                                    "name": "1999 Year Escalation Factor Value",
+                                    "value": "1.0510"
+                                },
+                                {
+                                    "id": "_FY99_ESC_Val",
+                                    "code": "number",
+                                    "name": "Descalation from Base Year to 1999",
+                                    "value": "1.000"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Tertiary",
+                            "input": [
+                                {
+                                    "id": "_ACF_Val",
+                                    "code": "number",
+                                    "name": "Area Cost Factor - Value",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_01.html"
+                                        }
+                                    ],
+                                    "id": "_MK_01",
+                                    "code": "number",
+                                    "name": "Prime Markup (CLEAN)",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_02.html"
+                                        }
+                                    ],
+                                    "id": "_MK_02",
+                                    "code": "number",
+                                    "name": "Prime Markup (RAC)",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_03.html"
+                                        }
+                                    ],
+                                    "id": "_MK_03",
+                                    "code": "number",
+                                    "name": "Program Office",
+                                    "value": "1.08"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_04.html"
+                                        }
+                                    ],
+                                    "id": "_MK_04",
+                                    "code": "number",
+                                    "name": "PCAS",
+                                    "value": "1.02"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_05.html"
+                                        }
+                                    ],
+                                    "id": "_MK_05",
+                                    "code": "number",
+                                    "name": "SIOH",
+                                    "value": "1.03"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_07.html"
+                                        }
+                                    ],
+                                    "id": "_MK_07",
+                                    "code": "number",
+                                    "name": "Contingency",
+                                    "value": "1.05"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_08.html"
+                                        }
+                                    ],
+                                    "id": "_MK_08",
+                                    "code": "number",
+                                    "name": "Closure Report",
+                                    "value": "1.02"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_09.html"
+                                        }
+                                    ],
+                                    "id": "_MK_09",
+                                    "code": "number",
+                                    "name": "User Markup",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "id": "_MK_10",
+                                    "code": "number",
+                                    "name": "Area Cost Factor",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "id": "_MK_11",
+                                    "code": "number",
+                                    "name": "Escalation Factor",
+                                    "value": "1.37"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_12.html"
+                                        }
+                                    ],
+                                    "id": "_MK_12",
+                                    "code": "number",
+                                    "name": "Other Markups",
+                                    "value": "1.00"
+                                }
+                            ]
+                        }
+                    ],
+                    "costElement": [
+                        {
+                            "description": "Phase 6 Operations/Maintenance",
+                            "directCost": 118964,
+                            "markup": 70831
+                        },
+                        {
+                            "description": "Phase 5d IRA Operations/Maintenance",
+                            "directCost": 0,
+                            "markup": 0
+                        },
+                        {
+                            "description": "Applicable Phase Markup",
+                            "directCost": 0,
+                            "markup": 5
+                        },
+                        {
+                            "description": "Professional Labor - Direct Cost",
+                            "directCost": 91464,
+                            "markup": 54458
+                        },
+                        {
+                            "description": "Professional Labor Subcontract - Direct Cost",
+                            "directCost": 0,
+                            "markup": 0
+                        },
+                        {
+                            "description": "Professional Labor Other Direct Cost",
+                            "directCost": 27500,
+                            "markup": 16373
+                        },
+                        {
+                            "description": "Professional Labor Composite Cost",
+                            "directCost": 0,
+                            "markup": 0
+                        },
+                        {
+                            "description": "Professional Labor Phase Summary",
+                            "directCost": 118964,
+                            "markup": 70831
+                        },
+                        {
+                            "description": "Total Cost Estimate",
+                            "directCost": 118964,
+                            "markup": 70831
+                        }
+                    ]
+                },
+                {
+                    "workBreakdown": "103",
+                    "description": "CERCLA 5Yr Review",
+                    "costValue": 129945,
+                    "group": [
+                        {
+                            "name": "Required",
+                            "input": [
+                                {
+                                    "id": "_Num_5_Yr_Rev_LTM",
+                                    "code": "number",
+                                    "name": "Number of 5 Year Reviews During LTMgt",
+                                    "value": "5",
+                                    "units": "Ea"
+                                },
+                                {
+                                    "id": "_Num_Sites",
+                                    "code": "number",
+                                    "name": "Number of Sites included in 5 Year Review",
+                                    "value": "5",
+                                    "units": "Each"
+                                },
+                                {
+                                    "id": "_Avg_Area",
+                                    "code": "number",
+                                    "name": "Average Number of Acres per Site",
+                                    "value": "5",
+                                    "units": "Acres"
+                                },
+                                {
+                                    "id": "_Site_Smpl_Count",
+                                    "code": "number",
+                                    "name": "Number of Site Sampling Media (GW, SW, Sed, Soil) Addressed in 5 Year Review",
+                                    "value": "2",
+                                    "units": "Ea"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_IRA.html"
+                                        }
+                                    ],
+                                    "id": "_IRA",
+                                    "code": "boolean",
+                                    "name": "Interim Remedial Action",
+                                    "value": "N"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Secondary",
+                            "input": [
+                                {
+                                    "id": "_PL_w_Cost_Basis",
+                                    "code": "boolean",
+                                    "name": "Is this a Professional Labor using Cost Basis? (Y/N)",
+                                    "value": "N"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_Usr_Input.html"
+                                        }
+                                    ],
+                                    "id": "_Usr_Input",
+                                    "code": "boolean",
+                                    "name": "Edit Unit Cost Value",
+                                    "value": "N"
+                                },
+                                {
+                                    "id": "_Treat_Cmplx_5Yr",
+                                    "code": "number-select",
+                                    "name": "5 Year Review Complexity During LTMgt",
+                                    "value": "L [Low]"
+                                },
+                                {
+                                    "id": "_PM_Est",
+                                    "code": "number",
+                                    "name": "Project Management/Support/Administration",
+                                    "value": "7510",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_CR_Est",
+                                    "code": "number",
+                                    "name": "Community Relations",
+                                    "value": "1060",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_RI_Est",
+                                    "code": "number",
+                                    "name": "Regulatory Interaction",
+                                    "value": "5215",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_RDoc_Est",
+                                    "code": "number",
+                                    "name": "Review Documentation",
+                                    "value": "7195",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_5Yr_WP_Est",
+                                    "code": "number",
+                                    "name": "Workplan - Five Year Review",
+                                    "value": "5635",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_5Yr_Rpt_Est",
+                                    "code": "number",
+                                    "name": "Five Year Review - Record",
+                                    "value": "16790",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_5Yr_ODC_Est",
+                                    "code": "number",
+                                    "name": "Five Year Review - Material and ODC",
+                                    "value": "13390",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Travl_Est",
+                                    "code": "number",
+                                    "name": "Travel",
+                                    "value": "5000",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Rev_SM",
+                                    "code": "number",
+                                    "name": "Site Sample Management, Data Evaluation, and Reporting",
+                                    "value": "19655",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Rev_Pr_SM",
+                                    "code": "number",
+                                    "name": "RAO Process Sample Management, Data Evaluation, and Reporting",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Initilz",
+                                    "code": "number",
+                                    "name": "Initialization Parameter",
+                                    "value": "1"
+                                },
+                                {
+                                    "id": "_B_Yr",
+                                    "code": "number",
+                                    "name": "Year for which the Estimate or Actual Cost is Based",
+                                    "value": "1999"
+                                },
+                                {
+                                    "id": "_B_Yr_Val",
+                                    "code": "number",
+                                    "name": "Base Year Escalation Factor Value",
+                                    "value": "1.0510"
+                                },
+                                {
+                                    "id": "_E_Yr",
+                                    "code": "number",
+                                    "name": "Year to which Base Year Cost is to be Escalated and Reported",
+                                    "value": "2019"
+                                },
+                                {
+                                    "id": "_E_Yr_Val",
+                                    "code": "number",
+                                    "name": "Year of Economics Escalation Factor Value",
+                                    "value": "1.4356"
+                                },
+                                {
+                                    "id": "_ESC_Val",
+                                    "code": "number",
+                                    "name": "Escalation from Base Year to Year of Economics",
+                                    "value": "1.366"
+                                },
+                                {
+                                    "id": "_Prot_All",
+                                    "code": "number-select",
+                                    "name": "Personal Protection Equipment (PPE) Level",
+                                    "value": "D [D]"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_CAF.html"
+                                        }
+                                    ],
+                                    "id": "_CAF",
+                                    "code": "number",
+                                    "name": "Cost Adjustment Factor",
+                                    "value": "1"
+                                },
+                                {
+                                    "id": "_Labor_Base",
+                                    "code": "number",
+                                    "name": "Professional Labor Base Cost",
+                                    "value": "63060",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Labor_CAF",
+                                    "code": "number",
+                                    "name": "Labor Cost Adjustment Factor - Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Equip_Base",
+                                    "code": "number",
+                                    "name": "Implementation Equipment Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Equip_CAF",
+                                    "code": "number",
+                                    "name": "Equipment Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Equip_Prot",
+                                    "code": "number",
+                                    "name": "Implementation Equipment Protection Level - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Matl_Base",
+                                    "code": "number",
+                                    "name": "Implementation Material Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Matl_CAF",
+                                    "code": "number",
+                                    "name": "Material Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Sub_Base",
+                                    "code": "number",
+                                    "name": "Professional Subcontract Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Sub_CAF",
+                                    "code": "number",
+                                    "name": "Subcontractor Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_ODC_Base",
+                                    "code": "number",
+                                    "name": "Professional Other Direct Cost Base Cost",
+                                    "value": "18390",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_ODC_CAF",
+                                    "code": "number",
+                                    "name": "Other Direct Cost - Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Comp_Base",
+                                    "code": "number",
+                                    "name": "Professional Composite Cost Adjustment Factor - Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Comp_CAF",
+                                    "code": "number",
+                                    "name": "Composite Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Consum_Base",
+                                    "code": "number",
+                                    "name": "Consumable Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Consum_CAF",
+                                    "code": "number",
+                                    "name": "Consumable Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Util_Base",
+                                    "code": "number",
+                                    "name": "Utility Base Cost",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_Util_CAF",
+                                    "code": "number",
+                                    "name": "Utility Cost Adjustment Factor - Cost Value",
+                                    "value": "0",
+                                    "units": "$"
+                                },
+                                {
+                                    "id": "_FY99_Yr_Val",
+                                    "code": "number",
+                                    "name": "1999 Year Escalation Factor Value",
+                                    "value": "1.0510"
+                                },
+                                {
+                                    "id": "_FY99_ESC_Val",
+                                    "code": "number",
+                                    "name": "Descalation from Base Year to 1999",
+                                    "value": "1.000"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Tertiary",
+                            "input": [
+                                {
+                                    "id": "_ACF_Val",
+                                    "code": "number",
+                                    "name": "Area Cost Factor - Value",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_01.html"
+                                        }
+                                    ],
+                                    "id": "_MK_01",
+                                    "code": "number",
+                                    "name": "Prime Markup (CLEAN)",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_02.html"
+                                        }
+                                    ],
+                                    "id": "_MK_02",
+                                    "code": "number",
+                                    "name": "Prime Markup (RAC)",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_03.html"
+                                        }
+                                    ],
+                                    "id": "_MK_03",
+                                    "code": "number",
+                                    "name": "Program Office",
+                                    "value": "1.08"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_04.html"
+                                        }
+                                    ],
+                                    "id": "_MK_04",
+                                    "code": "number",
+                                    "name": "PCAS",
+                                    "value": "1.02"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_05.html"
+                                        }
+                                    ],
+                                    "id": "_MK_05",
+                                    "code": "number",
+                                    "name": "SIOH",
+                                    "value": "1.03"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_07.html"
+                                        }
+                                    ],
+                                    "id": "_MK_07",
+                                    "code": "number",
+                                    "name": "Contingency",
+                                    "value": "1.05"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_08.html"
+                                        }
+                                    ],
+                                    "id": "_MK_08",
+                                    "code": "number",
+                                    "name": "Closure Report",
+                                    "value": "1.02"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_09.html"
+                                        }
+                                    ],
+                                    "id": "_MK_09",
+                                    "code": "number",
+                                    "name": "User Markup",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "id": "_MK_10",
+                                    "code": "number",
+                                    "name": "Area Cost Factor",
+                                    "value": "1.00"
+                                },
+                                {
+                                    "id": "_MK_11",
+                                    "code": "number",
+                                    "name": "Escalation Factor",
+                                    "value": "1.37"
+                                },
+                                {
+                                    "link": [
+                                        {
+                                            "rel": "about",
+                                            "type": "text/html",
+                                            "href": "http://10.0.0.23:8080/help/parm/_MK_12.html"
+                                        }
+                                    ],
+                                    "id": "_MK_12",
+                                    "code": "number",
+                                    "name": "Other Markups",
+                                    "value": "1.00"
+                                }
+                            ]
+                        }
+                    ],
+                    "costElement": [
+                        {
+                            "description": "Phase 7 Long-Term Management",
+                            "directCost": 81450,
+                            "markup": 48495
+                        },
+                        {
+                            "description": "Applicable Phase Markup",
+                            "directCost": 0,
+                            "markup": 6
+                        },
+                        {
+                            "description": "Professional Labor - Direct Cost",
+                            "directCost": 63060,
+                            "markup": 37546
+                        },
+                        {
+                            "description": "Professional Labor Subcontract - Direct Cost",
+                            "directCost": 0,
+                            "markup": 0
+                        },
+                        {
+                            "description": "Professional Labor Other Direct Cost",
+                            "directCost": 18390,
+                            "markup": 10949
+                        },
+                        {
+                            "description": "Professional Labor Composite Cost",
+                            "directCost": 0,
+                            "markup": 0
+                        },
+                        {
+                            "description": "Professional Labor Phase Summary",
+                            "directCost": 81450,
+                            "markup": 48495
+                        },
+                        {
+                            "description": "Total Cost Estimate",
+                            "directCost": 81450,
+                            "markup": 48495
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -7,6 +7,7 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProjectReportComponent} from './project-report/project-report.component';
 import {ProjectmodelComponent} from './projectmodel/projectmodel.component';
+import {ProjectResultComponent} from './project-result/project-result.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'createproject', component: CreateProjectComponent},
   {path: 'projectmodel', component: ProjectmodelComponent},
   {path: 'projectreport', component: ProjectReportComponent},
+  {path: 'projectresult', component: ProjectResultComponent},
 ];
 
 @NgModule({
