@@ -1,0 +1,105 @@
+{
+    "model": [
+        {
+            "id": 1009,
+            "tech": "2.10",
+            "name": "Five Year CERCLA Review"
+        },
+        {
+            "id": 1010,
+            "tech": "18.01",
+            "name": "Pump and Treat"
+        },
+        {
+            "id": 1011,
+            "tech": "19.01",
+            "name": "Excavation with Off-Site Disposal"
+        },
+        {
+            "id": 1012,
+            "tech": "25.02",
+            "name": "Air Sparging"
+        },
+        {
+            "id": 1013,
+            "tech": "23.04",
+            "name": "In Situ Chemical Oxidation"
+        },
+        {
+            "id": 1014,
+            "tech": "05.07",
+            "name": "Groundwater Monitoring"
+        },
+        {
+           
+            "id": 1015,
+            "tech": "25.17",
+            "name": "Soil Vapor Extraction In Situ"
+        },
+        {
+            "id": 1016,
+            "tech": "i27.01,08",
+            "name": "In Situ Heating - High Temp"
+        },
+        {
+          
+            "id": 1017,
+            "tech": "i27.02,04",
+            "name": "In Situ Heating - Low Temp"
+        },
+        {
+         
+            "id": 1018,
+            "tech": "i21.06b",
+            "name": "In-Situ Enhanced Bioremediation"
+        },
+        {
+           
+            "id": 1019,
+            "tech": "i21.08",
+            "name": "Monitored Natural Attenuation"
+        },
+        {
+          
+            "id": 1020,
+            "tech": "i29.03",
+            "name": "In Situ Stabilization - Solidification"
+        },
+        {
+           
+            "id": 1021,
+            "tech": "i30.01,04",
+            "name": "Ex Situ Solidification - Stabilization (v5.2)"
+        },
+        {
+          
+            "id": 1022,
+            "tech": "i17.14",
+            "name": "Sediment Capping"
+        },
+        {
+          
+            "id": 1023,
+            "tech": "i24.11",
+            "name": "Solvent Extraction"
+        },
+        {
+          
+            "id": 1024,
+            "tech": "i25.11",
+            "name": "Soil_Flushing"
+        },
+        {
+          
+            "id": 1025,
+            "tech": "i26.35",
+            "name": "Soil Washing"
+        },
+        {
+			
+            "id": 1026,
+            "tech": "i28.03",
+            "name": "Thermal Desorption"
+        }
+    ]
+}

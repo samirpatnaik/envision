@@ -11,5 +11,6 @@ export class ModelresponseService {
 
   public getJSON(): Observable<any> {
     return this.http.get("assets/modelresponse/ModelExecResponse.json");
-}
+  }
+  
 }

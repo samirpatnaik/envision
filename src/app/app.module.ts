@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {  ReactiveFormsModule } from '@angular/forms';
-
+import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+
 
 import { CommonLayoutModule} from  './common-layout/common-layout.module';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
@@ -27,14 +28,16 @@ import { ProjectResultDetailsComponent } from './project-result/project-result-d
     ProjectReportComponent,
     ProjectmodelComponent,
     ProjectResultComponent,
-    ProjectResultDetailsComponent
+    ProjectResultDetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    FilterPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
