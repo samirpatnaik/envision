@@ -47,7 +47,8 @@
               "src/assets/js/owl-carousel.2.3.0.min.js",
               "src/assets/js/smoothscroll.js",
               "src/assets/js/easyResponsiveTabs.js",
-              "src/assets/js/main.js"
+              "src/assets/js/main.js",
+              "src/assets/js/customscript.js"
             ]
           },
           "configurations": {
