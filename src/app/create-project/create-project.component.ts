@@ -57,7 +57,7 @@ export class CreateProjectComponent  implements OnInit{
       if (this.listmodelForm.invalid) {
         return;
       } else {
-        console.log(this.listmodelForm.value);
+        //console.log(this.listmodelForm.value);
         this.router.navigate(['/projectmodel']);
       }
   }
