@@ -5949,9 +5949,9 @@ ul.navbar-nav li.nav-item > a{padding: 25px 15px 10px !important;}
 .tabbingformbox_header .btn2{ display:inline-block;  padding:10px 15px;border:none; line-height:14px; background-color:#fff; color:#333; border-radius:25px;}
 .tabbingformbox_header .btn2:hover{background-color:#333; color:#fff;}
 
+/*height: 400px;overflow: auto;*/
 
-
-.tabbingformbox_padding{ padding:30px;height: 400px;overflow: auto; margin-bottom:30px;}
+.tabbingformbox_padding{ padding:30px; margin-bottom:30px;}
 .tabbingformbox_padding p{ font-size:14px; line-height:22px;}
 
 
@@ -5978,6 +5978,8 @@ ul.navbar-nav li.nav-item > a{padding: 25px 15px 10px !important;}
 
 .form-group {position:relative; width:98%;}
 .form-group img.reseticon {position: absolute;right: -20px;top: 45px; cursor: pointer;}
+.form-group img.radioreseticon {position: absolute;right: -20px;top: 7px; cursor: pointer;}
+
 .valuechange_bg{
   background-color: white !important;
 }

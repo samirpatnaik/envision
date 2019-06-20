@@ -33,7 +33,8 @@
                         <div class="form-group">
                             <label>Interim Remedial Action</label>&nbsp;&nbsp;
                             <input type="radio" formControlName="_IRA" value="N" id="_IRA" checked="checked" /> No <input type="radio" formControlName="_IRA" value="Y" id="_IRA" /> Yes
-                        </div>
+                            <a id="reset0" (click)="reset_radioctrl('_IRA','N')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                          </div>
                         <div class="form-group">
                           <label>Number of 5 Year Reviews During RAO</label>
                           <input type="text" class="form-control form-control-lg" id="_Num_5_Yr_Rev_Ops" placeholder="5" formControlName="_Num_5_Yr_Rev_Ops" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_5_Yr_Rev_Ops.errors }" (input)="updatebg('_Num_5_Yr_Rev_Ops')">
@@ -94,7 +95,11 @@
                       </div>
                     </div>   
                   </div>
+                  <div class="tabbingformbox_header ">
+                    <a href="#tab_b" data-toggle="pill" class="btn2">Next</a>
+                  </div>
                 </div>
+                
                 <div class="tab-pane" id="tab_b">
                   <div class="tabbingformbox_padding">
                     <h4>Secondary Section</h4>
@@ -103,7 +108,8 @@
                             <div class="form-group">
                                 <label>Is this a Professional Labor using Cost Basis? </label>&nbsp;&nbsp;
                                 <input type="radio" formControlName="_PL_w_Cost_Basis" value="N" id="_PL_w_Cost_Basis" checked="checked" /> No <input type="radio" formControlName="_PL_w_Cost_Basis" value="Y" id="_PL_w_Cost_Basis" /> Yes
-                            </div>
+                                <a id="reset01" (click)="reset_radioctrl('_PL_w_Cost_Basis','N')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                              </div>
                             <div class="form-group">
                                 <label>Management Complexity</label>
                                 <select class="form-control form-control-lg" id="_Treat_Cmplx" formControlName="_Treat_Cmplx" (input)="updatebg('_Treat_Cmplx')">
@@ -146,6 +152,9 @@
                             </div>
                         </div>
                       </div>
+                  </div>
+                  <div class="tabbingformbox_header ">
+                    <a href="#tab_c" data-toggle="pill" class="btn2">Next</a>
                   </div>
                 </div>
                 <div class="tab-pane" id="tab_c">

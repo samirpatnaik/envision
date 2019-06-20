@@ -76,6 +76,10 @@ export class ProjectmodelComponent implements OnInit {
     $('#'+nm).addClass( "reset_bg" );
 
   }
+  reset_radioctrl(optnm,optval){
+    this.multisiteForm.controls[optnm].reset();
+    $('input[id='+optnm+'][value='+optval+']').prop("checked",true);
+  }
   submit_multisiteForm() {
     this.submitted = true;
     if (this.multisiteForm.invalid) {
