@@ -13,9 +13,13 @@ export class ProjectResultDetailsComponent implements OnInit {
   displaystring: any;
 
   ngOnInit() {
-    this.modelresponseService.getJSON().subscribe(data => {
+    this.modelresponseService.apiData$.subscribe(data => {
       this.displaystring = this.sanitizer.bypassSecurityTrustHtml(data.displayString);
   });
+
+   /* this.modelresponseService.getJSON().subscribe(data => {
+      this.displaystring = this.sanitizer.bypassSecurityTrustHtml(data.displayString);
+  });*/
 
   }
 

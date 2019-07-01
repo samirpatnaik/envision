@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 import {Observable} from 'rxjs';
+import { ModelresponseService } from '../services/modelresponse.service';
 
 import {ModelList} from './model-list'
 import {HttpClient} from '@angular/common/http';
@@ -27,14 +28,14 @@ export class CreateProjectComponent  implements OnInit{
 
     
 
-  constructor(private router:Router,  private _http:HttpClient,private formBuilder: FormBuilder, private filterPipe: FilterPipe) {
+  constructor(private router:Router,  private _http:HttpClient,private formBuilder: FormBuilder, private filterPipe: FilterPipe, private modelresponseService: ModelresponseService) {
       this.listmodelForm = this.formBuilder.group({
         listoption: [''],
         project_title: [''],
         project_description: ['']
       });
      
-      this.model$ = _http.get("assets/modelresponse/ListOfModels.json");
+     // this.model$ = _http.get("assets/modelresponse/ListOfModels.json");
       this.addModeloptions(); 
 }
   ngOnInit() { 
@@ -42,11 +43,16 @@ export class CreateProjectComponent  implements OnInit{
   }
 
   private addModeloptions() {
-    
-    this.model$.subscribe(data => {    
+    this.modelresponseService.getModel()
+      .subscribe(data => {
         this.modellist_options = data.model;
       }
-    );
+    ); 
+
+   /* this.model$.subscribe(data => {    
+        this.modellist_options = data.model;
+      }
+    );*/
   }
 
   // convenience getter for easy access to form fields
@@ -57,8 +63,8 @@ export class CreateProjectComponent  implements OnInit{
       if (this.listmodelForm.invalid) {
         return;
       } else {
-        //console.log(this.listmodelForm.value);
-        this.router.navigate(['/projectmodel']);
+       // console.log(this.listmodelForm.controls['listoption'].value);
+        this.router.navigate(["/projectmodel/"+this.listmodelForm.controls['listoption'].value]);
       }
   }
 

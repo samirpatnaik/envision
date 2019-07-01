@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'login', component: LoginSignupComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'createproject', component: CreateProjectComponent},
-  {path: 'projectmodel', component: ProjectmodelComponent},
+  {path: 'projectmodel/:listid', component: ProjectmodelComponent},
   {path: 'projectreport', component: ProjectReportComponent},
   {path: 'projectresult', component: ProjectResultComponent},
 ];

@@ -14,11 +14,15 @@ export class ProjectResultComponent implements OnInit {
   costvalue: any;
   private loadComponent = false;
   ngOnInit() {
-    this.modelresponseService.getJSON().subscribe(data => {
+    this.modelresponseService.apiData.subscribe((data) => {
+     // console.log('Subscriber B:', data);
       this.description = data.run.description;
       this.modelname = data.run.modelName;
       this.costvalue = data.run.estimate.costValue;
     });
+    
+   
+    
   }
 
   loadMyChildComponent(){
