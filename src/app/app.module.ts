@@ -17,6 +17,8 @@ import { ProjectReportComponent } from './project-report/project-report.componen
 import { ProjectmodelComponent } from './projectmodel/projectmodel.component';
 import { ProjectResultComponent } from './project-result/project-result.component';
 import { ProjectResultDetailsComponent } from './project-result/project-result-details/project-result-details.component';
+import { Model1009Component } from './projectmodel/model1009/model1009.component';
+import { Model1010Component } from './projectmodel/model1010/model1010.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { ProjectResultDetailsComponent } from './project-result/project-result-d
     ProjectmodelComponent,
     ProjectResultComponent,
     ProjectResultDetailsComponent,
+    Model1009Component,
+    Model1010Component,
   ],
   imports: [
     BrowserModule,
