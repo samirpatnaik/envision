@@ -65,7 +65,7 @@ export class LoginSignupComponent implements OnInit {
       if (this.loginForm.invalid) {
         return;
       } else {
-     /* this._user.login(JSON.stringify(this.loginForm.value))
+     this._user.login(JSON.stringify(this.loginForm.value))
       .subscribe(
       data=>{
         console.log(data);
@@ -76,9 +76,9 @@ export class LoginSignupComponent implements OnInit {
         } else {
           this.message = 'Invalid login credential';  
         } 
-      });*/
-      this.session.set('currentUser', 'testname');
-      this.router.navigate(['/dashboard']);
+      });
+     // this.session.set('currentUser', 'testname');
+     // this.router.navigate(['/dashboard']);
       }
   }
 
