@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SessionStorageService } from 'angular-web-storage';
 import * as $ from "jquery";
+import { LoginRegisterService } from '../services/login-register.service';
 
 declare var $: any;
 
@@ -15,7 +16,7 @@ export class LoginSignupComponent implements OnInit {
 
   constructor(private router:Router,              
               private formBuilder: FormBuilder,
-              private session: SessionStorageService) {  }
+              private session: SessionStorageService, private _user:LoginRegisterService) {  }
 
   loginForm: FormGroup;
   signupForm: FormGroup;
@@ -42,8 +43,8 @@ export class LoginSignupComponent implements OnInit {
       }
 
       this.loginForm = this.formBuilder.group({
-        uname: [''],
-        password: ['']
+        uname: ['', Validators.required],
+        password: ['', Validators.required]
       });
 
       this.signupForm = this.formBuilder.group({
@@ -64,8 +65,20 @@ export class LoginSignupComponent implements OnInit {
       if (this.loginForm.invalid) {
         return;
       } else {
-        this.session.set('currentUser', 'testname');
-        this.router.navigate(['/dashboard']);
+     /* this._user.login(JSON.stringify(this.loginForm.value))
+      .subscribe(
+      data=>{
+        console.log(data);
+        if (data) {
+          this.session.set('currentUser', data);
+          this.router.navigate(['/dashboard']);
+          this.message = '';
+        } else {
+          this.message = 'Invalid login credential';  
+        } 
+      });*/
+      this.session.set('currentUser', 'testname');
+      this.router.navigate(['/dashboard']);
       }
   }
 

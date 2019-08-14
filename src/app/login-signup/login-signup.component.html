@@ -37,9 +37,19 @@
         <div class="resp-tabs-container">
           <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
             <div class="login-top">
+              <div class="error">{{message}}</div>
               <form [formGroup]="loginForm" (ngSubmit)="loginClick()">
-                <input type="text" class="name" placeholder="User Name" formControlName="uname" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }"  />
+              
+                <input type="text" class="name" placeholder="User Name" formControlName="uname" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }" /> 
+                <div *ngIf="submitted && f.uname.errors" class="invalid-feedback">
+                    <div *ngIf="f.uname.errors.required">User Name is required</div>
+                </div>
+      
                 <input type="password" class="password" placeholder="Password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                  <div *ngIf="f.password.errors.required">Password is required</div>
+                </div> 
+
                 <div class="login-bottom login-bottom1">
                   <div class="submit">
                     <input type="submit" value="LOGIN">
