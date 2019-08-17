@@ -37,12 +37,12 @@
         <div class="resp-tabs-container">
           <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
             <div class="login-top">
-              <div class="error">{{message}}</div>
+              <div class="error" style="text-align: center">{{message}}</div>
               <form [formGroup]="loginForm" (ngSubmit)="loginClick()">
               
-                <input type="text" class="name" placeholder="User Name" formControlName="uname" [ngClass]="{ 'is-invalid': submitted && f.uname.errors }" /> 
-                <div *ngIf="submitted && f.uname.errors" class="invalid-feedback">
-                    <div *ngIf="f.uname.errors.required">User Name is required</div>
+                <input type="text" class="username" placeholder="User Name" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" /> 
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">User Name is required</div>
                 </div>
       
                 <input type="password" class="password" placeholder="Password" formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
@@ -60,13 +60,24 @@
             </div>
           </div>
           <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-            <form [formGroup]="signupForm" (ngSubmit)="loginClick()"> 
+              <div class="error" style="text-align: center">{{message}}</div>
+            <form [formGroup]="signupForm" (ngSubmit)="signupClick()"> 
             <div class="login-top">
-                <input type="text" class="company" placeholder="Organization Name" formControlName="company" />
-                <input type="text" class="email" placeholder="Email" formControlName="email" />
-                <input type="text" class="name active" placeholder="User Name" formControlName="uname" />
-                <input type="password" class="password" placeholder="Password" formControlName="password" />
-              
+              <input type="text" class="firstname" placeholder="First Name" formControlName="firstname" />
+              <input type="text" class="lastname" placeholder="Last Name" formControlName="lastname" />
+              <input type="text" class="email" placeholder="Email" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && s.email.errors }"/>
+              <div *ngIf="submitted && s.email.errors" class="invalid-feedback">
+                <div *ngIf="s.email.errors.required">Email is required</div>
+              </div>
+              <input type="text" class="name active" placeholder="User Name" formControlName="uname"  [ngClass]="{ 'is-invalid': submitted && s.uname.errors }"/>
+              <div *ngIf="submitted && s.uname.errors" class="invalid-feedback">
+                <div *ngIf="s.uname.errors.required">Username is required</div>
+              </div>
+              <input type="password" class="password" placeholder="Password" formControlName="pwd"  [ngClass]="{ 'is-invalid': submitted && s.pwd.errors }"/>
+              <div *ngIf="submitted && s.pwd.errors" class="invalid-feedback">
+                <div *ngIf="s.pwd.errors.required">Password is required</div>
+              </div>
+
               <div class="login-bottom">
                 <div class="submit">
                   <input type="submit" value="SIGN UP" />

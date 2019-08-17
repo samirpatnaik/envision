@@ -18,4 +18,10 @@ export class LoginRegisterService {
     });
   }
 
+  register(body:any){
+    return this._http.post('http://54.81.168.191:8080/api/register',body,{
+      observe:'response',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
 }

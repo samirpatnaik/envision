@@ -22,7 +22,7 @@ export class LoginSignupComponent implements OnInit {
   signupForm: FormGroup;
   message: string;
   submitted = false;
-
+  
   ngOnInit() {
 
       $(document).ready(function () {
@@ -43,32 +43,37 @@ export class LoginSignupComponent implements OnInit {
       }
 
       this.loginForm = this.formBuilder.group({
-        uname: ['', Validators.required],
+        username: ['', Validators.required],
         password: ['', Validators.required]
       });
 
       this.signupForm = this.formBuilder.group({
-        company:[''],
-        email:[''],
-        uname: [''],
-        password: ['']
+        firstname:[''],
+        lastname:[''],
+        email:['', Validators.required],
+        uname: ['', Validators.required],
+        pwd: ['', Validators.required]
       });
   }
 
-  
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
-
+  get s() { return this.signupForm.controls; }
 
   loginClick(){
     this.submitted = true;
-      if (this.loginForm.invalid) {
+      if (this.loginForm.invalid) { 
         return;
       } else {
-     this._user.login(JSON.stringify(this.loginForm.value))
+        let logindata = { 
+                      "username": this.loginForm.controls['username'].value,
+                      "password": this.loginForm.controls['password'].value,
+                      "rememberMe": true
+                   };
+     this._user.login(logindata)
       .subscribe(
       data=>{
-        console.log(data);
+
         if (data) {
           this.session.set('currentUser', data);
           this.router.navigate(['/dashboard']);
@@ -82,4 +87,29 @@ export class LoginSignupComponent implements OnInit {
       }
   }
 
+  signupClick(){
+    this.submitted = true;
+      if (this.signupForm.invalid) { 
+        return;
+      } else {
+        let registerdata = { 
+                      "login": this.signupForm.controls['uname'].value,
+                      "password": this.signupForm.controls['pwd'].value,
+                      "email": this.signupForm.controls['email'].value,
+                      "firstName": this.signupForm.controls['firstname'].value,
+                      "lastName": this.signupForm.controls['lastname'].value,
+                      "createdBy": "UI"
+                   };
+       // console.log(registerdata);
+        this._user.register(registerdata)
+        .subscribe(res=>{
+         if(res.statusText == 'OK'){
+           this.message = "User Signup Completed Successfully";
+           this.signupForm.reset();
+         }
+        }, err => {
+          this.message = err.error.message;
+        });
+      }
+  }
 }
