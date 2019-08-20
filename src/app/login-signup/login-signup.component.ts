@@ -50,7 +50,7 @@ export class LoginSignupComponent implements OnInit {
       this.signupForm = this.formBuilder.group({
         firstname:[''],
         lastname:[''],
-        email:['', Validators.required],
+        email:['', [Validators.required, Validators.email]],
         uname: ['', Validators.required],
         pwd: ['', Validators.required]
       });
