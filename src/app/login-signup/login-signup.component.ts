@@ -20,8 +20,10 @@ export class LoginSignupComponent implements OnInit {
 
   loginForm: FormGroup;
   signupForm: FormGroup;
-  message: string;
+  loginmessage: string;
+  signupmessage: string;
   submitted = false;
+  signupsubmitted = false;
   
   ngOnInit() {
 
@@ -52,7 +54,7 @@ export class LoginSignupComponent implements OnInit {
         lastname:[''],
         email:['', [Validators.required, Validators.email]],
         uname: ['', Validators.required],
-        pwd: ['', Validators.required]
+        pwd: ['', [Validators.required, Validators.minLength(4)]]
       });
   }
 
@@ -77,18 +79,16 @@ export class LoginSignupComponent implements OnInit {
         if (data) {
           this.session.set('currentUser', data);
           this.router.navigate(['/dashboard']);
-          this.message = '';
+          this.loginmessage = '';
         } else {
-          this.message = 'Invalid login credential';  
+          this.loginmessage = 'Invalid login credential';  
         } 
       });
-     // this.session.set('currentUser', 'testname');
-     // this.router.navigate(['/dashboard']);
-      }
+    }
   }
 
   signupClick(){
-    this.submitted = true;
+    this.signupsubmitted = true;
       if (this.signupForm.invalid) { 
         return;
       } else {
@@ -104,11 +104,12 @@ export class LoginSignupComponent implements OnInit {
         this._user.register(registerdata)
         .subscribe(res=>{
          if(res.statusText == 'OK'){
-           this.message = "User Signup Completed Successfully";
+           this.signupmessage = "User Signup Completed Successfully";
            this.signupForm.reset();
          }
         }, err => {
-          this.message = err.error.message;
+          console.log(err);
+          this.signupmessage = err.error.message;
         });
       }
   }
