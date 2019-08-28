@@ -80,6 +80,13 @@ export class Model1009Component implements OnInit {
     this.multisiteForm.controls[optnm].reset();
     $('input[id='+optnm+'][value='+optval+']').prop("checked",true);
   }
+
+  validate_modelform(){
+    this.submitted = true;
+    if (this.multisiteForm.invalid) {
+      return;
+    }
+  }
   submit_multisiteForm() {
     this.submitted = true;
     
