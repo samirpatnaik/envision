@@ -12,9 +12,9 @@
   <div class="row">
       <div class="col-sm-3">
         <ul class="nav nav-pills col-sm-3 nav-stacked newleft">
-          <li class="active"><a href="#tab_a" data-toggle="pill">Required</a></li>
-          <li><a href="#tab_b" data-toggle="pill">Secondary</a></li>
-          <li><a href="#tab_c" data-toggle="pill">Tertiary</a></li>
+            <li class="active"><a href="#tab_a" data-toggle="pill" id="req">Required</a></li>
+            <li><a href="#tab_b" data-toggle="pill" id="sec">Secondary</a></li>
+            <li><a href="#tab_c" data-toggle="pill" id="ter">Tertiary</a></li>
         </ul>
   </div>
   <div class="col-sm-9"> 
@@ -47,45 +47,45 @@
                 </div>
                 <div class="form-group">
                   <label>Average of Total Well Depth including Screen</label>
-                  <input type="text" class="form-control form-control-lg" id="_WDepth" placeholder="0" formControlName="_WDepth" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._WDepth.errors }" (input)="updatebg('_WDepth')">
+                  <input type="text" class="form-control form-control-lg" id="_WDepth" placeholder="0" formControlName="_WDepth" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._WDepth.errors }" (input)="updatebg('_WDepth')">
                   <a id="reset2" (click)="reset_inputctrl('_WDepth','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                  <div *ngIf="submitted || f._WDepth.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._WDepth.errors" class="invalid-feedback">
                     <div *ngIf="f._WDepth.errors?.min">Minimum required number is 11.</div> 
                     <div *ngIf="f._WDepth.errors?.max">Maximum number can be 210.</div> 
                   </div>
                 </div>
                 <div class="form-group">
                   <label>Aquifer Saturated Thickness</label>
-                  <input type="text" class="form-control form-control-lg" id="_AST" placeholder="0" formControlName="_AST" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._AST.errors }"  (input)="updatebg('_AST')">
+                  <input type="text" class="form-control form-control-lg" id="_AST" placeholder="0" formControlName="_AST" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._AST.errors }"  (input)="updatebg('_AST')">
                   <a id="reset3" (click)="reset_inputctrl('_AST','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                  <div *ngIf="submitted || f._AST.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._AST.errors" class="invalid-feedback">
                     <div *ngIf="f._AST.errors?.min">Minimum required number is 0.01.</div> 
                     <div *ngIf="f._AST.errors?.max">Maximum number can be 200.</div> 
                   </div>
                 </div> 
                 <div class="form-group">
                   <label>Width</label>
-                  <input type="text" class="form-control form-control-lg" id="_W_Ft" placeholder="0" formControlName="_W_Ft" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._W_Ft.errors }" (input)="updatebg('_W_Ft')">
+                  <input type="text" class="form-control form-control-lg" id="_W_Ft" placeholder="0" formControlName="_W_Ft" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._W_Ft.errors }" (input)="updatebg('_W_Ft')">
                   <a id="reset4" (click)="reset_inputctrl('_W_Ft','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                  <div *ngIf="submitted || f._W_Ft.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._W_Ft.errors" class="invalid-feedback">
                     <div *ngIf="f._W_Ft.errors?.min">Minimum required number is 25.</div> 
                     <div *ngIf="f._W_Ft.errors?.max">Maximum number can be 500.</div>
                   </div>
                 </div> 
               <div class="form-group">
                 <label>Well Depth Less Screen Length</label>
-                <input type="text" class="form-control form-control-lg" id="_GWDepth" placeholder="101" formControlName="_GWDepth" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._GWDepth.errors }" (input)="updatebg('_GWDepth')">
+                <input type="text" class="form-control form-control-lg" id="_GWDepth" placeholder="101" formControlName="_GWDepth" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._GWDepth.errors }" (input)="updatebg('_GWDepth')">
                 <a id="reset5" (click)="reset_inputctrl('_GWDepth','101')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
-                <div *ngIf="submitted || f._GWDepth.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._GWDepth.errors" class="invalid-feedback">
                   <div *ngIf="f._GWDepth.errors?.min">Minimum required number is 3.</div>
                   <div *ngIf="f._GWDepth.errors?.max">Maximum required number is 200.</div> 
                 </div>
               </div> 
               <div class="form-group">
                 <label>Project Area</label>
-                <input type="text" class="form-control form-control-lg" id="_P_Area" placeholder="0.01" formControlName="_P_Area" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._P_Area.errors }" (input)="updatebg('_P_Area')">
+                <input type="text" class="form-control form-control-lg" id="_P_Area" placeholder="0.01" formControlName="_P_Area" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_Area.errors }" (input)="updatebg('_P_Area')">
                 <a id="reset6" (click)="reset_inputctrl('_P_Area','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
-                <div *ngIf="submitted || f._P_Area.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._P_Area.errors" class="invalid-feedback">
                   <div *ngIf="f._P_Area.errors?.min">Minimum required number is 0.01.</div> 
                 </div>
               </div>
@@ -101,46 +101,46 @@
               </div>
               <div class="form-group">
                 <label>Hydraulic Conductivity</label>
-                <input type="text" class="form-control form-control-lg" id="_HC" placeholder="20" formControlName="_HC" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._HC.errors }" (input)="updatebg('_HC')">
+                <input type="text" class="form-control form-control-lg" id="_HC" placeholder="20" formControlName="_HC" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._HC.errors }" (input)="updatebg('_HC')">
                 <a id="reset9" (click)="reset_inputctrl('_HC','20')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
-                <div *ngIf="submitted || f._HC.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._HC.errors" class="invalid-feedback">
                   <div *ngIf="f._HC.errors?.min">Minimum required number is 5.04.</div> 
                   <div *ngIf="f._HC.errors?.max">Maximum number can be 500.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Regional Hydraulic Gradient</label>
-                <input type="text" class="form-control form-control-lg" id="_RHG" placeholder="0.1" formControlName="_RHG" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._RHG.errors }" (input)="updatebg('_RHG')">
+                <input type="text" class="form-control form-control-lg" id="_RHG" placeholder="0.1" formControlName="_RHG" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._RHG.errors }" (input)="updatebg('_RHG')">
                 <a id="reset10" (click)="reset_inputctrl('_RHG','0.1')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
-                <div *ngIf="submitted || f._RHG.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._RHG.errors" class="invalid-feedback">
                   <div *ngIf="f._RHG.errors?.min">Minimum required number is 5.04.</div> 
                   <div *ngIf="f._RHG.errors?.max">Maximum number can be 500.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Soil Type Factor</label>
-                <input type="text" class="form-control form-control-lg" id="_STF" placeholder="25" formControlName="_STF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._STF.errors }" (input)="updatebg('_STF')">
+                <input type="text" class="form-control form-control-lg" id="_STF" placeholder="25" formControlName="_STF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._STF.errors }" (input)="updatebg('_STF')">
                 <a id="reset11" (click)="reset_inputctrl('_STF','25')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
               </div>
               <div class="form-group">
                 <label>Aquifer Thickness Factor</label>
-                <input type="text" class="form-control form-control-lg" id="_ATF" placeholder="1" formControlName="_ATF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._ATF.errors }" (input)="updatebg('_ATF')">
+                <input type="text" class="form-control form-control-lg" id="_ATF" placeholder="1" formControlName="_ATF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._ATF.errors }" (input)="updatebg('_ATF')">
                 <a id="reset12" (click)="reset_inputctrl('_ATF','1')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
               </div>
               <div class="form-group">
                 <label>Extraction Well Diameter</label>
-                <input type="text" class="form-control form-control-lg" id="_Ext_Well_Dia" placeholder="4" formControlName="_Ext_Well_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Ext_Well_Dia.errors }" (input)="updatebg('_Ext_Well_Dia')">
+                <input type="text" class="form-control form-control-lg" id="_Ext_Well_Dia" placeholder="4" formControlName="_Ext_Well_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Ext_Well_Dia.errors }" (input)="updatebg('_Ext_Well_Dia')">
                 <a id="reset13" (click)="reset_inputctrl('_Ext_Well_Dia','4')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Ext_Well_Dia.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Ext_Well_Dia.errors" class="invalid-feedback">
                   <div *ngIf="f._Ext_Well_Dia.errors?.min">Minimum required number is 1.</div> 
                   <div *ngIf="f._Ext_Well_Dia.errors?.max">Maximum number can be 4.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Quantity Extraction Wells</label>
-                <input type="text" class="form-control form-control-lg" id="_WNum_Ext_Well" placeholder="100" formControlName="_WNum_Ext_Well" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._WNum_Ext_Well.errors }" (input)="updatebg('_WNum_Ext_Well')">
+                <input type="text" class="form-control form-control-lg" id="_WNum_Ext_Well" placeholder="100" formControlName="_WNum_Ext_Well" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._WNum_Ext_Well.errors }" (input)="updatebg('_WNum_Ext_Well')">
                 <a id="reset14" (click)="reset_inputctrl('_WNum_Ext_Well','100')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._WNum_Ext_Well.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._WNum_Ext_Well.errors" class="invalid-feedback">
                   <div *ngIf="f._WNum_Ext_Well.errors?.min">Minimum required number is 1.</div> 
                   <div *ngIf="f._WNum_Ext_Well.errors?.max">Maximum number can be 200.</div> 
                 </div>
@@ -158,18 +158,18 @@
               </div>
               <div class="form-group">
                 <label>Project Liquids Flow Rate</label>
-                <input type="text" class="form-control form-control-lg" id="_P_GPM" placeholder="500" formControlName="_P_GPM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._P_GPM.errors }" (input)="updatebg('_P_GPM')">
+                <input type="text" class="form-control form-control-lg" id="_P_GPM" placeholder="500" formControlName="_P_GPM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_GPM.errors }" (input)="updatebg('_P_GPM')">
                 <a id="reset16" (click)="reset_inputctrl('_P_GPM','500')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._P_GPM.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._P_GPM.errors" class="invalid-feedback">
                   <div *ngIf="f._P_GPM.errors?.min">Minimum required number is 1.</div> 
                   <div *ngIf="f._P_GPM.errors?.max">Maximum number can be 500.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Project Gas/Vapor Extraction Flow Rate</label>
-                <input type="text" class="form-control form-control-lg" id="_P_CFM_Ext" placeholder="2005" formControlName="_P_CFM_Ext" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._P_CFM_Ext.errors }" (input)="updatebg('_P_CFM_Ext')">
+                <input type="text" class="form-control form-control-lg" id="_P_CFM_Ext" placeholder="2005" formControlName="_P_CFM_Ext" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_CFM_Ext.errors }" (input)="updatebg('_P_CFM_Ext')">
                 <a id="reset17" (click)="reset_inputctrl('_P_CFM_Ext','2005')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._P_CFM_Ext.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._P_CFM_Ext.errors" class="invalid-feedback">
                   <div *ngIf="f._P_CFM_Ext.errors?.min">Minimum required number is 20.</div> 
                   <div *ngIf="f._P_CFM_Ext.errors?.max">Maximum number can be 5000.</div> 
                 </div>
@@ -195,18 +195,18 @@
               </div>
               <div class="form-group">
                 <label>Injection Well Diameter</label>
-                <input type="text" class="form-control form-control-lg" id="_Inj_Well_Dia" placeholder="0" formControlName="_Inj_Well_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Inj_Well_Dia.errors }" (input)="updatebg('_Inj_Well_Dia')">
+                <input type="text" class="form-control form-control-lg" id="_Inj_Well_Dia" placeholder="0" formControlName="_Inj_Well_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Inj_Well_Dia.errors }" (input)="updatebg('_Inj_Well_Dia')">
                 <a id="reset20" (click)="reset_inputctrl('_Inj_Well_Dia','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Inj_Well_Dia.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Inj_Well_Dia.errors" class="invalid-feedback">
                   <div *ngIf="f._Inj_Well_Dia.errors?.min">Minimum required number is 1.</div> 
                   <div *ngIf="f._Inj_Well_Dia.errors?.max">Maximum number can be 16.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Quantity Injection Wells</label>
-                <input type="text" class="form-control form-control-lg" id="_WNum_Inj_Well" placeholder="0" formControlName="_WNum_Inj_Well" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._WNum_Inj_Well.errors }" (input)="updatebg('_WNum_Inj_Well')">
+                <input type="text" class="form-control form-control-lg" id="_WNum_Inj_Well" placeholder="0" formControlName="_WNum_Inj_Well" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._WNum_Inj_Well.errors }" (input)="updatebg('_WNum_Inj_Well')">
                 <a id="reset21" (click)="reset_inputctrl('_WNum_Inj_Well','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._WNum_Inj_Well.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._WNum_Inj_Well.errors" class="invalid-feedback">
                   <div *ngIf="f._WNum_Inj_Well.errors?.min">Minimum required number is 0.</div> 
                   <div *ngIf="f._WNum_Inj_Well.errors?.max">Maximum number can be 500.</div> 
                 </div>
@@ -225,9 +225,9 @@
               </div>
               <div class="form-group">
                 <label>Total Project CFM - Injection</label>
-                <input type="text" class="form-control form-control-lg" id="_P_CFM_Inj" placeholder="0" formControlName="_P_CFM_Inj" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._P_CFM_Inj.errors }" (input)="updatebg('_P_CFM_Inj')">
+                <input type="text" class="form-control form-control-lg" id="_P_CFM_Inj" placeholder="0" formControlName="_P_CFM_Inj" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_CFM_Inj.errors }" (input)="updatebg('_P_CFM_Inj')">
                 <a id="reset23" (click)="reset_inputctrl('_P_CFM_Inj','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._P_CFM_Inj.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._P_CFM_Inj.errors" class="invalid-feedback">
                   <div *ngIf="f._P_CFM_Inj.errors?.min">Minimum required number is 20.</div> 
                   <div *ngIf="f._P_CFM_Inj.errors?.max">Maximum number can be 5000.</div> 
                 </div>
@@ -249,9 +249,9 @@
               </div>		
               <div class="form-group">
                 <label>Monintoring  Well Diameter</label>
-                <input type="text" class="form-control form-control-lg" id="_Mon_Well_Dia" placeholder="5" formControlName="_Mon_Well_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Mon_Well_Dia.errors }" (input)="updatebg('_Mon_Well_Dia')">
+                <input type="text" class="form-control form-control-lg" id="_Mon_Well_Dia" placeholder="5" formControlName="_Mon_Well_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Mon_Well_Dia.errors }" (input)="updatebg('_Mon_Well_Dia')">
                 <a id="reset27" (click)="reset_inputctrl('_Mon_Well_Dia','2')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Mon_Well_Dia.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Mon_Well_Dia.errors" class="invalid-feedback">
                   <div *ngIf="f._Mon_Well_Dia.errors?.min">Minimum required number is 1.</div> 
                   <div *ngIf="f._Mon_Well_Dia.errors?.max">Maximum number can be 16.</div> 
                 </div>
@@ -283,18 +283,18 @@
               
               <div class="form-group">
                 <label>Quantity GW Monitoring Wells</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Mon_Well_Usr" placeholder="0" formControlName="_Num_Mon_Well_Usr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Mon_Well_Usr.errors }" (input)="updatebg('_Num_Mon_Well_Usr')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Mon_Well_Usr" placeholder="0" formControlName="_Num_Mon_Well_Usr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Mon_Well_Usr.errors }" (input)="updatebg('_Num_Mon_Well_Usr')">
                 <a id="reset30" (click)="reset_inputctrl('_Num_Mon_Well_Usr','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Mon_Well_Usr.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Mon_Well_Usr.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Mon_Well_Usr.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Mon_Well_Usr.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Quantity GW Monitoring Wells</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Mon_Well" placeholder="0" formControlName="_Num_Mon_Well" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Mon_Well.errors }" (input)="updatebg('_Num_Mon_Well')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Mon_Well" placeholder="0" formControlName="_Num_Mon_Well" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Mon_Well.errors }" (input)="updatebg('_Num_Mon_Well')">
                 <a id="reset31" (click)="reset_inputctrl('_Num_Mon_Well','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Mon_Well.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Mon_Well.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Mon_Well.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Mon_Well.errors?.max">Maximum number can be 200.</div> 
                 </div>
@@ -310,127 +310,127 @@
               </div>
               <div class="form-group">
                 <label>Quantity Ancillary Well (Vadose Monitoring)</label>
-                <input type="text" class="form-control form-control-lg" id="_WNum_Vad_Mon_Usr" placeholder="0" formControlName="_WNum_Vad_Mon_Usr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._WNum_Vad_Mon_Usr.errors }" (input)="updatebg('_WNum_Vad_Mon_Usr')">
+                <input type="text" class="form-control form-control-lg" id="_WNum_Vad_Mon_Usr" placeholder="0" formControlName="_WNum_Vad_Mon_Usr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._WNum_Vad_Mon_Usr.errors }" (input)="updatebg('_WNum_Vad_Mon_Usr')">
                 <a id="reset33" (click)="reset_inputctrl('_WNum_Vad_Mon_Usr','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._WNum_Vad_Mon_Usr.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._WNum_Vad_Mon_Usr.errors" class="invalid-feedback">
                   <div *ngIf="f._WNum_Vad_Mon_Usr.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._WNum_Vad_Mon_Usr.errors?.max">Maximum number can be 50.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Quantity Ancillary Well (Vadose Monitoring)</label>
-                <input type="text" class="form-control form-control-lg" id="_WNum_Vad_Mon" placeholder="0" formControlName="_WNum_Vad_Mon" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._WNum_Vad_Mon.errors }" (input)="updatebg('_WNum_Vad_Mon')">
+                <input type="text" class="form-control form-control-lg" id="_WNum_Vad_Mon" placeholder="0" formControlName="_WNum_Vad_Mon" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._WNum_Vad_Mon.errors }" (input)="updatebg('_WNum_Vad_Mon')">
                 <a id="reset34" (click)="reset_inputctrl('_WNum_Vad_Mon','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._WNum_Vad_Mon.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._WNum_Vad_Mon.errors" class="invalid-feedback">
                   <div *ngIf="f._WNum_Vad_Mon.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._WNum_Vad_Mon.errors?.max">Maximum number can be 50.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Air Sampling Locations</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Air_Loc" placeholder="0" formControlName="_Num_Air_Loc" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Air_Loc.errors }" (input)="updatebg('_Num_Air_Loc')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Air_Loc" placeholder="0" formControlName="_Num_Air_Loc" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Air_Loc.errors }" (input)="updatebg('_Num_Air_Loc')">
                 <a id="reset35" (click)="reset_inputctrl('_Num_Air_Loc','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Air_Loc.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Air_Loc.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Air_Loc.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Air_Loc.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Monitoring Wells to Sample</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Mon_Well_Smpl" placeholder="0" formControlName="_Num_Mon_Well_Smpl" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Mon_Well_Smpl.errors }" (input)="updatebg('_Num_Mon_Well_Smpl')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Mon_Well_Smpl" placeholder="0" formControlName="_Num_Mon_Well_Smpl" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Mon_Well_Smpl.errors }" (input)="updatebg('_Num_Mon_Well_Smpl')">
                 <a id="reset36" (click)="reset_inputctrl('_Num_Mon_Well_Smpl','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Mon_Well_Smpl.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Mon_Well_Smpl.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Mon_Well_Smpl.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Mon_Well_Smpl.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Water Station Points (SPMDs/SPMEs)</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_SW_Points" placeholder="0" formControlName="_Num_SW_Points" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_SW_Points.errors }" (input)="updatebg('_Num_SW_Points')">
+                <input type="text" class="form-control form-control-lg" id="_Num_SW_Points" placeholder="0" formControlName="_Num_SW_Points" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_SW_Points.errors }" (input)="updatebg('_Num_SW_Points')">
                 <a id="reset37" (click)="reset_inputctrl('_Num_SW_Points','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_SW_Points.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_SW_Points.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_SW_Points.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_SW_Points.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Surface Soil Sample Locations or Grids</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Surf_Loc" placeholder="0" formControlName="_Num_Surf_Loc" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Surf_Loc.errors }" (input)="updatebg('_Num_Surf_Loc')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Surf_Loc" placeholder="0" formControlName="_Num_Surf_Loc" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Surf_Loc.errors }" (input)="updatebg('_Num_Surf_Loc')">
                 <a id="reset38" (click)="reset_inputctrl('_Num_Surf_Loc','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Surf_Loc.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Surf_Loc.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Surf_Loc.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Surf_Loc.errors?.max">Maximum number can be 2500.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Consolidated Samples per Location/Grid. (e.g.,  25 hand collected samples per grid for consolidated sample.)</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Surf_Per_Loc" placeholder="1" formControlName="_NUM_Surf_Per_Loc" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Surf_Per_Loc.errors }" (input)="updatebg('_NUM_Surf_Per_Loc')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Surf_Per_Loc" placeholder="1" formControlName="_NUM_Surf_Per_Loc" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Surf_Per_Loc.errors }" (input)="updatebg('_NUM_Surf_Per_Loc')">
                 <a id="reset39" (click)="reset_inputctrl('_NUM_Surf_Per_Loc','1')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Surf_Per_Loc.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Surf_Per_Loc.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Surf_Per_Loc.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Surf_Per_Loc.errors?.max">Maximum number can be 2500.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Sediment Station Points (SPMDs/SPMEs)</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Sed_Points" placeholder="0" formControlName="_Num_Sed_Points" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Sed_Points.errors }" (input)="updatebg('_Num_Sed_Points')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Sed_Points" placeholder="0" formControlName="_Num_Sed_Points" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Sed_Points.errors }" (input)="updatebg('_Num_Sed_Points')">
                 <a id="reset40" (click)="reset_inputctrl('_Num_Sed_Points','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Sed_Points.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Sed_Points.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Sed_Points.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Sed_Points.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Soil Borings</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Soil_Borings" placeholder="0" formControlName="_Num_Soil_Borings" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Soil_Borings.errors }" (input)="updatebg('_Num_Soil_Borings')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Soil_Borings" placeholder="0" formControlName="_Num_Soil_Borings" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Soil_Borings.errors }" (input)="updatebg('_Num_Soil_Borings')">
                 <a id="reset41" (click)="reset_inputctrl('_Num_Soil_Borings','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Num_Soil_Borings.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Num_Soil_Borings.errors" class="invalid-feedback">
                   <div *ngIf="f._Num_Soil_Borings.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Num_Soil_Borings.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Vadose Zone Monitoring Wells to Sample</label>
-                <input type="text" class="form-control form-control-lg" id="_WNum_Vad_Mon_Smpl" placeholder="0" formControlName="_WNum_Vad_Mon_Smpl" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._WNum_Vad_Mon_Smpl.errors }" (input)="updatebg('_WNum_Vad_Mon_Smpl')">
+                <input type="text" class="form-control form-control-lg" id="_WNum_Vad_Mon_Smpl" placeholder="0" formControlName="_WNum_Vad_Mon_Smpl" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._WNum_Vad_Mon_Smpl.errors }" (input)="updatebg('_WNum_Vad_Mon_Smpl')">
                 <a id="reset41" (click)="reset_inputctrl('_WNum_Vad_Mon_Smpl','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._WNum_Vad_Mon_Smpl.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._WNum_Vad_Mon_Smpl.errors" class="invalid-feedback">
                   <div *ngIf="f._WNum_Vad_Mon_Smpl.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._WNum_Vad_Mon_Smpl.errors?.max">Maximum number can be 50.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Ecological Samples</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Eco_Samp" placeholder="0" formControlName="_NUM_Eco_Samp" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Eco_Samp.errors }" (input)="updatebg('_NUM_Eco_Samp')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Eco_Samp" placeholder="0" formControlName="_NUM_Eco_Samp" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Eco_Samp.errors }" (input)="updatebg('_NUM_Eco_Samp')">
                 <a id="reset42" (click)="reset_inputctrl('_NUM_Eco_Samp','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Eco_Samp.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Eco_Samp.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Eco_Samp.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Eco_Samp.errors?.max">Maximum number can be 200.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Operation and Maintenance Duration</label>
-                <input type="text" class="form-control form-control-lg" id="_Ops_Yr" placeholder="0" formControlName="_Ops_Yr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Ops_Yr.errors }" (input)="updatebg('_Ops_Yr')">
+                <input type="text" class="form-control form-control-lg" id="_Ops_Yr" placeholder="0" formControlName="_Ops_Yr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Ops_Yr.errors }" (input)="updatebg('_Ops_Yr')">
                 <a id="reset43" (click)="reset_inputctrl('_Ops_Yr','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._Ops_Yr.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._Ops_Yr.errors" class="invalid-feedback">
                   <div *ngIf="f._Ops_Yr.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._Ops_Yr.errors?.max">Maximum number can be 30.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Temporary or Single Use Wells Only</label>
-                <input type="text" class="form-control form-control-lg" id="_SnglUse" placeholder="" formControlName="_SnglUse" [ngClass]="{ 'is-invalid': submitted || f._SnglUse.errors }" (input)="updatebg('_SnglUse')">
+                <input type="text" class="form-control form-control-lg" id="_SnglUse" placeholder="" formControlName="_SnglUse" [ngClass]="{ 'is-invalid': submitted && f._SnglUse.errors }" (input)="updatebg('_SnglUse')">
                 <a id="reset44" (click)="reset_inputctrl('_SnglUse','')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
               </div>
               <div class="form-group">
                 <label>Number of Sample Events (Rounds)</label>
-                <input type="text" class="form-control form-control-lg" id="_Num_Samp_Event" placeholder="0" formControlName="_Num_Samp_Event" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Num_Samp_Event.errors }" (input)="updatebg('_Num_Samp_Event')">
+                <input type="text" class="form-control form-control-lg" id="_Num_Samp_Event" placeholder="0" formControlName="_Num_Samp_Event" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Num_Samp_Event.errors }" (input)="updatebg('_Num_Samp_Event')">
                 <a id="reset45" (click)="reset_inputctrl('_Num_Samp_Event','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
               </div>
               <div class="form-group">
                 <label>Phase Total Number of Consolidated Surface Soil Samples</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Surf" placeholder="0" formControlName="_NUM_Surf" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Surf.errors }" (input)="updatebg('_NUM_Surf')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Surf" placeholder="0" formControlName="_NUM_Surf" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Surf.errors }" (input)="updatebg('_NUM_Surf')">
                 <a id="reset46" (click)="reset_inputctrl('_NUM_Surf','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Surf.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Surf.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Surf.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Surf.errors?.max">Maximum number can be 2500.</div> 
                 </div>
@@ -442,54 +442,54 @@
               </div>				  
               <div class="form-group">
                 <label>Number of Phase 4 Process Samples - Air/Gas</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Air" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Ph4_Proc_Smpl_Air.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Air')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Air" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph4_Proc_Smpl_Air.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Air')">
                 <a id="reset48" (click)="reset_inputctrl('_NUM_Ph4_Proc_Smpl_Air','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Ph4_Proc_Smpl_Air.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Ph4_Proc_Smpl_Air.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Ph4_Proc_Smpl_Air.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Ph4_Proc_Smpl_Air.errors?.max">Maximum number can be 5000.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Phase 4 Process Samples - Liquid</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Lqd" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Lqd" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Ph4_Proc_Smpl_Lqd.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Lqd')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Lqd" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Lqd" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph4_Proc_Smpl_Lqd.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Lqd')">
                 <a id="reset49" (click)="reset_inputctrl('_NUM_Ph4_Proc_Smpl_Lqd','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Ph4_Proc_Smpl_Lqd.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Ph4_Proc_Smpl_Lqd.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Ph4_Proc_Smpl_Lqd.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Ph4_Proc_Smpl_Lqd.errors?.max">Maximum number can be 5000.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Phase 4 Process Samples - Solid</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Solid" placeholder="200" formControlName="_NUM_Ph4_Proc_Smpl_Solid" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Ph4_Proc_Smpl_Solid.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Solid')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Solid" placeholder="200" formControlName="_NUM_Ph4_Proc_Smpl_Solid" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph4_Proc_Smpl_Solid.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Solid')">
                 <a id="reset50" (click)="reset_inputctrl('_NUM_Ph4_Proc_Smpl_Solid','200')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Ph4_Proc_Smpl_Solid.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Ph4_Proc_Smpl_Solid.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Ph4_Proc_Smpl_Solid.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Ph4_Proc_Smpl_Solid.errors?.max">Maximum number can be 5000.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Phase 6 O&M Process Samples - Air/Gas</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Ph6_Proc_Smpl_Air" placeholder="360" formControlName="_NUM_Ph6_Proc_Smpl_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Ph6_Proc_Smpl_Air.errors }" (input)="updatebg('_NUM_Ph6_Proc_Smpl_Air')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Ph6_Proc_Smpl_Air" placeholder="360" formControlName="_NUM_Ph6_Proc_Smpl_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph6_Proc_Smpl_Air.errors }" (input)="updatebg('_NUM_Ph6_Proc_Smpl_Air')">
                 <a id="reset51" (click)="reset_inputctrl('_NUM_Ph6_Proc_Smpl_Air','360')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Ph6_Proc_Smpl_Air.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Ph6_Proc_Smpl_Air.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Ph6_Proc_Smpl_Air.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Ph6_Proc_Smpl_Air.errors?.max">Maximum number can be 5000.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Phase 6 O&M Process Samples - Liquid</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Ph6_Proc_Smpl_Lqd" placeholder="360" formControlName="_NUM_Ph6_Proc_Smpl_Lqd" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Ph6_Proc_Smpl_Lqd.errors }" (input)="updatebg('_NUM_Ph6_Proc_Smpl_Lqd')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Ph6_Proc_Smpl_Lqd" placeholder="360" formControlName="_NUM_Ph6_Proc_Smpl_Lqd" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph6_Proc_Smpl_Lqd.errors }" (input)="updatebg('_NUM_Ph6_Proc_Smpl_Lqd')">
                 <a id="reset52" (click)="reset_inputctrl('_NUM_Ph6_Proc_Smpl_Lqd','360')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Ph6_Proc_Smpl_Lqd.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Ph6_Proc_Smpl_Lqd.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Ph6_Proc_Smpl_Lqd.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Ph6_Proc_Smpl_Lqd.errors?.max">Maximum number can be 5000.</div> 
                 </div>
               </div>
               <div class="form-group">
                 <label>Number of Phase 6 O&M Process Samples - Solid</label>
-                <input type="text" class="form-control form-control-lg" id="_NUM_Ph6_Proc_Smpl_Solid" placeholder="0" formControlName="_NUM_Ph6_Proc_Smpl_Solid" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Ph6_Proc_Smpl_Solid.errors }" (input)="updatebg('_NUM_Ph6_Proc_Smpl_Solid')">
+                <input type="text" class="form-control form-control-lg" id="_NUM_Ph6_Proc_Smpl_Solid" placeholder="0" formControlName="_NUM_Ph6_Proc_Smpl_Solid" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph6_Proc_Smpl_Solid.errors }" (input)="updatebg('_NUM_Ph6_Proc_Smpl_Solid')">
                 <a id="reset53" (click)="reset_inputctrl('_NUM_Ph6_Proc_Smpl_Solid','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                <div *ngIf="submitted || f._NUM_Ph6_Proc_Smpl_Solid.errors" class="invalid-feedback">
+                <div *ngIf="submitted && f._NUM_Ph6_Proc_Smpl_Solid.errors" class="invalid-feedback">
                   <div *ngIf="f._NUM_Ph6_Proc_Smpl_Solid.errors?.min">Minimum required number is 0.01.</div> 
                   <div *ngIf="f._NUM_Ph6_Proc_Smpl_Solid.errors?.max">Maximum number can be 5000.</div> 
                 </div>
@@ -500,7 +500,7 @@
           </div>   
         </div>
         <div class="tabbingformbox_header ">
-          <a href="#tab_b" data-toggle="pill" class="btn2">Next</a>
+            <a href="#" data-toggle="pill" class="btn2" (click)="validate_required()">Next</a>
         </div>
       </div>
       
@@ -511,9 +511,9 @@
               <div class="col-sm-6">
                   <div class="form-group">
                       <label>Project Gas/Vapor Flow Rate</label>
-                      <input type="text" class="form-control form-control-lg" id="_P_CFM" placeholder="2005" formControlName="_P_CFM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._P_CFM.errors }" (input)="updatebg('_P_CFM')">
+                      <input type="text" class="form-control form-control-lg" id="_P_CFM" placeholder="2005" formControlName="_P_CFM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_CFM.errors }" (input)="updatebg('_P_CFM')">
                       <a id="reset54" (click)="reset_inputctrl('_P_CFM','2005')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
-                      <div *ngIf="submitted || f._P_CFM.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._P_CFM.errors" class="invalid-feedback">
                         <div *ngIf="f._P_CFM.errors?.min">Minimum required number is 200.</div> 
                         <div *ngIf="f._P_CFM.errors?.max">Maximum number can be 5000.</div> 
                       </div>
@@ -522,57 +522,57 @@
                       <label>Number of Sampling Ports per well</label>
                       <input type="text" class="form-control form-control-lg" id="_Num_Ports" placeholder="1" formControlName="_Num_Ports" onkeypress="return isNumberKey(event)"  (input)="updatebg('_Num_Ports')">
                       <a id="reset55" (click)="reset_inputctrl('_Num_Ports','1')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
-                      <div *ngIf="submitted || f._Num_Ports.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._Num_Ports.errors" class="invalid-feedback">
                         <div *ngIf="f._Num_Ports.errors?.min">Minimum required number is 0.01.</div> 
                         <div *ngIf="f._Num_Ports.errors?.max">Maximum number can be 20.</div> 
                       </div>
                   </div>
                   <div class="form-group">
                       <label>Number of Air Samples</label>
-                      <input type="text" class="form-control form-control-lg" id="_NUM_Air" placeholder="0" formControlName="_NUM_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Air.errors }" (input)="updatebg('_NUM_Air')">
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Air" placeholder="0" formControlName="_NUM_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Air.errors }" (input)="updatebg('_NUM_Air')">
                       <a id="reset56" (click)="reset_inputctrl('_NUM_Air','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
                   </div>
                   <div class="form-group">
                       <label>Number of Groundwater Samples</label>
-                      <input type="text" class="form-control form-control-lg" id="_NUM_GW" placeholder="0" formControlName="_NUM_GW" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_GW.errors }" (input)="updatebg('_NUM_GW')">
+                      <input type="text" class="form-control form-control-lg" id="_NUM_GW" placeholder="0" formControlName="_NUM_GW" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_GW.errors }" (input)="updatebg('_NUM_GW')">
                       <a id="reset57" (click)="reset_inputctrl('_NUM_GW','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                      <div *ngIf="submitted || f._NUM_GW.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._NUM_GW.errors" class="invalid-feedback">
                         <div *ngIf="f._NUM_GW.errors?.min">Minimum required number is 0.01.</div> 
                         <div *ngIf="f._NUM_GW.errors?.max">Maximum number can be 5000.</div> 
                       </div>
                   </div>
                   <div class="form-group">
                       <label>Number of Surface Water Samples</label>
-                      <input type="text" class="form-control form-control-lg" id="_NUM_SW" placeholder="0" formControlName="_NUM_SW" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_SW.errors }" (input)="updatebg('_NUM_SW')">
+                      <input type="text" class="form-control form-control-lg" id="_NUM_SW" placeholder="0" formControlName="_NUM_SW" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_SW.errors }" (input)="updatebg('_NUM_SW')">
                       <a id="reset58" (click)="reset_inputctrl('_NUM_SW','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                      <div *ngIf="submitted || f._NUM_SW.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._NUM_SW.errors" class="invalid-feedback">
                         <div *ngIf="f._NUM_SW.errors?.min">Minimum required number is 0.01.</div> 
                         <div *ngIf="f._NUM_SW.errors?.max">Maximum number can be 2500.</div> 
                       </div>
                   </div>     
                   <div class="form-group">
                       <label>Number of Soil Samples</label>
-                      <input type="text" class="form-control form-control-lg" id="_NUM_Soil" placeholder="0" formControlName="_NUM_Soil" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Soil.errors }" (input)="updatebg('_NUM_Soil')">
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Soil" placeholder="0" formControlName="_NUM_Soil" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Soil.errors }" (input)="updatebg('_NUM_Soil')">
                       <a id="reset59" (click)="reset_inputctrl('_NUM_Soil','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                      <div *ngIf="submitted || f._NUM_Soil.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._NUM_Soil.errors" class="invalid-feedback">
                         <div *ngIf="f._NUM_Soil.errors?.min">Minimum required number is 0.01.</div> 
                         <div *ngIf="f._NUM_Soil.errors?.max">Maximum number can be 5000.</div> 
                       </div>
                   </div>
                   <div class="form-group">
                       <label>Number of Soil Gas Samples</label>
-                      <input type="text" class="form-control form-control-lg" id="_NUM_Soil_Gas" placeholder="0" formControlName="_NUM_Soil_Gas" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Soil_Gas.errors }" (input)="updatebg('_NUM_Soil_Gas')">
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Soil_Gas" placeholder="0" formControlName="_NUM_Soil_Gas" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Soil_Gas.errors }" (input)="updatebg('_NUM_Soil_Gas')">
                       <a id="reset60" (click)="reset_inputctrl('_NUM_Soil_Gas','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                      <div *ngIf="submitted || f._NUM_Soil_Gas.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._NUM_Soil_Gas.errors" class="invalid-feedback">
                         <div *ngIf="f._NUM_Soil_Gas.errors?.min">Minimum required number is 0.01.</div> 
                         <div *ngIf="f._NUM_Soil_Gas.errors?.max">Maximum number can be 5000.</div> 
                       </div>
                   </div>  
                   <div class="form-group">
                       <label>Number of Sediment Samples</label>
-                      <input type="text" class="form-control form-control-lg" id="_NUM_Sed" placeholder="0" formControlName="_NUM_Sed" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_Sed.errors }" (input)="updatebg('_NUM_Sed')">
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Sed" placeholder="0" formControlName="_NUM_Sed" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Sed.errors }" (input)="updatebg('_NUM_Sed')">
                       <a id="reset61" (click)="reset_inputctrl('_NUM_Sed','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                      <div *ngIf="submitted || f._NUM_Sed.errors" class="invalid-feedback">
+                      <div *ngIf="submitted && f._NUM_Sed.errors" class="invalid-feedback">
                         <div *ngIf="f._NUM_Sed.errors?.min">Minimum required number is 0.01.</div> 
                         <div *ngIf="f._NUM_Sed.errors?.max">Maximum number can be 2500.</div> 
                       </div>
@@ -624,26 +624,26 @@
                   </div>		
                   <div class="form-group">
                     <label>Generic Monitored Natural Attenuation</label>
-                    <input type="text" class="form-control form-control-lg" id="_NUM_MNA" placeholder="0" formControlName="_NUM_MNA" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NUM_MNA.errors }" (input)="updatebg('_NUM_MNA')">
+                    <input type="text" class="form-control form-control-lg" id="_NUM_MNA" placeholder="0" formControlName="_NUM_MNA" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_MNA.errors }" (input)="updatebg('_NUM_MNA')">
                     <a id="reset71" (click)="reset_inputctrl('_NUM_MNA','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
                   </div>
                   <div class="form-group">
                       <label>Sum of Sample Collection Days</label>
-                      <input type="text" class="form-control form-control-lg" id="_Sum_Samp_Day" placeholder="0" formControlName="_Sum_Samp_Day" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Sum_Samp_Day.errors }" (input)="updatebg('_Sum_Samp_Day')">
+                      <input type="text" class="form-control form-control-lg" id="_Sum_Samp_Day" placeholder="0" formControlName="_Sum_Samp_Day" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Sum_Samp_Day.errors }" (input)="updatebg('_Sum_Samp_Day')">
                       <a id="reset72" (click)="reset_inputctrl('_Sum_Samp_Day','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
                   </div>
                   <div class="form-group">
                     <label>Average Well Drilling - Diameter</label>
-                    <input type="text" class="form-control form-control-lg" id="_Well_Drill_Dia" placeholder="4" formControlName="_Well_Drill_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Well_Drill_Dia.errors }" (input)="updatebg('_Well_Drill_Dia')">
+                    <input type="text" class="form-control form-control-lg" id="_Well_Drill_Dia" placeholder="4" formControlName="_Well_Drill_Dia" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Well_Drill_Dia.errors }" (input)="updatebg('_Well_Drill_Dia')">
                     <a id="reset73" (click)="reset_inputctrl('_Well_Drill_Dia','4')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._Well_Drill_Dia.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._Well_Drill_Dia.errors" class="invalid-feedback">
                       <div *ngIf="f._Well_Drill_Dia.errors?.min">Minimum required number is 1.</div> 
                       <div *ngIf="f._Well_Drill_Dia.errors?.max">Maximum number can be 16.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Percent of Drill Cuttings that are Non-Hazardous</label>
-                    <input type="text" class="form-control form-control-lg" id="_Prcnt_NH_Drill_C" placeholder="50" formControlName="_Prcnt_NH_Drill_C" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Prcnt_NH_Drill_C.errors }" (input)="updatebg('_Prcnt_NH_Drill_C')">
+                    <input type="text" class="form-control form-control-lg" id="_Prcnt_NH_Drill_C" placeholder="50" formControlName="_Prcnt_NH_Drill_C" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Prcnt_NH_Drill_C.errors }" (input)="updatebg('_Prcnt_NH_Drill_C')">
                     <a id="reset74" (click)="reset_inputctrl('_Prcnt_NH_Drill_C','50')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
                   </div>                  		  			  			  				  				  				                                             
                   <div class="form-group">
@@ -661,104 +661,104 @@
                   
                   <div class="form-group">
                     <label>Density</label>
-                    <input type="text" class="form-control form-control-lg" id="_Den" placeholder="1.60" formControlName="_Den" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Den.errors }" (input)="updatebg('_Den')">
+                    <input type="text" class="form-control form-control-lg" id="_Den" placeholder="1.60" formControlName="_Den" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Den.errors }" (input)="updatebg('_Den')">
                     <a id="reset76" (click)="reset_inputctrl('_Den','1.60')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
                   </div>
                   <div class="form-group">
                     <label>Non-Hazardous Solid Waste Bulk Quantity - Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_NH_SW_Con" placeholder="522" formControlName="_NH_SW_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NH_SW_Con.errors }" (input)="updatebg('_NH_SW_Con')">
+                    <input type="text" class="form-control form-control-lg" id="_NH_SW_Con" placeholder="522" formControlName="_NH_SW_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NH_SW_Con.errors }" (input)="updatebg('_NH_SW_Con')">
                     <a id="reset77" (click)="reset_inputctrl('_NH_SW_Con','522')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._NH_SW_Con.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._NH_SW_Con.errors" class="invalid-feedback">
                       <div *ngIf="f._NH_SW_Con.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._NH_SW_Con.errors?.max">Maximum number can be 50000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Non-Hazardous Liquid Waste Bulk Quantity - Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_NH_LW_Con" placeholder="0" formControlName="_NH_LW_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NH_LW_Con.errors }" (input)="updatebg('_NH_LW_Con')">
+                    <input type="text" class="form-control form-control-lg" id="_NH_LW_Con" placeholder="0" formControlName="_NH_LW_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NH_LW_Con.errors }" (input)="updatebg('_NH_LW_Con')">
                     <a id="reset78" (click)="reset_inputctrl('_NH_LW_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._NH_LW_Con.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._NH_LW_Con.errors" class="invalid-feedback">
                       <div *ngIf="f._NH_LW_Con.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._NH_LW_Con.errors?.max">Maximum number can be 1000000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Solid Waste Bulk Quantity - Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_SW_Bulk_Con" placeholder="0" formControlName="_SW_Bulk_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._SW_Bulk_Con.errors }" (input)="updatebg('_SW_Bulk_Con')">
+                    <input type="text" class="form-control form-control-lg" id="_SW_Bulk_Con" placeholder="0" formControlName="_SW_Bulk_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._SW_Bulk_Con.errors }" (input)="updatebg('_SW_Bulk_Con')">
                     <a id="reset79" (click)="reset_inputctrl('_SW_Bulk_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._SW_Bulk_Con.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._SW_Bulk_Con.errors" class="invalid-feedback">
                       <div *ngIf="f._SW_Bulk_Con.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._SW_Bulk_Con.errors?.max">Maximum number can be 50000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Liquid Waste Bulk Quantity - Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_LW_Bulk_Con" placeholder="0" formControlName="_LW_Bulk_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._LW_Bulk_Con.errors }" (input)="updatebg('_LW_Bulk_Con')">
+                    <input type="text" class="form-control form-control-lg" id="_LW_Bulk_Con" placeholder="0" formControlName="_LW_Bulk_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._LW_Bulk_Con.errors }" (input)="updatebg('_LW_Bulk_Con')">
                     <a id="reset80" (click)="reset_inputctrl('_LW_Bulk_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._LW_Bulk_Con.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._LW_Bulk_Con.errors" class="invalid-feedback">
                       <div *ngIf="f._LW_Bulk_Con.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._LW_Bulk_Con.errors?.max">Maximum number can be 1000000.</div> 
                     </div>
                   </div>              
                   <div class="form-group">
                     <label>Number of Solid Watse Drums  - Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_SW_Drm_Con" placeholder="1199" formControlName="_SW_Drm_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._SW_Drm_Con.errors }" (input)="updatebg('_SW_Drm_Con')">
+                    <input type="text" class="form-control form-control-lg" id="_SW_Drm_Con" placeholder="1199" formControlName="_SW_Drm_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._SW_Drm_Con.errors }" (input)="updatebg('_SW_Drm_Con')">
                     <a id="reset81" (click)="reset_inputctrl('_SW_Drm_Con','1199')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._SW_Drm_Con.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._SW_Drm_Con.errors" class="invalid-feedback">
                       <div *ngIf="f._SW_Drm_Con.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._SW_Drm_Con.errors?.max">Maximum number can be 10000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Number of Liquid Waste Drums - Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_LW_Drm_Con" placeholder="0" formControlName="_LW_Drm_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._LW_Drm_Con.errors }" (input)="updatebg('_LW_Drm_Con')">
+                    <input type="text" class="form-control form-control-lg" id="_LW_Drm_Con" placeholder="0" formControlName="_LW_Drm_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._LW_Drm_Con.errors }" (input)="updatebg('_LW_Drm_Con')">
                     <a id="reset82" (click)="reset_inputctrl('_LW_Drm_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._LW_Drm_Con.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._LW_Drm_Con.errors" class="invalid-feedback">
                       <div *ngIf="f._LW_Drm_Con.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._LW_Drm_Con.errors?.max">Maximum number can be 10000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Annual Discharge Volume - During Construction</label>
-                    <input type="text" class="form-control form-control-lg" id="_Const_KGPY_Wtr" placeholder="0" formControlName="_Const_KGPY_Wtr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._Const_KGPY_Wtr.errors }" (input)="updatebg('_Const_KGPY_Wtr')">
+                    <input type="text" class="form-control form-control-lg" id="_Const_KGPY_Wtr" placeholder="0" formControlName="_Const_KGPY_Wtr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Const_KGPY_Wtr.errors }" (input)="updatebg('_Const_KGPY_Wtr')">
                     <a id="reset83" (click)="reset_inputctrl('_Const_KGPY_Wtr','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._Const_KGPY_Wtr.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._Const_KGPY_Wtr.errors" class="invalid-feedback">
                       <div *ngIf="f._Const_KGPY_Wtr.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._Const_KGPY_Wtr.errors?.max">Maximum number can be 300000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Non-Hazardous Solid Waste Bulk Quantity - Operations</label>
-                    <input type="text" class="form-control form-control-lg" id="_NH_SW_OM" placeholder="0" formControlName="_NH_SW_OM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NH_SW_OM.errors }" (input)="updatebg('_NH_SW_OM')">
+                    <input type="text" class="form-control form-control-lg" id="_NH_SW_OM" placeholder="0" formControlName="_NH_SW_OM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NH_SW_OM.errors }" (input)="updatebg('_NH_SW_OM')">
                     <a id="reset84" (click)="reset_inputctrl('_NH_SW_OM','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._NH_SW_OM.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._NH_SW_OM.errors" class="invalid-feedback">
                       <div *ngIf="f._NH_SW_OM.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._NH_SW_OM.errors?.max">Maximum number can be 50000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Waste Quantity - Operations</label>
-                    <input type="text" class="form-control form-control-lg" id="_NH_LW_OM" placeholder="0" formControlName="_NH_LW_OM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._NH_LW_OM.errors }" (input)="updatebg('_NH_LW_OM')">
+                    <input type="text" class="form-control form-control-lg" id="_NH_LW_OM" placeholder="0" formControlName="_NH_LW_OM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NH_LW_OM.errors }" (input)="updatebg('_NH_LW_OM')">
                     <a id="reset85" (click)="reset_inputctrl('_NH_LW_OM','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._NH_LW_OM.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._NH_LW_OM.errors" class="invalid-feedback">
                       <div *ngIf="f._NH_LW_OM.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._NH_LW_OM.errors?.max">Maximum number can be 1000000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Waste Quantity - Operations</label>
-                    <input type="text" class="form-control form-control-lg" id="_SW_Bulk_OM" placeholder="0" formControlName="_SW_Bulk_OM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._SW_Bulk_OM.errors }" (input)="updatebg('_SW_Bulk_OM')">
+                    <input type="text" class="form-control form-control-lg" id="_SW_Bulk_OM" placeholder="0" formControlName="_SW_Bulk_OM" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._SW_Bulk_OM.errors }" (input)="updatebg('_SW_Bulk_OM')">
                     <a id="reset86" (click)="reset_inputctrl('_SW_Bulk_OM','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._SW_Bulk_OM.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._SW_Bulk_OM.errors" class="invalid-feedback">
                       <div *ngIf="f._SW_Bulk_OM.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._SW_Bulk_OM.errors?.max">Maximum number can be 10000.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Annual Discharge Volume - Operation</label>
-                    <input type="text" class="form-control form-control-lg" id="_O_M_KGPY_Wtr" placeholder="262800" formControlName="_O_M_KGPY_Wtr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._O_M_KGPY_Wtr.errors }" (input)="updatebg('_O_M_KGPY_Wtr')">
+                    <input type="text" class="form-control form-control-lg" id="_O_M_KGPY_Wtr" placeholder="262800" formControlName="_O_M_KGPY_Wtr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._O_M_KGPY_Wtr.errors }" (input)="updatebg('_O_M_KGPY_Wtr')">
                     <a id="reset87" (click)="reset_inputctrl('_O_M_KGPY_Wtr','262800')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._O_M_KGPY_Wtr.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._O_M_KGPY_Wtr.errors" class="invalid-feedback">
                       <div *ngIf="f._O_M_KGPY_Wtr.errors?.min">Minimum required number is 0.01.</div> 
                       <div *ngIf="f._O_M_KGPY_Wtr.errors?.max">Maximum number can be 300000.</div> 
                     </div>
@@ -795,9 +795,9 @@
                   </div>	
                   <div class="form-group">
                     <label>Length of Fencing</label>
-                    <input type="text" class="form-control form-control-lg" id="_L_Ft_F_Input" placeholder="0" formControlName="_L_Ft_F_Input" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._L_Ft_F_Input.errors }" (input)="updatebg('_L_Ft_F_Input')">
+                    <input type="text" class="form-control form-control-lg" id="_L_Ft_F_Input" placeholder="0" formControlName="_L_Ft_F_Input" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._L_Ft_F_Input.errors }" (input)="updatebg('_L_Ft_F_Input')">
                     <a id="reset94" (click)="reset_inputctrl('_L_Ft_F_Input','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._L_Ft_F_Input.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._L_Ft_F_Input.errors" class="invalid-feedback">
                       <div *ngIf="f._L_Ft_F_Input.errors?.min">Minimum required number is 100.</div> 
                       <div *ngIf="f._L_Ft_F_Input.errors?.max">Maximum number can be 10000.</div> 
                     </div>
@@ -820,16 +820,16 @@
                   </div>
                   <div class="form-group">
                     <label>Cost Adjustment Factor</label>
-                    <input type="text" class="form-control form-control-lg" id="_CAF" placeholder="0" formControlName="_CAF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._CAF.errors }" (input)="updatebg('_CAF')">
+                    <input type="text" class="form-control form-control-lg" id="_CAF" placeholder="0" formControlName="_CAF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._CAF.errors }" (input)="updatebg('_CAF')">
                     <a id="reset97" (click)="reset_inputctrl('_CAF','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
-                    <div *ngIf="submitted || f._CAF.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._CAF.errors" class="invalid-feedback">
                       <div *ngIf="f._CAF.errors?.min">Minimum required number is 0.5.</div> 
                       <div *ngIf="f._CAF.errors?.max">Maximum number can be 2.</div> 
                     </div>
                   </div>
                   <div class="form-group">
                     <label>Year to which Base Year Cost is to be Escalated and Reported</label>
-                    <input type="text" class="form-control form-control-lg" id="_E_Yr" placeholder="0" formControlName="_E_Yr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._E_Yr.errors }" (input)="updatebg('_E_Yr')">
+                    <input type="text" class="form-control form-control-lg" id="_E_Yr" placeholder="0" formControlName="_E_Yr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._E_Yr.errors }" (input)="updatebg('_E_Yr')">
                     <a id="reset98" (click)="reset_inputctrl('_E_Yr','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
                   </div>
                           
@@ -837,7 +837,7 @@
             </div>
         </div>
         <div class="tabbingformbox_header ">
-          <a href="#tab_c" data-toggle="pill" class="btn2">Next</a>
+            <a href="#" data-toggle="pill" class="btn2" (click)="validate_secondary()">Next</a>
         </div>
       </div>
       <div class="tab-pane" id="tab_c">
@@ -853,30 +853,30 @@
                 </div>
                 <div class="form-group">
                   <label>Prime Markup (CLEAN)</label>
-                  <input type="text" class="form-control form-control-lg" id="_MK_01" placeholder="1.00" formControlName="_MK_01" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_01.errors }" (input)="updatebg('_MK_01')">
+                  <input type="text" class="form-control form-control-lg" id="_MK_01" placeholder="1.00" formControlName="_MK_01" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_01.errors }" (input)="updatebg('_MK_01')">
                   <a id="reset100" (click)="reset_inputctrl('_MK_01','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                  <div *ngIf="submitted || f._MK_01.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._MK_01.errors" class="invalid-feedback">
                       <div *ngIf="f._MK_01.errors?.min">Minimum required number is 1.</div> 
                       <div *ngIf="f._MK_01.errors?.max">Maximum number can be 5.</div> 
                   </div>
                 </div>
                 <div class="form-group">
                   <label>Prime Markup (RAC)</label>
-                  <input type="text" class="form-control form-control-lg" id="_MK_02" placeholder="1.00" formControlName="_MK_02" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_02.errors }" (input)="updatebg('_MK_02')">
+                  <input type="text" class="form-control form-control-lg" id="_MK_02" placeholder="1.00" formControlName="_MK_02" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_02.errors }" (input)="updatebg('_MK_02')">
                   <a id="reset101" (click)="reset_inputctrl('_MK_02','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                  <div *ngIf="submitted || f._MK_02.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._MK_02.errors" class="invalid-feedback">
                       <div *ngIf="f._MK_02.errors?.min">Minimum required number is 1.</div> 
                       <div *ngIf="f._MK_02.errors?.max">Maximum number can be 5.</div> 
                   </div>
                 </div>
                 <div class="form-group">
                   <label>Program Office</label>
-                  <input type="text" class="form-control form-control-lg" id="_MK_03" placeholder="1.00" formControlName="_MK_03" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_03.errors }" (input)="updatebg('_MK_03')">
+                  <input type="text" class="form-control form-control-lg" id="_MK_03" placeholder="1.00" formControlName="_MK_03" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_03.errors }" (input)="updatebg('_MK_03')">
                   <a id="reset102" (click)="reset_inputctrl('_MK_03','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                  <div *ngIf="submitted || f._MK_03.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._MK_03.errors" class="invalid-feedback">
                       <div *ngIf="f._MK_03.errors?.min">Minimum required number is 1.</div> 
                       <div *ngIf="f._MK_03.errors?.max">Maximum number can be 5.</div> 
                   </div>
@@ -889,10 +889,10 @@
                 </div>
                 <div class="form-group">
                   <label>SIOH</label>
-                  <input type="text" class="form-control form-control-lg" id="_MK_05" placeholder="1.00" formControlName="_MK_05" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_05.errors }" (input)="updatebg('_MK_05')">
+                  <input type="text" class="form-control form-control-lg" id="_MK_05" placeholder="1.00" formControlName="_MK_05" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_05.errors }" (input)="updatebg('_MK_05')">
                   <a id="reset104" (click)="reset_inputctrl('_MK_05','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                  <div *ngIf="submitted || f._MK_05.errors" class="invalid-feedback">
+                  <div *ngIf="submitted && f._MK_05.errors" class="invalid-feedback">
                       <div *ngIf="f._MK_05.errors?.min">Minimum required number is 1.</div> 
                       <div *ngIf="f._MK_05.errors?.max">Maximum number can be 1.2.</div> 
                   </div>
@@ -908,30 +908,30 @@
               <div class="col-sm-6">
                 <div class="form-group">
                     <label>Contingency</label>
-                    <input type="text" class="form-control form-control-lg" id="_MK_07" placeholder="1.00" formControlName="_MK_07" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_07.errors }" (input)="updatebg('_MK_07')">
+                    <input type="text" class="form-control form-control-lg" id="_MK_07" placeholder="1.00" formControlName="_MK_07" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_07.errors }" (input)="updatebg('_MK_07')">
                     <a id="reset106" (click)="reset_inputctrl('_MK_07','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                    <div *ngIf="submitted || f._MK_07.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._MK_07.errors" class="invalid-feedback">
                         <div *ngIf="f._MK_07.errors?.min">Minimum required number is 1.</div> 
                         <div *ngIf="f._MK_07.errors?.max">Maximum number can be 3.</div> 
                     </div>
                 </div>
                 <div class="form-group">
                     <label>Closure Report</label>
-                    <input type="text" class="form-control form-control-lg" id="_MK_08" placeholder="1.00" formControlName="_MK_08" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_08.errors }" (input)="updatebg('_MK_08')">
+                    <input type="text" class="form-control form-control-lg" id="_MK_08" placeholder="1.00" formControlName="_MK_08" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_08.errors }" (input)="updatebg('_MK_08')">
                     <a id="reset107" (click)="reset_inputctrl('_MK_08','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                    <div *ngIf="submitted || f._MK_08.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._MK_08.errors" class="invalid-feedback">
                         <div *ngIf="f._MK_08.errors?.min">Minimum required number is 1.</div> 
                         <div *ngIf="f._MK_08.errors?.max">Maximum number can be 1.2.</div> 
                     </div>
                 </div>
                 <div class="form-group">
                     <label>User Markup</label>
-                    <input type="text" class="form-control form-control-lg" id="_MK_09" placeholder="1.00" formControlName="_MK_09" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_09.errors }" (input)="updatebg('_MK_09')">
+                    <input type="text" class="form-control form-control-lg" id="_MK_09" placeholder="1.00" formControlName="_MK_09" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_09.errors }" (input)="updatebg('_MK_09')">
                     <a id="reset108" (click)="reset_inputctrl('_MK_09','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                    <div *ngIf="submitted || f._MK_09.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._MK_09.errors" class="invalid-feedback">
                         <div *ngIf="f._MK_09.errors?.min">Minimum required number is 1.</div> 
                         <div *ngIf="f._MK_09.errors?.max">Maximum number can be 1.5.</div> 
                     </div>
@@ -950,10 +950,10 @@
                 </div> 
                 <div class="form-group">
                     <label>Other Markups</label>
-                    <input type="text" class="form-control form-control-lg" id="_MK_12" placeholder="1.00" formControlName="_MK_12" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted || f._MK_12.errors }" (input)="updatebg('_MK_12')"> 
+                    <input type="text" class="form-control form-control-lg" id="_MK_12" placeholder="1.00" formControlName="_MK_12" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_12.errors }" (input)="updatebg('_MK_12')"> 
                     <a id="reset111" (click)="reset_inputctrl('_MK_12','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
 
-                    <div *ngIf="submitted || f._MK_12.errors" class="invalid-feedback">
+                    <div *ngIf="submitted && f._MK_12.errors" class="invalid-feedback">
                         <div *ngIf="f._MK_12.errors?.min">Minimum required number is 1.</div> 
                         <div *ngIf="f._MK_12.errors?.max">Maximum number can be 1.5.</div> 
                     </div>

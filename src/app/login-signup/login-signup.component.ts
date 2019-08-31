@@ -18,11 +18,8 @@ export class LoginSignupComponent implements OnInit {
               private formBuilder: FormBuilder,
               private session: SessionStorageService, private _user:LoginRegisterService) {  }
 
-  loginForm: FormGroup;
   signupForm: FormGroup;
-  loginmessage: string;
   signupmessage: string;
-  submitted = false;
   signupsubmitted = false;
   
   ngOnInit() {
@@ -44,11 +41,6 @@ export class LoginSignupComponent implements OnInit {
           });
       }
 
-      this.loginForm = this.formBuilder.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required]
-      });
-
       this.signupForm = this.formBuilder.group({
         firstname:[''],
         lastname:[''],
@@ -59,34 +51,9 @@ export class LoginSignupComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
   get s() { return this.signupForm.controls; }
 
-  loginClick(){
-    this.submitted = true;
-      if (this.loginForm.invalid) { 
-        return;
-      } else {
-        let logindata = { 
-                      "username": this.loginForm.controls['username'].value,
-                      "password": this.loginForm.controls['password'].value,
-                      "rememberMe": true
-                   };
-     this._user.login(logindata)
-      .subscribe(
-      data=>{
-
-        if (data) {
-          this.session.set('currentUser', data);
-          this.router.navigate(['/dashboard']);
-          this.loginmessage = '';
-        } else {
-          this.loginmessage = 'Invalid login credential';  
-        } 
-      });
-    }
-  }
-
+ 
   signupClick(){
     this.signupsubmitted = true;
       if (this.signupForm.invalid) { 
@@ -104,8 +71,8 @@ export class LoginSignupComponent implements OnInit {
         this._user.register(registerdata)
         .subscribe(res=>{
          if(res.statusText == 'OK'){
-           this.signupmessage = "User Signup Completed Successfully";
            this.signupForm.reset();
+           this.router.navigate(['/login'], { queryParams: { registered: 'true' } }); 
          }
         }, err => {
           console.log(err);

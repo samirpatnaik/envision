@@ -24,4 +24,11 @@ export class LoginRegisterService {
       headers:new HttpHeaders().append('Content-Type','application/json')
     });
   }
+
+  resetpwd(body:any){
+    return this._http.post('http://54.81.168.191:8080//api/account/reset-password/init',body,{
+      observe:'response',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
 }

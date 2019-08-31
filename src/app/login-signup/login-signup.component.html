@@ -3,9 +3,7 @@
 <div class="row">
 <div class="col">
   <div class="section-heading text-center" style= "margin-top: -50" >
-    <h2>
-      Login <span>or</span> Register
-        </h2>
+    <h2>Signup</h2>
 
   </div>
 </div>
@@ -18,7 +16,7 @@
   <div class="logo">
     
     <div class="logo-bottom"><div class="logo-top">
-      <h1>ENV LOGIN</h1>
+      <h1>ENV SIGNUP</h1>
     </div>
       <div class="sky-form" style="padding-left: 70">
         <img src="assets/images/email-sign-up-icon-small.png" width="205px" />
@@ -29,43 +27,14 @@
     <div class="sap_tabs">
       <div id="horizontalTab" style=" display: 'block'; width: 100; margin: 0 ">
         <ul class="resp-tabs-list">
-          <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Login</span></li>
-          <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><label>/</label><span>Sign up</span></li>
+          <li class="resp-tab-item"><span><a routerLink="/login">Login</a></span></li>
+          <li class="resp-tab-item"><label>/</label><span><a routerLink="/signup">Sign up</a></span></li>
           <div class="clearfix"></div>
 
         </ul>
         <div class="resp-tabs-container">
-          <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-            <div class="login-top">
-              <div class="error" style="text-align: center">{{loginmessage}}</div>
-              <form [formGroup]="loginForm" (ngSubmit)="loginClick()">
-              
-                <div class="form-group">
-                  <label>Username</label>
-                  <input type="text" class="form-control"  formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                    <div *ngIf="f.username.errors.required">User Name is required</div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label>Password</label>
-                  <input type="password" class="form-control"  formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                  <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                    <div *ngIf="f.password.errors.required">Password is required</div>
-                  </div> 
-                  
-                </div>
-                <div class="login-bottom login-bottom1">
-                  <div class="submit">
-                    <input type="submit" value="LOGIN">
-                  </div>
-                  <div class="clear"></div>
-                </div>
-              </form>
-            </div>
-          </div>
-          <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+          
+          <div class="resp-tab-content" aria-labelledby="tab_item-1">
               <div class="error" style="text-align: center">{{signupmessage}}</div>
             <form [formGroup]="signupForm" (ngSubmit)="signupClick()"> 
             <div class="login-top">

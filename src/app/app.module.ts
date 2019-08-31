@@ -19,6 +19,8 @@ import { ProjectResultComponent } from './project-result/project-result.componen
 import { ProjectResultDetailsComponent } from './project-result/project-result-details/project-result-details.component';
 import { Model1009Component } from './projectmodel/model1009/model1009.component';
 import { Model1010Component } from './projectmodel/model1010/model1010.component';
+import { ResetPasswordComponent } from './login-signup/reset-password/reset-password.component';
+import { LoginComponent } from './login-signup/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { Model1010Component } from './projectmodel/model1010/model1010.component
     ProjectResultDetailsComponent,
     Model1009Component,
     Model1010Component,
+    ResetPasswordComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

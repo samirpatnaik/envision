@@ -6,14 +6,18 @@ import {CreateProjectComponent} from './create-project/create-project.component'
 import {HomepageComponent} from './homepage/homepage.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProjectReportComponent} from './project-report/project-report.component';
-import {ProjectmodelComponent} from './projectmodel/projectmodel.component';
+import {ResetPasswordComponent} from './login-signup/reset-password/reset-password.component';
+import {LoginComponent} from './login-signup/login/login.component'
+
 import {ProjectResultComponent} from './project-result/project-result.component';
 import { Model1009Component } from './projectmodel/model1009/model1009.component';
 import { Model1010Component } from './projectmodel/model1010/model1010.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
-  {path: 'login', component: LoginSignupComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'signup', component: LoginSignupComponent},
+  {path: 'resetpassword', component: ResetPasswordComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'createproject', component: CreateProjectComponent},
   {path: 'projectmodel/1009', component: Model1009Component},

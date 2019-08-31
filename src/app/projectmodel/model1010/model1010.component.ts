@@ -171,6 +171,24 @@ export class Model1010Component implements OnInit {
     this.multisiteForm.controls[optnm].reset();
     $('input[id='+optnm+'][value='+optval+']').prop("checked",true);
   }
+
+  validate_required(){
+    this.submitted = true;
+    if (this.multisiteForm.invalid) {
+      return;
+    }else{
+      document.getElementById('sec').click();
+    }
+  }
+  validate_secondary(){
+    this.submitted = true;
+    if (this.multisiteForm.invalid) {
+      return;
+    }else{
+      document.getElementById('ter').click();
+    }
+  }
+  
   submit_multisiteForm() {
     this.submitted = true;
     if (this.multisiteForm.invalid) {
