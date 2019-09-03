@@ -206,7 +206,7 @@ export class Model1009Component implements OnInit {
       }
 
       let data = { "argument":[this.argument_array] };
-      console.log(data);
+      //console.log(data);
       this.modelresponseService.submitModel(1009,data)
       .subscribe(result =>{
         this.response = result;
