@@ -104,103 +104,103 @@ export class Model1009Component implements OnInit {
     if (this.multisiteForm.invalid) {
       return;
     } else {
-      if(this.multisiteForm.controls['_IRA'] && this.multisiteForm.controls['_IRA'].value.trim()){
+      if(this.multisiteForm.controls['_IRA'] && this.multisiteForm.controls['_IRA'].value){
         let modelData = { 'inputId': "_IRA", 'value' : this.multisiteForm.controls['_IRA'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'] && this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'].value.trim()){
+      if(this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'] && this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'].value){
         let modelData = { "inputId": "_Num_5_Yr_Rev_Ops", "value" : this.multisiteForm.controls['_Num_5_Yr_Rev_Ops'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'] && this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'].value.trim()){
+      if(this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'] && this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'].value){
         let modelData = { "inputId": "_Num_5_Yr_Rev_LTM", "value" : this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Num_Sites'] && this.multisiteForm.controls['_Num_Sites'].value.trim()){
+      if(this.multisiteForm.controls['_Num_Sites'] && this.multisiteForm.controls['_Num_Sites'].value){
         let modelData = { "inputId": "_Num_Sites", "value" : this.multisiteForm.controls['_Num_Sites'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Avg_Area'] && this.multisiteForm.controls['_Avg_Area'].value.trim()){
+      if(this.multisiteForm.controls['_Avg_Area'] && this.multisiteForm.controls['_Avg_Area'].value){
         let modelData = { "inputId": "_Avg_Area", "value" : this.multisiteForm.controls['_Avg_Area'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Site_Smpl_Count'] && this.multisiteForm.controls['_Site_Smpl_Count'].value.trim()){
+      if(this.multisiteForm.controls['_Site_Smpl_Count'] && this.multisiteForm.controls['_Site_Smpl_Count'].value){
         let modelData = { "inputId": "_Site_Smpl_Count", "value" : this.multisiteForm.controls['_Site_Smpl_Count'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Proc_Smpl_Count'] && this.multisiteForm.controls['_Proc_Smpl_Count'].value.trim()){
+      if(this.multisiteForm.controls['_Proc_Smpl_Count'] && this.multisiteForm.controls['_Proc_Smpl_Count'].value){
         let modelData = { "inputId": "_Proc_Smpl_Count", "value" : this.multisiteForm.controls['_Proc_Smpl_Count'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_PL_w_Cost_Basis'] && this.multisiteForm.controls['_PL_w_Cost_Basis'].value.trim()){
+      if(this.multisiteForm.controls['_PL_w_Cost_Basis'] && this.multisiteForm.controls['_PL_w_Cost_Basis'].value){
         let modelData = { "inputId": "_PL_w_Cost_Basis", "value" : this.multisiteForm.controls['_PL_w_Cost_Basis'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Treat_Cmplx'] && this.multisiteForm.controls['_Treat_Cmplx'].value.trim()){
+      if(this.multisiteForm.controls['_Treat_Cmplx'] && this.multisiteForm.controls['_Treat_Cmplx'].value){
         let modelData = { "inputId": "_Treat_Cmplx", "value" : this.multisiteForm.controls['_Treat_Cmplx'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Prot_All'] && this.multisiteForm.controls['_Prot_All'].value.trim()){
+      if(this.multisiteForm.controls['_Prot_All'] && this.multisiteForm.controls['_Prot_All'].value){
         let modelData = { "inputId": "_Prot_All", "value" : this.multisiteForm.controls['_Prot_All'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_CAF'] && this.multisiteForm.controls['_CAF'].value.trim()){
+      if(this.multisiteForm.controls['_CAF'] && this.multisiteForm.controls['_CAF'].value){
         let modelData = { "inputId": "_CAF", "value" : this.multisiteForm.controls['_CAF'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_E_Yr'] && this.multisiteForm.controls['_E_Yr'].value.trim()){
+      if(this.multisiteForm.controls['_E_Yr'] && this.multisiteForm.controls['_E_Yr'].value){
         let modelData = { "inputId": "_E_Yr", "value" : this.multisiteForm.controls['_E_Yr'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_ACF_Val'] && this.multisiteForm.controls['_ACF_Val'].value.trim()){
+      if(this.multisiteForm.controls['_ACF_Val'] && this.multisiteForm.controls['_ACF_Val'].value){
         let modelData = { "inputId": "_ACF_Val", "value" : this.multisiteForm.controls['_ACF_Val'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_01'] && this.multisiteForm.controls['_MK_01'].value.trim()){
+      if(this.multisiteForm.controls['_MK_01'] && this.multisiteForm.controls['_MK_01'].value){
         let modelData = { "inputId": "_MK_01", "value" : this.multisiteForm.controls['_MK_01'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_02'] && this.multisiteForm.controls['_MK_02'].value.trim()){
+      if(this.multisiteForm.controls['_MK_02'] && this.multisiteForm.controls['_MK_02'].value){
         let modelData = { "inputId": "_MK_02", "value" : this.multisiteForm.controls['_MK_02'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_03'] && this.multisiteForm.controls['_MK_03'].value.trim()){
+      if(this.multisiteForm.controls['_MK_03'] && this.multisiteForm.controls['_MK_03'].value){
         let modelData = { "inputId": "_MK_03", "value" : this.multisiteForm.controls['_MK_03'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_04'] && this.multisiteForm.controls['_MK_04'].value.trim()){
+      if(this.multisiteForm.controls['_MK_04'] && this.multisiteForm.controls['_MK_04'].value){
         let modelData = { "inputId": "_MK_04", "value" : this.multisiteForm.controls['_MK_04'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_05'] && this.multisiteForm.controls['_MK_05'].value.trim()){
+      if(this.multisiteForm.controls['_MK_05'] && this.multisiteForm.controls['_MK_05'].value){
         let modelData = { "inputId": "_MK_05", "value" : this.multisiteForm.controls['_MK_05'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_06'] && this.multisiteForm.controls['_MK_06'].value.trim()){
+      if(this.multisiteForm.controls['_MK_06'] && this.multisiteForm.controls['_MK_06'].value){
         let modelData = { "inputId": "_MK_06", "value" : this.multisiteForm.controls['_MK_06'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_07'] && this.multisiteForm.controls['_MK_07'].value.trim()){
+      if(this.multisiteForm.controls['_MK_07'] && this.multisiteForm.controls['_MK_07'].value){
         let modelData = { "inputId": "_MK_07", "value" : this.multisiteForm.controls['_MK_07'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_08'] && this.multisiteForm.controls['_MK_08'].value.trim()){
+      if(this.multisiteForm.controls['_MK_08'] && this.multisiteForm.controls['_MK_08'].value){
         let modelData = { "inputId": "_MK_08", "value" : this.multisiteForm.controls['_MK_08'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_09'] && this.multisiteForm.controls['_MK_09'].value.trim()){
+      if(this.multisiteForm.controls['_MK_09'] && this.multisiteForm.controls['_MK_09'].value){
         let modelData = { "inputId": "_MK_09", "value" : this.multisiteForm.controls['_MK_09'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_10'] && this.multisiteForm.controls['_MK_10'].value.trim()){
+      if(this.multisiteForm.controls['_MK_10'] && this.multisiteForm.controls['_MK_10'].value){
         let modelData = { "inputId": "_MK_10", "value" : this.multisiteForm.controls['_MK_10'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_11'] && this.multisiteForm.controls['_MK_11'].value.trim()){
+      if(this.multisiteForm.controls['_MK_11'] && this.multisiteForm.controls['_MK_11'].value){
         let modelData = { "inputId": "_MK_11", "value" : this.multisiteForm.controls['_MK_11'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_MK_12'] && this.multisiteForm.controls['_MK_12'].value.trim()){
+      if(this.multisiteForm.controls['_MK_12'] && this.multisiteForm.controls['_MK_12'].value){
         let modelData = { "inputId": "_MK_12", "value" : this.multisiteForm.controls['_MK_12'].value };
         this.argument_array.push(modelData);
       }
