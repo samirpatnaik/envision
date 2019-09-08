@@ -21,6 +21,8 @@ import { Model1009Component } from './projectmodel/model1009/model1009.component
 import { Model1010Component } from './projectmodel/model1010/model1010.component';
 import { ResetPasswordComponent } from './login-signup/reset-password/reset-password.component';
 import { LoginComponent } from './login-signup/login/login.component';
+import { UserProfileComponent } from './login-signup/user-profile/user-profile.component';
+import { ChangepwdComponent } from './login-signup/changepwd/changepwd.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { LoginComponent } from './login-signup/login/login.component';
     Model1010Component,
     ResetPasswordComponent,
     LoginComponent,
+    UserProfileComponent,
+    ChangepwdComponent,
   ],
   imports: [
     BrowserModule,

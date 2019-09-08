@@ -1,0 +1,74 @@
+<section id="ModelContainer" class="tw-contact-us bg-offwhite">
+  <div class="container">
+<div class="row">
+<div class="col">
+<div class="section-heading text-center" style= "margin-top: -50" >
+  <h2>User Profile</h2>
+
+</div>
+</div>
+
+</div>
+
+<div class="contact-us-form">
+
+<div class="head">
+<div class="logo">
+  
+  <div class="logo-bottom"><div class="logo-top">
+    <h1>ENV USER PROFILE</h1>
+  </div>
+    <div class="sky-form" style="padding-left: 70">
+      <img src="assets/images/email-sign-up-icon-small.png" width="205px" />
+    </div>
+  </div>
+</div>
+<div class="login">
+  <div class="sap_tabs">
+    <div id="horizontalTab" style=" display: 'block'; width: 100; margin: 0 ">
+      <ul class="resp-tabs-list">
+        <li class="resp-tab-item"><span><a routerLink="/profile">User Profile</a></span></li>
+        <li class="resp-tab-item"><label>/</label><span><a routerLink="/changepassword">Change Password</a></span></li>
+        <div class="clearfix"></div>
+
+      </ul>
+      <div class="resp-tabs-container">
+        
+        <div>
+            <div class="error" style="text-align: center">{{profilemessage}}</div>
+          <form [formGroup]="profileForm" (ngSubmit)="profileClick()"> 
+          <div class="login-top">
+            <label>First Name</label>
+            <input type="text" class="form-control"  formControlName="firstname"  />
+            <label>Last Name</label>
+            <input type="text" class="form-control"  formControlName="lastname" />
+            <label>Email Address</label>
+            <input type="text" class="form-control"  formControlName="email"  [ngClass]="{ 'is-invalid': profilesubmitted && p.email.errors }"/>
+            <div *ngIf="profilesubmitted && p.email.errors" class="invalid-feedback">
+              <div *ngIf="p.email.errors.required">Email is required</div>
+              <div *ngIf="p.email.errors.email">Email must be a valid email address</div>
+            </div>
+            
+            <div class="login-bottom">
+              <div class="submit">
+                <input type="submit" value="SUBMIT" />
+              </div>
+              
+              <div class="clear"></div>
+            </div>
+          </div>
+        </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+</div>
+
+
+</div>
+
+</div>>
+
+</section>

@@ -180,7 +180,7 @@
             
          </div>
 
-        <div class="col-sm-2 afterlogin_top" *ngIf="this.session.get('currentUser')"> <a href="#">Account</a>  &nbsp;&nbsp;  / &nbsp;&nbsp;  <a href="#"  (click)="logout()">Logout</a></div>
+        <div class="col-sm-2 afterlogin_top" *ngIf="this.session.get('currentUser')"> <a routerLink="userprofile">Account</a>  &nbsp;&nbsp;  / &nbsp;&nbsp;  <a href="#"  (click)="logout()">Logout</a></div>
         
         <div class="col-sm-2 loginbtn" *ngIf="!this.session.get('currentUser')"><a routerLink="login" class="loginbtn1"><i class="fa fa-lock"></i> Login</a></div>
         

@@ -72,9 +72,10 @@ export class LoginComponent implements OnInit {
      this._user.login(logindata)
       .subscribe(
       data=>{
-
         if (data) {
-          this.session.set('currentUser', data);
+          //console.log(data.id_token);
+          this.session.set('currentUser', this.loginForm.controls['username'].value);
+          this.session.set('userToken', data.id_token);
           this.router.navigate(['/dashboard']);
           this.loginmessage = '';
         } else {

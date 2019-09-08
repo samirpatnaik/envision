@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {AuthGuardService} from './services/auth-guard.service';
 
 import {LoginSignupComponent} from './login-signup/login-signup.component';
 import {CreateProjectComponent} from './create-project/create-project.component';
@@ -7,8 +8,9 @@ import {HomepageComponent} from './homepage/homepage.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProjectReportComponent} from './project-report/project-report.component';
 import {ResetPasswordComponent} from './login-signup/reset-password/reset-password.component';
-import {LoginComponent} from './login-signup/login/login.component'
-
+import {LoginComponent} from './login-signup/login/login.component';
+import {UserProfileComponent} from './login-signup/user-profile/user-profile.component';
+import {ChangepwdComponent} from './login-signup/changepwd/changepwd.component';
 import {ProjectResultComponent} from './project-result/project-result.component';
 import { Model1009Component } from './projectmodel/model1009/model1009.component';
 import { Model1010Component } from './projectmodel/model1010/model1010.component';
@@ -18,12 +20,15 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: LoginSignupComponent},
   {path: 'resetpassword', component: ResetPasswordComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'createproject', component: CreateProjectComponent},
-  {path: 'projectmodel/1009', component: Model1009Component},
-  {path: 'projectmodel/1010', component: Model1010Component},
-  {path: 'projectreport', component: ProjectReportComponent},
-  {path: 'projectresult', component: ProjectResultComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService]},
+  {path: 'userprofile', component: UserProfileComponent, canActivate: [AuthGuardService]},
+  {path: 'changepassword', component: ChangepwdComponent, canActivate: [AuthGuardService]},
+
+  {path: 'createproject', component: CreateProjectComponent, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1009', component: Model1009Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1010', component: Model1010Component, canActivate: [AuthGuardService]},
+  {path: 'projectreport', component: ProjectReportComponent, canActivate: [AuthGuardService]},
+  {path: 'projectresult', component: ProjectResultComponent, canActivate: [AuthGuardService]},
 ];
 
 @NgModule({
