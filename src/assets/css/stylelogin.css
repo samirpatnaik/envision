@@ -128,6 +128,30 @@ position: relative;
 	-o-transition: 0.5s all ease;
 	-ms-transition: 0.5s all ease;
 }
+.submit input[type="button"] {
+    font-size: 13px;
+    color: #44c7f4;
+    background: #fff;
+    border: 2px solid #44c7f4;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px;
+    padding: 6px 13px;
+    /*font-family: 'SourceSansPro-Regular';*/
+}
+.submit input[type="button"]:hover{
+	background:#44c7f4;
+	color:#fff;
+	transition: 0.5s all ease;
+	-webkit-transition: 0.5s all ease;
+	-moz-transition: 0.5s all ease;
+	-o-transition: 0.5s all ease;
+	-ms-transition: 0.5s all ease;
+}
 /* radios and checkboxes */
 .row1{
 	outline:none;
