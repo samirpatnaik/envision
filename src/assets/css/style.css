@@ -5949,9 +5949,13 @@ ul.navbar-nav li.nav-item > a{padding: 25px 15px 10px !important;}
 .tabbingformbox_header .btn2{ display:inline-block;  padding:10px 15px;border:none; line-height:14px; background-color:#fff; color:#333; border-radius:25px;}
 .tabbingformbox_header .btn2:hover{background-color:#333; color:#fff;}
 
+.nextbackbtn .btn3{ display:inline-block; padding:7px 20px; margin: 0px 20px 10px 20px; background-color:#00b70f; border-radius:5px; color:#fff;}
+.nextbackbtn .btn3:hover{background-color:#333; color:#fff;}
+.nextbackbtn .btn3:focus{background-color:#333; color:#fff;}
+
 /*height: 400px;overflow: auto;*/
 
-.tabbingformbox_padding{ padding:30px; margin-bottom:30px;}
+.tabbingformbox_padding{ padding:10px; margin-bottom:30px;}
 .tabbingformbox_padding p{ font-size:14px; line-height:22px;}
 
 
@@ -6001,6 +6005,15 @@ ul.navbar-nav li.nav-item > a{padding: 25px 15px 10px !important;}
   color: #66615b !important;
 }
 
+/* NEW CODE FOR MADEL SECTION TAB PART */
 
+.stepwizard-step p {margin-top: 10px;}
+.stepwizard-row {display: table-row;}
+.stepwizard {display: table;width: 100%;position: relative; background:url(../images/grid-line.gif) no-repeat left 20px;}
+.stepwizard-step button[disabled] {opacity: 1 !important;filter: alpha(opacity=100) !important;}
+
+.stepwizard-step { display: table-cell;text-align: center;position: relative;}
+.btn-circle {width: 40px;height: 40px;text-align: center;padding: 6px 0;font-size: 16px;font-weight:bold;line-height: 30px;border-radius: 50%;background-color:#c8c8c8; display:inline-block;}
+.btn-circle.active{background-color:#00b60f; color:#fff;}
 
 

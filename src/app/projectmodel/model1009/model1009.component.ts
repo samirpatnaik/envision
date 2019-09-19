@@ -81,23 +81,15 @@ export class Model1009Component implements OnInit {
     $('input[id='+optnm+'][value='+optval+']').prop("checked",true);
   }
 
-  validate_required(){
+  validate_tab(tab_name){
     this.submitted = true;
     if (this.multisiteForm.invalid) {
       return;
     }else{
-      document.getElementById('sec').click();
+      document.getElementById(tab_name).click();
     }
   }
-  validate_secondary(){
-    this.submitted = true;
-    if (this.multisiteForm.invalid) {
-      return;
-    }else{
-      document.getElementById('ter').click();
-    }
-  }
-
+  
   submit_multisiteForm() {
     this.submitted = true;
     

@@ -10,20 +10,41 @@
 <form [formGroup]="multisiteForm" role="form">
 <div class="contact-us-form">
   <div class="row">
-      <div class="col-sm-3">
+      <div class="col-sm-3" style="display: none">
         <ul class="nav nav-pills col-sm-3 nav-stacked newleft">
           <li class="active"><a href="#tab_a" data-toggle="pill" id="req">Required</a></li>
           <li><a href="#tab_b" data-toggle="pill" id="sec">Secondary</a></li>
           <li><a href="#tab_c" data-toggle="pill" id="ter">Tertiary</a></li>
         </ul>
   </div>
-  <div class="col-sm-9"> 
-    <div class="tab-content col-sm-9 rightside_formnav">
+  <div class="col-sm-12"> 
+    <div class="tab-content col-sm-12 rightside_formnav">
       <div class="tabbingformbox_header ">
         <input type="button" (click)="submit_multisiteForm()" class="btn1" value="Calculate">&nbsp;
         <a href="#" class="btn2">Save &amp; View Report</a>
       </div>
       <div class="tab-pane active" id="tab_a">
+          <br/>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="stepwizard">
+                  <div class="stepwizard-row">
+                      <div class="stepwizard-step">
+                          <span class="btn-circle active">1</span>
+                          <p>Required</p>
+                      </div>
+                      <div class="stepwizard-step">
+                          <span class="btn-circle">2</span>
+                          <p>Secondary</p>
+                      </div>
+                      <div class="stepwizard-step">
+                          <span  class="btn-circle">3</span>
+                          <p>Tertiary</p>
+                      </div> 
+                  </div>
+              </div>
+            </div>
+          </div>
         <div class="tabbingformbox_padding">
           <h4>Reuired Section</h4>
           <div class="row">
@@ -94,12 +115,34 @@
             </div>-->
           </div>   
         </div>
-        <div class="tabbingformbox_header">
-           <a href="#" data-toggle="pill" class="btn2" (click)="validate_required()">Next</a> 
+        
+        <div class="row nextbackbtn">
+            <div class="col-sm-12 text-right"><a href="#null" class="btn3" data-toggle="pill" (click)="validate_tab('sec')">Next <i class="fa fa-chevron-right"></i></a></div>	
         </div>
       </div>
       
       <div class="tab-pane" id="tab_b">
+        <br/>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="stepwizard">
+                <div class="stepwizard-row">
+                    <div class="stepwizard-step">
+                        <span class="btn-circle">1</span>
+                        <p>Required</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span class="btn-circle active">2</span>
+                        <p>Secondary</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span  class="btn-circle">3</span>
+                        <p>Tertiary</p>
+                    </div> 
+                </div>
+            </div>
+          </div>
+        </div>
         <div class="tabbingformbox_padding">
           <h4>Secondary Section</h4>
             <div class="row">
@@ -152,11 +195,34 @@
               </div>
             </div>
         </div>
-        <div class="tabbingformbox_header ">
-            <a href="#" data-toggle="pill" class="btn2" (click)="validate_secondary()">Next</a>
+
+        <div class="row nextbackbtn">
+          <div class="col-sm-6 text-left"><a href="#null" class="btn3" data-toggle="pill" (click)="validate_tab('req')"><i class="fa fa-chevron-left"></i> Back</a></div>
+          <div class="col-sm-6 text-right"><a href="#null" class="btn3" data-toggle="pill" (click)="validate_tab('ter')">Next <i class="fa fa-chevron-right"></i></a></div>	
         </div>
       </div>
       <div class="tab-pane" id="tab_c">
+        <br/>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="stepwizard">
+                <div class="stepwizard-row">
+                    <div class="stepwizard-step">
+                        <span class="btn-circle">1</span>
+                        <p>Required</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span class="btn-circle">2</span>
+                        <p>Secondary</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span  class="btn-circle active">3</span>
+                        <p>Tertiary</p>
+                    </div> 
+                </div>
+            </div>
+          </div>
+        </div>
         <div class="tabbingformbox_padding">
           <h4>Tertiary Section</h4>
             <div class="row">
@@ -277,6 +343,9 @@
               </div>
             </div>
         </div>
+        <div class="row nextbackbtn">
+          <div class="col-sm-6 text-left" ><a href="#null" data-toggle="pill" class="btn3" (click)="validate_tab('sec')"> Back</a></div>
+        </div> 
       </div>
     </div><!-- tab content -->
   </div>                    

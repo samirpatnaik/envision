@@ -172,7 +172,7 @@ export class Model1010Component implements OnInit {
     $('input[id='+optnm+'][value='+optval+']').prop("checked",true);
   }
 
-  validate_required(){
+ /* validate_required(){
     this.submitted = true;
     if (this.multisiteForm.invalid) {
       return;
@@ -186,6 +186,14 @@ export class Model1010Component implements OnInit {
       return;
     }else{
       document.getElementById('ter').click();
+    }
+  } */
+  validate_tab(tab_name){
+    this.submitted = true;
+    if (this.multisiteForm.invalid) {
+      return;
+    }else{
+      document.getElementById(tab_name).click();
     }
   }
   
