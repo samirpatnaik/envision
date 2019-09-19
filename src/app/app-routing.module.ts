@@ -5,6 +5,8 @@ import {AuthGuardService} from './services/auth-guard.service';
 import {LoginSignupComponent} from './login-signup/login-signup.component';
 import {CreateProjectComponent} from './create-project/create-project.component';
 import {HomepageComponent} from './homepage/homepage.component';
+import {ModelsComponent} from './models/models.component';
+import {DocsComponent} from './docs/docs.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ProjectReportComponent} from './project-report/project-report.component';
 import {ResetPasswordComponent} from './login-signup/reset-password/reset-password.component';
@@ -17,6 +19,9 @@ import { Model1010Component } from './projectmodel/model1010/model1010.component
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
+  {path: 'models', component: ModelsComponent},
+  {path: 'docs', component: DocsComponent},
+
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: LoginSignupComponent},
   {path: 'resetpassword', component: ResetPasswordComponent},

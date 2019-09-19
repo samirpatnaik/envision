@@ -23,6 +23,8 @@ import { ResetPasswordComponent } from './login-signup/reset-password/reset-pass
 import { LoginComponent } from './login-signup/login/login.component';
 import { UserProfileComponent } from './login-signup/user-profile/user-profile.component';
 import { ChangepwdComponent } from './login-signup/changepwd/changepwd.component';
+import { ModelsComponent } from './models/models.component';
+import { DocsComponent } from './docs/docs.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { ChangepwdComponent } from './login-signup/changepwd/changepwd.component
     LoginComponent,
     UserProfileComponent,
     ChangepwdComponent,
+    ModelsComponent,
+    DocsComponent,
   ],
   imports: [
     BrowserModule,
