@@ -31,8 +31,8 @@ export class CreateProjectComponent  implements OnInit{
   constructor(private router:Router,  private _http:HttpClient,private formBuilder: FormBuilder, private filterPipe: FilterPipe, private modelresponseService: ModelresponseService) {
       this.listmodelForm = this.formBuilder.group({
         listoption: [''],
-        project_title: [''],
-        project_description: ['']
+        project_title: ['', Validators.required],
+        project_description: ['', Validators.required]
       });
      
      // this.model$ = _http.get("assets/modelresponse/ListOfModels.json");
@@ -62,6 +62,8 @@ export class CreateProjectComponent  implements OnInit{
     this.submitted = true;
       if (this.listmodelForm.invalid) {
         return;
+      }else if(this.listmodelForm.controls['listoption'].value == ''){
+        this.message = 'Please select any Model Name to proceed';
       } else {
        // console.log(this.listmodelForm.controls['listoption'].value);
         this.router.navigate(["/projectmodel/"+this.listmodelForm.controls['listoption'].value]);
