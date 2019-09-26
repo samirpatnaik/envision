@@ -28,7 +28,7 @@ export class ModelresponseService {
   };
 
 
-  public submitModel(lid: number, body:any){
+/*  public submitModel(lid: number, body:any){
     console.log(this.session.get('userToken'));
     return this.http.post('http://54.81.168.191:8080/eep/v1/model/'+`${lid}`,body,
       {
@@ -39,7 +39,20 @@ export class ModelresponseService {
       }) .pipe(map((data) => {
       return data;
     }));
- }
+ } */
+
+ public submitModel(lid: number, body:any){
+
+  return this.http.post('http://13.58.79.119/eep/v1/model/'+`${lid}`,body,
+    {
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    }) .pipe(map((data) => {
+    return data;
+  }));
+}
+
 
  // here we set/change value of the observable
   public setData(data) { 
