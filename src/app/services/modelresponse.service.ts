@@ -17,20 +17,8 @@ export class ModelresponseService {
   public apiData = new BehaviorSubject<any>(null);
   public apiData$ = this.apiData.asObservable();
 
-  /*public getJSON(): Observable<any> {
-    return this.http.get("assets/modelresponse/ModelExecResponse.json");
-  }
-  */
- private httpOptions = {
-  headers:new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-  };
-
-
-/*  public submitModel(lid: number, body:any){
-    console.log(this.session.get('userToken'));
-    return this.http.post('http://54.81.168.191:8080/eep/v1/model/'+`${lid}`,body,
+  public submitModel(lid: number, body:any){
+    return this.http.post('http://54.81.168.191:8080/api/eep/'+`${lid}`,body,
       {
         headers:new HttpHeaders({
           'Authorization': 'Bearer ' + this.session.get('userToken'),
@@ -39,9 +27,9 @@ export class ModelresponseService {
       }) .pipe(map((data) => {
       return data;
     }));
- } */
+  } 
 
- public submitModel(lid: number, body:any){
+ /*public submitModel(lid: number, body:any){
 
   return this.http.post('http://13.58.79.119/eep/v1/model/'+`${lid}`,body,
     {
@@ -51,7 +39,7 @@ export class ModelresponseService {
     }) .pipe(map((data) => {
     return data;
   }));
-}
+}*/
 
 
  // here we set/change value of the observable
@@ -61,10 +49,22 @@ export class ModelresponseService {
   }
 
   public getModel(): Observable<any> {
-    return this.http.get('http://13.58.79.119/eep/v1/model', this.httpOptions);
+    console.log(this.session.get('userToken'));
+    return this.http.get('http://54.81.168.191:8080/api/models', {
+      headers:new HttpHeaders({
+        'Authorization': 'Bearer ' + this.session.get('userToken'),
+        'Content-Type': 'application/json'
+      })
+    });
   }
 
-  public getModelFields(lid: number): Observable<any>{
-     return this.http.get('http://13.58.79.119/eep/v1/model/'+`${lid}`, this.httpOptions);
+  saveproject(body:any){
+    return this.http.post('http://54.81.168.191:8080/api/projects',body,{
+      observe:'response',
+      headers:new HttpHeaders({
+        'Authorization': 'Bearer ' + this.session.get('userToken'),
+        'Content-Type': 'application/json'
+      })
+    });
   }
 }

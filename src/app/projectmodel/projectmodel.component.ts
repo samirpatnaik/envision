@@ -25,12 +25,12 @@ export class ProjectmodelComponent implements OnInit {
   ngOnInit() {
     
     this.id = +this.route.snapshot.paramMap.get('listid');
-    this.modelresponseService.getModelFields(this.id)
+   /* this.modelresponseService.getModelFields(this.id)
       .subscribe(
         fldinfo =>{
          this.pagetitle = fldinfo.name;
         }
-      );
+      );*/
     this.create_form();
     isNumberKey(event);
 

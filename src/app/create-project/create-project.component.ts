@@ -45,14 +45,9 @@ export class CreateProjectComponent  implements OnInit{
   private addModeloptions() {
     this.modelresponseService.getModel()
       .subscribe(data => {
-        this.modellist_options = data.model;
+        this.modellist_options = data;
       }
     ); 
-
-   /* this.model$.subscribe(data => {    
-        this.modellist_options = data.model;
-      }
-    );*/
   }
 
   // convenience getter for easy access to form fields
@@ -65,8 +60,22 @@ export class CreateProjectComponent  implements OnInit{
       }else if(this.listmodelForm.controls['listoption'].value == ''){
         this.message = 'Please select any Model Name to proceed';
       } else {
+        let projectdata = { 
+          "name": this.listmodelForm.controls['project_title'].value,
+          "description": this.listmodelForm.controls['project_description'].value,
+          "modelId": this.listmodelForm.controls['listoption'].value
+       };
+        // console.log(registerdata);
+        this.modelresponseService.saveproject(projectdata)
+        .subscribe(res=>{
+        if(res.statusText == 'OK'){
+          this.router.navigate(["/projectmodel/"+this.listmodelForm.controls['listoption'].value]); 
+        }
+        }, err => {
+        console.log(err);
+        this.message = err.error.message;
+        });
        // console.log(this.listmodelForm.controls['listoption'].value);
-        this.router.navigate(["/projectmodel/"+this.listmodelForm.controls['listoption'].value]);
       }
   }
 

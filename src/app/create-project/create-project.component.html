@@ -39,7 +39,7 @@
            <div class="radiostyle" *ngFor="let modelname of modellist_options| filterBy:inputSearch; let i=index" > 
   
              <div class="inputGroupe" >
-               <input type="radio" formControlName="listoption" id="model{{i}}" value="{{modelname.id}}"><label for="model{{i}}"><img src="assets/images/tree-leaf.png" alt="img"> {{modelname.name}}</label>
+               <input type="radio" formControlName="listoption" id="model{{i}}" value="{{modelname.eepId}}"><label for="model{{i}}"><img src="assets/images/tree-leaf.png" alt="img"> {{modelname.name}}</label>
               </div>
             <!--   <div class="inputGroupe"><input type="radio"  value="radio2" id="model2"><label for="model2"><img src="assets/images/tree-leaf.png" alt="img"> Model Two</label></div> 
               <div class="inputGroupe"><input type="radio" formControlName="listoption" value="radio10" id="model10"><label for="model10"><img src="assets/images/tree-leaf.png" alt="img"> Model Ten</label></div> -->
