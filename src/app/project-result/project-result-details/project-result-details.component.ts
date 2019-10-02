@@ -45,13 +45,36 @@ export class ProjectResultDetailsComponent implements OnInit {
       
       var imgData = canvas.toDataURL("image/jpeg", 1.0);
       var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
-      pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
+
+      var doc = new jsPDF("p", "pt", [PDF_Width, PDF_Height]),
+      source = $("#project-result")[0],
+      margins = {
+        top: 60,
+        bottom: 20,
+        left: 40,
+        width: HTML_Width
+      };
+      doc.fromHTML(
+        source, // HTML string or DOM elem ref.
+        margins.left, // x coord
+        margins.top, {
+          // y coord
+          width: margins.width // max width of content on PDF
+        },
+        function(dispose) {
+          // dispose: object with X, Y of the last line add to the PDF
+          //          this allow the insertion of new lines after html
+          doc.save("ProjectResult.pdf");
+        },
+        margins
+      );
+     // pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
       
-      for (var i = 1; i <= totalPDFPages; i++) { 
+    /*  for (var i = 1; i <= totalPDFPages; i++) { 
         pdf.addPage(PDF_Width, PDF_Height);
         pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
       }
-      pdf.save("ProjectResult.pdf");
+      pdf.save("ProjectResult.pdf");*/
     });
 
   }

@@ -3,9 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SessionStorageService } from 'angular-web-storage';
-
-
-
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +16,7 @@ export class ModelresponseService {
   public apiData$ = this.apiData.asObservable();
 
   public submitModel(lid: number, body:any){
-    return this.http.post('http://54.81.168.191:8080/api/eep/'+`${lid}`,body,
+    return this.http.post(environment.apiUrl+'eep/'+`${lid}`,body,
       {
         headers:new HttpHeaders({
           'Authorization': 'Bearer ' + this.session.get('userToken'),
@@ -50,7 +48,7 @@ export class ModelresponseService {
 
   public getModel(): Observable<any> {
     console.log(this.session.get('userToken'));
-    return this.http.get('http://54.81.168.191:8080/api/models', {
+    return this.http.get(environment.apiUrl+'models', {
       headers:new HttpHeaders({
         'Authorization': 'Bearer ' + this.session.get('userToken'),
         'Content-Type': 'application/json'
@@ -59,7 +57,7 @@ export class ModelresponseService {
   }
 
   saveproject(body:any){
-    return this.http.post('http://54.81.168.191:8080/api/projects',body,{
+    return this.http.post(environment.apiUrl+'projects',body,{
       observe:'response',
       headers:new HttpHeaders({
         'Authorization': 'Bearer ' + this.session.get('userToken'),
