@@ -12,32 +12,21 @@
 
 <div class="contact-us-form">
       <div class="row">
+        <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+          <p style="font-size: 20px; color: white">Loading Run History...</p>
+      </ngx-spinner>
 
 <div class="col-sm-12">
-<table class="table">
+ <table class="table">
 
-  <tr>
-  <td width="40%"><h5>3/25/2019 at 2:30 PM (Current)</h5></td>
-  <td width="30%"><h5>$1,100,00</h5></td>
-  <td width="30%" valign="middle" style="vertical-align:middle !important;"><a routerLink="/projectresult" class="viewdtlsbtn">View</a>&nbsp; &nbsp;<a routerLink='/projectmodel' class="viewdtlsbtn">Re-Run</a></td>
+  <tr *ngFor="let runinfo of projectrunInfo| sortingResult:'createdDate'; index as i">
+  <td width="40%"><h5>{{runinfo.createdDate | date:'medium' }}</h5></td>
+  <td width="30%"><h5>{{runinfo.totalCost| currency}}</h5></td>
+  <td width="30%" valign="middle" style="vertical-align:middle !important;"><a href="#" routerLink="/viewrundetails/{{runinfo.id}}" class="viewdtlsbtn">View</a> &nbsp; &nbsp;<span *ngIf="i == 0"> <a href="#" class="viewdtlsbtn">Re-Run</a></span></td>
   </tr>
-  <tr>
-    <td width="40%"><h5>3/24/2019 at 1:30 PM</h5></td>
-    <td width="30%"><h5>$700,00</h5></td>
-    <td width="30%" valign="middle" style="vertical-align:middle !important;"><a routerLink="/projectresult" class="viewdtlsbtn">View</a></td>
-    </tr>
-  <tr>
-    <td width="40%"><h5>3/22/2019 at 12:30 PM</h5> </td>
-    <td width="30%"><h5>$900,00</h5></td>
-    <td width="30%" valign="middle" style="vertical-align:middle !important;"><a routerLink="/projectresult" class="viewdtlsbtn">View</a></td>
-    </tr>
-  <tr>
-    <td width="40%"><h5>3/20/2019 at 4:30 PM</h5> </td>
-    <td width="30%"><h5>$850,00</h5></td>
-    <td width="30%" valign="middle" style="vertical-align:middle !important;"><a routerLink="/projectresult" class="viewdtlsbtn">View</a></td>
-    </tr>
+  
 
-</table>
+</table> 
   </div>
 </div> </div>
 

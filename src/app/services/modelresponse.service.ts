@@ -4,6 +4,8 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SessionStorageService } from 'angular-web-storage';
 import { environment } from '../../environments/environment';
+import {ProjectModel} from '../model/ProjectModel';
+
 
 @Injectable({
   providedIn: 'root'
@@ -27,20 +29,7 @@ export class ModelresponseService {
     }));
   } 
 
- /*public submitModel(lid: number, body:any){
-
-  return this.http.post('http://13.58.79.119/eep/v1/model/'+`${lid}`,body,
-    {
-      headers:new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    }) .pipe(map((data) => {
-    return data;
-  }));
-}*/
-
-
- // here we set/change value of the observable
+  // here we set/change value of the observable
   public setData(data) { 
    // console.log('Subscriber A:',data);
     this.apiData.next(data)
@@ -65,4 +54,25 @@ export class ModelresponseService {
       })
     });
   }
+
+  rundetails(mid: number){
+    return this.http.get(environment.apiUrl+'runs/'+`${mid}`,{
+      headers:new HttpHeaders({
+        'Authorization': 'Bearer ' + this.session.get('userToken'),
+        'Content-Type': 'application/json'
+      })
+    });
+  }
+
+  viewrundetails(pid: number): Observable<ProjectModel>{
+    return this.http.get<ProjectModel>(environment.apiUrl+'run/'+`${pid}`,{
+      headers:new HttpHeaders({
+        'Authorization': 'Bearer ' + this.session.get('userToken'),
+        'Content-Type': 'application/json'
+      })
+    }).pipe(map((data) => {
+      return data;
+    }));;
+  }
+
 }

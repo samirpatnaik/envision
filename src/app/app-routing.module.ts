@@ -16,6 +16,7 @@ import {ChangepwdComponent} from './login-signup/changepwd/changepwd.component';
 import {ProjectResultComponent} from './project-result/project-result.component';
 import { Model1009Component } from './projectmodel/model1009/model1009.component';
 import { Model1010Component } from './projectmodel/model1010/model1010.component';
+import { ViewRunDetailsComponent } from './view-run-details/view-run-details.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
   {path: 'createproject', component: CreateProjectComponent, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1009', component: Model1009Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1010', component: Model1010Component, canActivate: [AuthGuardService]},
-  {path: 'projectreport', component: ProjectReportComponent, canActivate: [AuthGuardService]},
+  {path: 'projectrunreport/:mid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
+  {path: 'viewrundetails/:pid', component: ViewRunDetailsComponent, canActivate: [AuthGuardService]},
   {path: 'projectresult', component: ProjectResultComponent, canActivate: [AuthGuardService]},
 ];
 

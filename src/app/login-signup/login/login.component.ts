@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
       data=>{
         if (data) {
-          //console.log(data.id_token);
+          console.log(data.id_token);
           this.session.set('currentUser', this.loginForm.controls['username'].value);
           this.session.set('userToken', data.id_token);
           this.router.navigate(['/dashboard']);

@@ -52,7 +52,7 @@ export class UserProfileComponent implements OnInit {
                       "lastName": this.profileForm.controls['lastname'].value,
                       "login": this.session.get('currentUser')
                    };
-        console.log(profiledata);
+       // console.log(profiledata);
         this._user.updateprofile(profiledata)
         .subscribe(res=>{
           console.log(res);

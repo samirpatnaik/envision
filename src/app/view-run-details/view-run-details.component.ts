@@ -1,29 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { ModelresponseService } from '../../services/modelresponse.service';
+import { ModelresponseService } from '../services/modelresponse.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import * as jsPDF from 'jspdf'; 
 import html2canvas from 'html2canvas';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-project-result-details',
-  templateUrl: './project-result-details.component.html',
-  styleUrls: ['./project-result-details.component.css']
+  selector: 'app-view-run-details',
+  templateUrl: './view-run-details.component.html',
+  styleUrls: ['./view-run-details.component.css']
 })
-export class ProjectResultDetailsComponent implements OnInit {
+export class ViewRunDetailsComponent implements OnInit {
 
-  constructor(private modelresponseService: ModelresponseService, private sanitizer: DomSanitizer) { }
-  displaystring: any;
-  pdfstring= false;
+  constructor(private _model:ModelresponseService, private spinner: NgxSpinnerService, private route: ActivatedRoute, private _router: Router, private sanitizer: DomSanitizer) { }
+
+  displaystring:any;
+  modelId: any;
+  id: any;
+  response: any;
+
   ngOnInit() {
-    this.modelresponseService.apiData$.subscribe(data => {
-      this.pdfstring = data.displayString;
-      this.displaystring = this.sanitizer.bypassSecurityTrustHtml(data.displayString);
-      this.pdfstring = true; // set to true for showing the Export to PDF button
-  });
-   /* this.modelresponseService.getJSON().subscribe(data => {
-      this.displaystring = this.sanitizer.bypassSecurityTrustHtml(data.displayString);
-  });*/
+    this.id = +this.route.snapshot.paramMap.get('pid');
+
+    this.spinner.show();
+    this._model.viewrundetails(this.id).subscribe(
+      qinfo =>{
+        console.log(qinfo);
+        //this.projectrunInfo = qinfo.output;
+        this.modelId = qinfo.modelId;
+       
+        this.displaystring = this.sanitizer.bypassSecurityTrustHtml(qinfo.displayString);
+  
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 0);
+      });
   }
 
   exportPDF(){
@@ -61,7 +74,7 @@ export class ProjectResultDetailsComponent implements OnInit {
           // y coord
           width: margins.width // max width of content on PDF
         },
-        function(dispose) {
+        function() {
           // dispose: object with X, Y of the last line add to the PDF
           //          this allow the insertion of new lines after html
           doc.save("ProjectResult.pdf");

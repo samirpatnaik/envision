@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipeModule } from 'ngx-filter-pipe';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { CommonLayoutModule} from  './common-layout/common-layout.module';
 import { LoginSignupComponent } from './login-signup/login-signup.component';
@@ -25,6 +25,8 @@ import { UserProfileComponent } from './login-signup/user-profile/user-profile.c
 import { ChangepwdComponent } from './login-signup/changepwd/changepwd.component';
 import { ModelsComponent } from './models/models.component';
 import { DocsComponent } from './docs/docs.component';
+import { SortingResultPipe } from './sorting-result.pipe';
+import { ViewRunDetailsComponent } from './view-run-details/view-run-details.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { DocsComponent } from './docs/docs.component';
     ChangepwdComponent,
     ModelsComponent,
     DocsComponent,
+    SortingResultPipe,
+    ViewRunDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,8 @@ import { DocsComponent } from './docs/docs.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    FilterPipeModule
+    FilterPipeModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

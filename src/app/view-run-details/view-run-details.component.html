@@ -1,0 +1,22 @@
+
+  <section id="ModelContainer" class="tw-contact-us bg-offwhite lessmargin">
+    <div class="container">
+      <div class="contact-us-form">
+        <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p style="font-size: 20px; color: white">Loading Run Result...</p>
+        </ngx-spinner>
+    
+        <div class="row">
+          <div class="col-sm-12">
+            <br/><br/>
+            <div class="col-sm-6"><button (click)="exportPDF()" class="viewdtlsbtn">Export to PDF</button></div>
+            <div class="col-sm-6" style="text-align: right;"><button routerLink="/projectrunreport/{{modelId}}" class="viewdtlsbtn">Back to Run List</button></div>
+          </div>
+          <br/><br/>
+          <div >
+              <div class="col-sm-12" id="project-result" [innerHTML]="displaystring"></div>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </section>
