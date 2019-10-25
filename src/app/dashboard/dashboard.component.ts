@@ -16,8 +16,9 @@ export class DashboardComponent implements OnInit {
     this.spinner.show();
     this._user.fetchprofile().subscribe(
       qinfo =>{
-        //console.log(qinfo);
-        this.dashboardInfo = qinfo.projects;
+        console.log(qinfo);
+        this.dashboardInfo = qinfo.projects;      
+
         setTimeout(() => {
           this.spinner.hide();
         }, 0);

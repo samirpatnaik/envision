@@ -22,7 +22,7 @@
   <tr *ngFor="let runinfo of projectrunInfo| sortingResult:'createdDate'; index as i">
   <td width="40%"><h5>{{runinfo.createdDate | date:'medium' }}</h5></td>
   <td width="30%"><h5>{{runinfo.totalCost| currency}}</h5></td>
-  <td width="30%" valign="middle" style="vertical-align:middle !important;"><a href="#" routerLink="/viewrundetails/{{runinfo.id}}" class="viewdtlsbtn">View</a> &nbsp; &nbsp;<span *ngIf="i == 0"> <a href="#" class="viewdtlsbtn">Re-Run</a></span></td>
+  <td width="30%" valign="middle" style="vertical-align:middle !important;"><a href="#" routerLink="/viewrundetails/{{runinfo.id}}" class="viewdtlsbtn">View</a> &nbsp; &nbsp;<span *ngIf="i == 0"> <a href="#" routerLink="/projectmodel/{{runinfo.modelId}}/{{runinfo.id}}" class="viewdtlsbtn">Re-Run</a></span></td>
   </tr>
   
 

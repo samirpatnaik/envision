@@ -29,7 +29,7 @@
 							<div class="panel-heading" role="tab" id="{{i}}">
 							  <h4 class="panel-title">
 								  <a role="button" data-toggle="collapse" data-parent="#accordionMenu" href="#collapse{{i}}" aria-expanded="false" aria-controls="collapseOne">
-									{{dashinfo.name}} <p>{{dashinfo.modelName}}</p> <span>$52,606</span>
+									{{dashinfo.name}} <p>{{dashinfo.modelName}}</p> <span>{{dashinfo.lastRunTotalCost | currency}}</span>
 								  </a>
 							  </h4>
 							</div>
@@ -38,7 +38,7 @@
 									<table width="100%">
 										<tbody>
 											<tr>
-											  <td width="50%" style="color:#b4b4b4">Last run : 3/19/19 2:22pm</td>
+											  <td width="50%" style="color:#b4b4b4">Last run : {{dashinfo.runs[0].createdDate | date:'medium'}}</td>
 											  <td width="50%" align="right"> <a routerLink="/projectmodel/{{dashinfo.modelId}}" class="rerunbtn2">Add Run</a>&nbsp;&nbsp;<a routerLink="/projectrunreport/{{dashinfo.modelId}}" class="rerunbtn2">View Project</a></td>
 											</tr>
 										</tbody>
@@ -47,31 +47,20 @@
 									<table class="table">
 										<thead>
 											<tr>
-											  <th width="40%">Cost Element</th>
+											  <th width="40%">Description</th>
 											  <th width="20%">Direct Cost</th>
 											  <th width="20%">Markup</th>
-											  <th width="20%">Burdned Cost</th>
+											  <th width="20%">Total Cost</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-											  <td>John</td>
-											  <td>Doe</td>
-											  <td>john</td>
-											  <td>john</td>
+											<tr *ngFor="let estinfo of dashinfo.estDTOs; index as j">
+											  <td>{{dashinfo.estDTOs[j].descripton}}</td>
+											  <td>{{dashinfo.estDTOs[j].directCost | currency}}</td>
+											  <td>{{dashinfo.estDTOs[j].markup | currency}}</td>
+											  <td>{{dashinfo.estDTOs[j].totalCost | currency}}</td> 
 											</tr>
-											<tr>
-											  <td>Mary</td>
-											  <td>Moe</td>
-											  <td>john</td>
-											  <td>john</td>
-											</tr>
-											<tr>
-											  <td>July</td>
-											  <td>Dooley</td>
-											  <td>john</td>
-											  <td>john</td>
-											</tr>
+											
 										</tbody>
 									</table>
 								</div>
