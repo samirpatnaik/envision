@@ -55,7 +55,7 @@ export class UserProfileComponent implements OnInit {
        // console.log(profiledata);
         this._user.updateprofile(profiledata)
         .subscribe(res=>{
-          console.log(res);
+//          console.log(res);
          if(res.statusText == 'OK'){
           this.profilemessage = 'Profile Updated Successfully'; 
           this.fetch_userInfo();

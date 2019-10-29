@@ -22,7 +22,7 @@ export class ProjectReportComponent implements OnInit {
     this.spinner.show();
     this._model.rundetails(this.id).subscribe(
       qinfo =>{
-        console.log(qinfo);
+        //console.log(qinfo);
         this.projectrunInfo = qinfo;
         setTimeout(() => {
           this.spinner.hide();
