@@ -16,6 +16,7 @@ export class Model1010Component implements OnInit {
   multisiteForm: FormGroup;
   submitted = false;
   id : any;
+  pid: any;
   data : any;
   response: any;
   pagetitle: String;
@@ -23,8 +24,139 @@ export class Model1010Component implements OnInit {
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private modelresponseService: ModelresponseService, private _router: Router) { }
 
   ngOnInit() {
+    this.pid = +this.route.snapshot.paramMap.get('pid');
     this.create_form();
     isNumberKey(event);
+    if(this.pid != ''){
+      this.modelresponseService.viewrundetails(this.pid).subscribe(
+        qinfo =>{
+            const formObject ={
+              _IRA: 'N',
+              _ST: '',
+              _WDepth: '',
+              _AST : '',
+              _W_Ft : '',
+              _GWDepth : '',
+              _P_Area : '',
+              _Conf: 'N',
+              _Unconsolid: 'Y',
+              _HC: '',
+              _RHG: '',
+              _STF: '',
+              _ATF: '',
+              _Ext_Well_Dia: '',
+              _WNum_Ext_Well: '',
+              _Ext_Well_Mthd: '',
+              _P_GPM: '',
+              _P_CFM_Ext: '',
+              _GWInj_YN: 'N',
+              _Well_Type_Inj: '',
+              _Inj_Well_Dia: '',
+              _WNum_Inj_Well: '',
+              _Inj_Well_Mthd: '',
+              _P_CFM_Inj: '',
+              _YN_Equip_Encl: 'N',
+              _YN_Trailr_Blw_Sys: 'Y',
+              _Incl_Perf_Samp: 'N',
+              _Mon_Well_Dia:'',
+              _Mon_Well_Mthd:'',
+              _Well_Type_Mon: '',
+              _Num_Mon_Well_Usr:'',
+              _Num_Mon_Well: '',
+              _Ancil_Well_Mthd:'',
+              _WNum_Vad_Mon_Usr: '',
+              _WNum_Vad_Mon:'',
+              _Num_Air_Loc: '',
+              _Num_Mon_Well_Smpl: '',
+              _Num_SW_Points:'',
+              _Num_Surf_Loc: '',
+              _NUM_Surf_Per_Loc: '',
+              _Num_Sed_Points: '',
+              _Num_Soil_Borings: '',
+              _WNum_Vad_Mon_Smpl: '',
+              _NUM_Eco_Samp: '',
+              _Ops_Yr: '',
+              _SnglUse: '',
+              _Num_Samp_Event: '',
+              _NUM_Surf:'',
+              _Process_Samp_YN: 'Y',
+              _NUM_Ph4_Proc_Smpl_Air : '',
+              _NUM_Ph4_Proc_Smpl_Lqd: '',
+              _NUM_Ph4_Proc_Smpl_Solid : '',
+              _NUM_Ph6_Proc_Smpl_Air: '',
+              _NUM_Ph6_Proc_Smpl_Lqd : '',
+              _NUM_Ph6_Proc_Smpl_Solid: '',
+              
+              _P_CFM: '',
+              _Num_Ports : '',
+              _NUM_Air:'',
+              _NUM_GW: '',
+              _NUM_SW: '',
+              _NUM_Soil: '',
+              _NUM_Soil_Gas: '',
+              _NUM_Sed: '',
+              _VOC:'Y',
+              _VOC_Gas:'Y',
+              _SVOC:'N',
+              _SVOC_Gas:'N',
+              _PCB:'N',
+              _PCB_Gas:'N',
+              _MC: 'N',
+              _TAL_Mtl:'Y',
+              _MNA:'N',
+              _NUM_MNA:'',
+              _Sum_Samp_Day:'',
+              _Well_Drill_Dia:'',
+              _Prcnt_NH_Drill_C:'',
+              _Moist:'',
+              _Den:'',
+              _NH_SW_Con: '',
+              _NH_LW_Con: '',
+              _SW_Bulk_Con: '',
+              _LW_Bulk_Con: '',
+              _SW_Drm_Con: '',
+              _LW_Drm_Con: '',
+              _Const_KGPY_Wtr: '',
+              _NH_SW_OM: '',
+              _NH_LW_OM: '',
+              _SW_Bulk_OM: '',
+              _O_M_KGPY_Wtr: '',
+              _Phase3_Req:'Y',
+              _Phase4_Req:'Y',
+              _Phase6_Req:'Y',
+              _Phase7_Req:'N',
+              _Land_Use:'N',
+              _Engr_Cntl:'N',
+              _L_Ft_F_Input: '',
+              _RACR_YN:'N',
+              _Prot_All:'',
+              _CAF: '',
+              _E_Yr: '',
+          
+              _ACF_Val:'',
+              _MK_01:'',
+              _MK_02:'',
+              _MK_03:'',
+              _MK_04:'',
+              _MK_05:'',
+              _MK_06:'',
+              _MK_07:'',
+              _MK_08:'',
+              _MK_09:'',
+              _MK_10:'',
+              _MK_11:'',
+              _MK_12:''
+            };
+
+            var my_object = qinfo.input.argument[0].reduce(function(prev, curr) {
+              prev[curr.inputId] = curr.value;
+              return prev;
+            }, {});
+
+            Object.assign(formObject, my_object);
+            this.multisiteForm.setValue(formObject);
+        });
+      }
   }
 
   create_form(){

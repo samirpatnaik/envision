@@ -33,10 +33,6 @@ export class Model1009Component implements OnInit {
     if(this.pid != ''){
       this.modelresponseService.viewrundetails(this.pid).subscribe(
         qinfo =>{
-         //console.log(qinfo.input.argument);
-         // console.log(this.multisiteForm);
-         // var keys = Object.keys(this.multisiteForm.controls);
-         // console.log("keys", keys);
           const formObject ={
             _IRA: 'N',
             _Num_5_Yr_Rev_Ops: '',
@@ -64,92 +60,20 @@ export class Model1009Component implements OnInit {
             _MK_11:'',
             _MK_12:''
           };
-          const formObject1 ={
-            _IRA: 'N',
-            _Num_5_Yr_Rev_Ops: '',
-            _Num_5_Yr_Rev_LTM: '',
-            _Num_Sites: '',
-            _Avg_Area: '',
-            _Site_Smpl_Count: '',
-            _Proc_Smpl_Count: '',
-            _PL_w_Cost_Basis: 'N',
-            _Treat_Cmplx:'',
-            _Prot_All:'',
-            _CAF: '',
-            _E_Yr:'',
-            _ACF_Val:'',
-            _MK_01:'',
-            _MK_02:'',
-            _MK_03:'',
-            _MK_04:'',
-            _MK_05:8,
-            _MK_06:8,
-            _MK_07:6,
-            _MK_08:5,
-            _MK_09:4,
-            _MK_10:3,
-            _MK_11:2,
-            _MK_12:1
-          };
-        var new_obj;
-          qinfo.input.argument[0].forEach(function (item, index) {
-            var obj = {};
-            obj=item;
-            new_obj = Object.assign({},obj); 
-          });
-        
-  
-          const my_object = qinfo.input.argument[0].reduce(function(prev, curr) {
-  prev[curr.inputId] = curr.value;
-  return prev;
-}, {});
-
-        //   qinfo.input.argument.forEach(element => {
-        //     var obj
-           
-        //  });
-       
-        
-
-          setTimeout(function(){   
-           console.log(my_object);
-            const returnedTarget = Object.assign(formObject, my_object);
-            console.log('returnedTarget', returnedTarget);
-            console.log('formObject', formObject1);
-             this.multisiteForm.setValue(formObject1);
-            
-             }, 3000);        
-          //console.log(element[index].inputId+ ':=> ' +element[index].value);
-            
           
-         // for( let i=0; i < element.length; i++){
-           // console.log(element[i].inputId+ ':=> ' +element[i].value);
-            /*this.multisiteForm.patchValue ({
-              '+ element[i].inputId +'  : element[i].value 
-            });*/
-            //this.multisiteForm.controls('+ element[i].inputId +').setValue(element[i].value);
-          //}
-        //});
-          /*Object.entries(qinfo.input.argument).forEach(
-            ([key, value]) => console.log(key, value)
-          ); */
-         /* for( let i=0; i < this.input_array.length; i++){
-            console.log(this.input_array[i].inputId);
-            this.multisiteForm.patchValue ({
-              this.input_array[i].inputId : this.input_array[i].value
-            });
-          }*/
+          var my_object = qinfo.input.argument[0].reduce(function(prev, curr) {
+            prev[curr.inputId] = curr.value;
+            return prev;
+          }, {});
+
+          
+          Object.assign(formObject, my_object);
+          this.multisiteForm.setValue(formObject);
+         
         });
     }
   }
-   func1( list) {
-    return list.map((item, i) => {
-        
-            console.log(Object.assign({}, item));
-            return Object.assign({}, (item.inputId,item.value)); 
-      
-    }); 
-}
+   
   create_form(){
     this.multisiteForm = this.formBuilder.group({
       _IRA: ['N'],

@@ -31,8 +31,12 @@ const routes: Routes = [
   {path: 'changepassword', component: ChangepwdComponent, canActivate: [AuthGuardService]},
 
   {path: 'createproject', component: CreateProjectComponent, canActivate: [AuthGuardService]},
+
+  {path: 'projectmodel/1009', component: Model1009Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1009/:pid', component: Model1009Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1010', component: Model1010Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1010/:pid', component: Model1010Component, canActivate: [AuthGuardService]},
+
   {path: 'projectrunreport/:mid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
   {path: 'viewrundetails/:pid', component: ViewRunDetailsComponent, canActivate: [AuthGuardService]},
   {path: 'projectresult', component: ProjectResultComponent, canActivate: [AuthGuardService]},
