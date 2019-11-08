@@ -248,7 +248,7 @@ export class Model1009Component implements OnInit {
         this.argument_array.push(modelData);
       }
 
-      let data = { "argument":[this.argument_array] };
+      let data = { "argument":this.argument_array };
       //console.log(data);
       this.modelresponseService.submitModel(1009,data)
       .subscribe(result =>{
