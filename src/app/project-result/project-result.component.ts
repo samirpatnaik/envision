@@ -19,11 +19,11 @@ export class ProjectResultComponent implements OnInit {
     this.spinner.show();
 
     this.modelresponseService.apiData.subscribe((data) => {
-      console.log('Subscriber B:', data);
-      this.description = data.run.description;
-      this.modelname = data.run.modelName;
-      this.costvalue = data.run.estimate.costValue;
+     // console.log('Subscriber B:', data);
       setTimeout(() => {
+         this.description = data.run.description;
+        this.modelname = data.run.modelName;
+        this.costvalue = data.run.estimate.costValue;
         this.spinner.hide();
       }, 0);
     });

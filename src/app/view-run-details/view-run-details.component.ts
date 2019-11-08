@@ -27,7 +27,7 @@ export class ViewRunDetailsComponent implements OnInit {
     this.spinner.show();
     this._model.viewrundetails(this.id).subscribe(
       qinfo =>{
-        console.log(qinfo);
+        //console.log(qinfo);
         //this.projectrunInfo = qinfo.output;
         this.modelId = qinfo.modelId;
        

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ModelresponseService } from '../../services/modelresponse.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 declare function isNumberKey(evt:any): any;
 import $ from 'jquery';
@@ -23,7 +24,7 @@ export class Model1009Component implements OnInit {
   pagetitle: String;
   argument_array = [];
   input_array = [];
-  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private modelresponseService: ModelresponseService, private _router: Router) { }
+  constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private modelresponseService: ModelresponseService, private _router: Router, private spinner: NgxSpinnerService) { }
 
   ngOnInit() {
     this.pid = +this.route.snapshot.paramMap.get('pid');
@@ -145,6 +146,7 @@ export class Model1009Component implements OnInit {
     if (this.multisiteForm.invalid) {
       return;
     } else {
+      this.spinner.show();
       if(this.multisiteForm.controls['_IRA'] && this.multisiteForm.controls['_IRA'].value){
         let modelData = { 'inputId': "_IRA", 'value' : this.multisiteForm.controls['_IRA'].value };
         this.argument_array.push(modelData);
@@ -250,9 +252,12 @@ export class Model1009Component implements OnInit {
       //console.log(data);
       this.modelresponseService.submitModel(1009,data)
       .subscribe(result =>{
-        this.response = result;
-        // set data in service which is to be shared
-        this.modelresponseService.setData(this.response)
+        setTimeout(() => {
+          this.response = result;
+          // set data in service which is to be shared
+          this.modelresponseService.setData(this.response)  
+          this.spinner.hide();
+        }, 0);
         this._router.navigate(["/projectresult"]);
       });
     }

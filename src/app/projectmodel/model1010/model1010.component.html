@@ -1,15 +1,20 @@
 <section id="ModelContainer" class="tw-contact-us bg-offwhite lessmargin">
   <div class="container">
-<div class="row">
-<div class="col">
-  <div class="section-heading text-center">
-    <h3>Pump and Treat</h3>
-  </div>
-</div>
-</div>
+    <div class="row">
+      <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+              <p style="font-size: 20px; color: white">Calculating  Model Result...</p>
+      </ngx-spinner>
+      <div class="col">
+        <div class="section-heading text-center">
+          <h3>Pump and Treat</h3>
+        </div>
+      </div>
+    </div>
 <form [formGroup]="multisiteForm" role="form">
 <div class="contact-us-form">
   <div class="row">
+      
+
       <div class="col-sm-3" style="display: none">
         <ul class="nav nav-pills col-sm-3 nav-stacked newleft">
             <li class="active"><a href="#tab_a" data-toggle="pill" id="req">Required</a></li>
