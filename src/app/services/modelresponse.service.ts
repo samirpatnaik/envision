@@ -36,7 +36,7 @@ export class ModelresponseService {
   }
 
   public getModel(): Observable<any> {
-    console.log(this.session.get('userToken'));
+    //console.log(this.session.get('userToken'));
     return this.http.get(environment.apiUrl+'models', {
       headers:new HttpHeaders({
         'Authorization': 'Bearer ' + this.session.get('userToken'),

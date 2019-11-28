@@ -14,7 +14,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { ProjectReportComponent } from './project-report/project-report.component';
-import { ProjectmodelComponent } from './projectmodel/projectmodel.component';
 import { ProjectResultComponent } from './project-result/project-result.component';
 import { ProjectResultDetailsComponent } from './project-result/project-result-details/project-result-details.component';
 import { Model1009Component } from './projectmodel/model1009/model1009.component';
@@ -27,6 +26,7 @@ import { ModelsComponent } from './models/models.component';
 import { DocsComponent } from './docs/docs.component';
 import { SortingResultPipe } from './sorting-result.pipe';
 import { ViewRunDetailsComponent } from './view-run-details/view-run-details.component';
+import { Model1011Component } from './projectmodel/model1011/model1011.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { ViewRunDetailsComponent } from './view-run-details/view-run-details.com
     DashboardComponent,
     CreateProjectComponent,
     ProjectReportComponent,
-    ProjectmodelComponent,
     ProjectResultComponent,
     ProjectResultDetailsComponent,
     Model1009Component,
@@ -49,6 +48,7 @@ import { ViewRunDetailsComponent } from './view-run-details/view-run-details.com
     DocsComponent,
     SortingResultPipe,
     ViewRunDetailsComponent,
+    Model1011Component,
   ],
   imports: [
     BrowserModule,

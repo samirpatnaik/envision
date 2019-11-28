@@ -151,7 +151,7 @@ export class Model1009Component implements OnInit {
         let modelData = { 'inputId': "_IRA", 'value' : this.multisiteForm.controls['_IRA'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'] && this.multisiteForm.controls['_Num_5_Yr_Rev_LTM'].value){
+      if(this.multisiteForm.controls['_Num_5_Yr_Rev_Ops'] && this.multisiteForm.controls['_Num_5_Yr_Rev_Ops'].value){
         let modelData = { "inputId": "_Num_5_Yr_Rev_Ops", "value" : this.multisiteForm.controls['_Num_5_Yr_Rev_Ops'].value };
         this.argument_array.push(modelData);
       }

@@ -1,0 +1,612 @@
+<section id="ModelContainer" class="tw-contact-us bg-offwhite lessmargin">
+  <div class="container">
+<div class="row">
+    <ngx-spinner [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+        <p style="font-size: 20px; color: white">Calculating  Model Result...</p>
+    </ngx-spinner>
+<div class="col">
+  <div class="section-heading text-center">
+    <h3>Excavation with Off-Site Disposal</h3>
+  </div>
+</div>
+</div>
+<form [formGroup]="multisiteForm" role="form">
+<div class="contact-us-form">
+  <div class="row">
+      <div class="col-sm-3" style="display: none">
+        <ul class="nav nav-pills col-sm-3 nav-stacked newleft">
+          <li class="active"><a href="#tab_a" data-toggle="pill" id="req">Required</a></li>
+          <li><a href="#tab_b" data-toggle="pill" id="sec">Secondary</a></li>
+          <li><a href="#tab_c" data-toggle="pill" id="ter">Tertiary</a></li>
+        </ul>
+  </div>
+  <div class="col-sm-12"> 
+    <div class="tab-content col-sm-12 rightside_formnav">
+      <div class="tabbingformbox_header ">
+        <input type="button" (click)="submit_multisiteForm()" class="btn1" value="Calculate">&nbsp;
+        <a href="#" class="btn2">Save &amp; View Report</a>
+      </div>
+      <div class="tab-pane active" id="tab_a">
+          <br/>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="stepwizard">
+                  <div class="stepwizard-row">
+                      <div class="stepwizard-step">
+                          <span class="btn-circle active">1</span>
+                          <p>Required</p>
+                      </div>
+                      <div class="stepwizard-step">
+                          <span class="btn-circle">2</span>
+                          <p>Secondary</p>
+                      </div>
+                      <div class="stepwizard-step">
+                          <span  class="btn-circle">3</span>
+                          <p>Tertiary</p>
+                      </div> 
+                  </div>
+              </div>
+            </div>
+          </div>
+        <div class="tabbingformbox_padding">
+          <h4>Reuired Section</h4>
+          <div class="row">
+            <div class="col-sm-7">
+              <div class="form-group">
+                <label>Interim Remedial Action</label>&nbsp;&nbsp;
+                <input type="radio" formControlName="_IRA" value="N" id="_IRA" checked="checked" /> No <input type="radio"
+                  formControlName="_IRA" value="Y" id="_IRA" /> Yes
+                <a id="reset0" (click)="reset_radioctrl('_IRA','N')" prevent-default><img src="assets/images/arrow_refresh.png"
+                    id="img1" class="radioreseticon"></a>
+              </div>
+              <div class="form-group">
+                <label>Excavation</label>&nbsp;&nbsp;
+                <input type="radio" formControlName="_Select_1" value="N" id="_Select_1" /> No <input type="radio"
+                  formControlName="_Select_1" value="Y" id="_Select_1"  checked="checked"/> Yes
+                <a id="reset1" (click)="reset_radioctrl('_Select_1','Y')" prevent-default><img src="assets/images/arrow_refresh.png"
+                    id="img1" class="radioreseticon"></a>
+              </div>
+              <div class="form-group">
+                <label>Dredging</label>&nbsp;&nbsp;
+                <input type="radio" formControlName="_Select_2" value="N" id="_Select_2" checked="checked"/> No <input type="radio"
+                  formControlName="_Select_2" value="Y" id="_Select_2"/> Yes
+                <a id="reset2" (click)="reset_radioctrl('_Select_2','N')" prevent-default><img src="assets/images/arrow_refresh.png"
+                    id="img1" class="radioreseticon"></a>
+              </div>
+              <div class="form-group">
+                <label>Select Excavation Input</label>
+                <select class="form-control form-control-lg" id="_Dim_CY" formControlName="_Dim_CY"
+                  (input)="updatebg('_Dim_CY')">
+                  <option value="" disabled selected hidden>-- Select Any --</option>
+                  <option value="1">Enter Cubic Yards</option>
+                  <option value="2">Enter Dimensions (L,W)</option>
+                </select>
+                <a id="reset3" (click)="reset_selectctrl('_Dim_CY',1)" prevent-default><img src="assets/images/arrow_refresh.png"
+                    id="img1" class="reseticon"></a>
+              </div>
+              <div class="form-group">
+                <label>Depth of Contamination</label>
+                <input type="text" class="form-control form-control-lg" id="_Depth_Ft_Con" placeholder="22" formControlName="_Depth_Ft_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Depth_Ft_Con.errors }" (input)="updatebg('_Depth_Ft_Con')">
+                <a id="reset4" (click)="reset_inputctrl('_Depth_Ft_Con','22')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
+                <div *ngIf="submitted && f._Depth_Ft_Con.errors" class="invalid-feedback">
+                  <div *ngIf="f._Depth_Ft_Con.errors?.min">Minimum required number is 5.00</div> 
+                  <div *ngIf="f._Depth_Ft_Con.errors?.max">Maximum number can be 40.00.</div> 
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Excavation/Dredging -  Length</label>
+                <input type="text" class="form-control form-control-lg" id="_L_Ft" placeholder="0" formControlName="_L_Ft" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._L_Ft.errors }"  (input)="updatebg('_L_Ft')">
+                <a id="reset5" (click)="reset_inputctrl('_L_Ft','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
+                <div *ngIf="submitted && f._L_Ft.errors" class="invalid-feedback">
+                  <div *ngIf="f._L_Ft.errors?.min">Minimum required number is 10.</div> 
+                  <div *ngIf="f._L_Ft.errors?.max">Maximum number can be 10000.</div> 
+                </div>
+              </div> 
+              <div class="form-group">
+                <label>Width</label>
+                <input type="text" class="form-control form-control-lg" id="_W_Ft" placeholder="250" formControlName="_W_Ft" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._W_Ft.errors }" (input)="updatebg('_W_Ft')">
+                <a id="reset6" (click)="reset_inputctrl('_W_Ft','250')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>
+                <div *ngIf="submitted && f._W_Ft.errors" class="invalid-feedback">
+                  <div *ngIf="f._W_Ft.errors?.min">Minimum required number is 25.</div> 
+                  <div *ngIf="f._W_Ft.errors?.max">Maximum required number is 500.</div> 
+                </div>
+              </div> 
+              <div class="form-group">
+                <label>Enter Total Cubic Yards (Including Side Slope)</label>
+                <input type="text" class="form-control form-control-lg" id="_Usr_Ttl_CY" placeholder="250000" formControlName="_Usr_Ttl_CY" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Usr_Ttl_CY.errors }" (input)="updatebg('_Usr_Ttl_CY')">
+                <a id="reset7" (click)="reset_inputctrl('_Usr_Ttl_CY','250000')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                <div *ngIf="submitted && f._Usr_Ttl_CY.errors" class="invalid-feedback">
+                  <div *ngIf="f._Usr_Ttl_CY.errors?.min">Minimum required number is 10.</div> 
+                  <div *ngIf="f._Usr_Ttl_CY.errors?.max">Maximum required number is 500000.</div> 
+                </div>
+              </div> 
+              <div class="form-group">
+                <label>Project Area</label>
+                <input type="text" class="form-control form-control-lg" id="_P_Area" placeholder="6.90" formControlName="_P_Area" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_Area.errors }" (input)="updatebg('_P_Area')">
+                <a id="reset8" (click)="reset_inputctrl('_P_Area','6.90')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                <div *ngIf="submitted && f._P_Area.errors" class="invalid-feedback">
+                  <div *ngIf="f._P_Area.errors?.max">Maximum number can be 0.</div> 
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Geology (Soil Type)</label>
+                <input type="text" class="form-control form-control-lg" id="_ST" placeholder="B" formControlName="_ST" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._ST.errors }" (input)="updatebg('_ST')">
+                <a id="reset9" (click)="reset_inputctrl('_ST','B')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+              </div>
+               
+            </div>
+          </div>   
+        </div>
+        
+        <div class="row nextbackbtn">
+            <div class="col-sm-12 text-right"><a href="#null" class="btn3" data-toggle="pill" (click)="validate_tab('sec')">Next <i class="fa fa-chevron-right"></i></a></div>	
+        </div>
+      </div>
+      
+      <div class="tab-pane" id="tab_b">
+        <br/>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="stepwizard">
+                <div class="stepwizard-row">
+                    <div class="stepwizard-step">
+                        <span class="btn-circle">1</span>
+                        <p>Required</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span class="btn-circle active">2</span>
+                        <p>Secondary</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span  class="btn-circle">3</span>
+                        <p>Tertiary</p>
+                    </div> 
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabbingformbox_padding">
+          <h4>Secondary Section</h4>
+            <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <label>Total Volume of Soil to Excavate (CY)</label>
+                      <input type="text" class="form-control form-control-lg" id="_P_CY" placeholder="250000" formControlName="_P_CY" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._P_CY.errors }" (input)="updatebg('_P_CY')">
+                      <a id="reset10" (click)="reset_inputctrl('_P_CY','250000')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      
+                      <div *ngIf="submitted && f._P_CY.errors" class="invalid-feedback">
+                        <div *ngIf="f._P_CY.errors?.min">Minimum required number is 500000.</div> 
+                        <div *ngIf="f._P_CY.errors?.max">Maximum number can be 10.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Moisture</label>
+                      <select class="form-control form-control-lg" id="_Moist" formControlName="_Moist"
+                        (input)="updatebg('_Moist')">
+                        <option value="" disabled selected hidden>-- Select Any --</option>
+                        <option value="A">Dry</option>
+                        <option value="B">Moist</option>
+                        <option value="C">Wet</option>
+                      </select>
+                      <a id="reset11" (click)="reset_selectctrl('_Moist',A)" prevent-default><img src="assets/images/arrow_refresh.png"
+                          id="img1" class="reseticon"></a>
+                  </div>
+                  <div class="form-group">
+                      <label>Density</label>
+                      <input type="text" class="form-control form-control-lg" id="_Den" placeholder="1.50" formControlName="_Den" onkeypress="return isNumberKey(event)"  (input)="updatebg('_Den')">
+                      <a id="reset12" (click)="reset_inputctrl('_Den','1.50')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                  </div>
+                  <div class="form-group">
+                      <label>Percent of Total Volume - Non Hazardous</label>
+                      <input type="text" class="form-control form-control-lg" id="_Prcnt_Non_Haz" placeholder="0" formControlName="_Prcnt_Non_Haz" onkeypress="return isNumberKey(event)"  (input)="updatebg('_Prcnt_Non_Haz')">
+                      <a id="reset13" (click)="reset_inputctrl('_Prcnt_Non_Haz','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                  </div>
+                  <div class="form-group">
+                      <label>Non-Hazardous Solid Waste Bulk Quantity - Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_NH_SW_Con" placeholder="0" formControlName="_NH_SW_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NH_SW_Con.errors }" (input)="updatebg('_NH_SW_Con')">
+                      <a id="reset14" (click)="reset_inputctrl('_NH_SW_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._NH_SW_Con.errors" class="invalid-feedback">
+                        <div *ngIf="f._NH_SW_Con.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._NH_SW_Con.errors?.max">Maximum number can be 50000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Non-Hazardous Liquid Waste Bulk Quantity - Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_NH_LW_Con" placeholder="0" formControlName="_NH_LW_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NH_LW_Con.errors }" (input)="updatebg('_NH_LW_Con')">
+                      <a id="reset15" (click)="reset_inputctrl('_NH_LW_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._NH_LW_Con.errors" class="invalid-feedback">
+                        <div *ngIf="f._NH_LW_Con.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._NH_LW_Con.errors?.max">Maximum number can be 1000000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Solid Waste Bulk Quantity - Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_SW_Bulk_Con" placeholder="375000" formControlName="_SW_Bulk_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._SW_Bulk_Con.errors }" (input)="updatebg('_SW_Bulk_Con')">
+                      <a id="reset16" (click)="reset_inputctrl('_SW_Bulk_Con','375000')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._SW_Bulk_Con.errors" class="invalid-feedback">
+                        <div *ngIf="f._SW_Bulk_Con.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._SW_Bulk_Con.errors?.max">Maximum number can be 50000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Liquid Waste Bulk Quantity - Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_LW_Bulk_Con" placeholder="0" formControlName="_LW_Bulk_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._LW_Bulk_Con.errors }" (input)="updatebg('_LW_Bulk_Con')">
+                      <a id="reset17" (click)="reset_inputctrl('_LW_Bulk_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._LW_Bulk_Con.errors" class="invalid-feedback">
+                        <div *ngIf="f._LW_Bulk_Con.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._LW_Bulk_Con.errors?.max">Maximum number can be 1000000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Number of Solid Watse Drums  - Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_SW_Drm_Con" placeholder="0" formControlName="_SW_Drm_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._SW_Drm_Con.errors }" (input)="updatebg('_SW_Drm_Con')">
+                      <a id="reset18" (click)="reset_inputctrl('_SW_Drm_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._SW_Drm_Con.errors" class="invalid-feedback">
+                        <div *ngIf="f._SW_Drm_Con.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._SW_Drm_Con.errors?.max">Maximum number can be 10000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Number of Liquid Watse Drums  - Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_LW_Drm_Con" placeholder="0" formControlName="_LW_Drm_Con" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._LW_Drm_Con.errors }" (input)="updatebg('_LW_Drm_Con')">
+                      <a id="reset19" (click)="reset_inputctrl('_LW_Drm_Con','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._LW_Drm_Con.errors" class="invalid-feedback">
+                        <div *ngIf="f._LW_Drm_Con.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._LW_Drm_Con.errors?.max">Maximum number can be 10000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Annual Discharge Volume - During Construction</label>
+                      <input type="text" class="form-control form-control-lg" id="_Const_KGPY_Wtr" placeholder="0" formControlName="_Const_KGPY_Wtr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._Const_KGPY_Wtr.errors }" (input)="updatebg('_Const_KGPY_Wtr')">
+                      <a id="reset20" (click)="reset_inputctrl('_Const_KGPY_Wtr','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._Const_KGPY_Wtr.errors" class="invalid-feedback">
+                        <div *ngIf="f._Const_KGPY_Wtr.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._Const_KGPY_Wtr.errors?.max">Maximum number can be 300000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Perform Confirmatory Samples</label>&nbsp;&nbsp;
+                    <input type="radio" formControlName="_Conf_Smpl_YN" value="N" id="_Conf_Smpl_YN" checked="checked" /> No <input
+                      type="radio" formControlName="_Conf_Smpl_YN" value="Y" id="_Conf_Smpl_YN" /> Yes
+                    <a id="reset21" (click)="reset_radioctrl('_Conf_Smpl_YN','N')" prevent-default><img
+                        src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                  </div>
+                  <div class="form-group">
+                      <label>Confirmatory Samples Post Soil Excavation</label>
+                      <input type="text" class="form-control form-control-lg" id="_Conf_Smpl" placeholder="0" formControlName="_Conf_Smpl" onkeypress="return isNumberKey(event)"  (input)="updatebg('_Conf_Smpl')">
+                      <a id="reset22" (click)="reset_inputctrl('_Conf_Smpl','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                  </div>
+                  <div class="form-group">
+                      <label>Number of Phase 4 Process Samples - Air/Gas</label>
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Air" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Air" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph4_Proc_Smpl_Air.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Air')">
+                      <a id="reset23" (click)="reset_inputctrl('_NUM_Ph4_Proc_Smpl_Air','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._NUM_Ph4_Proc_Smpl_Air.errors" class="invalid-feedback">
+                        <div *ngIf="f._NUM_Ph4_Proc_Smpl_Air.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._NUM_Ph4_Proc_Smpl_Air.errors?.max">Maximum number can be 5000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Number of Phase 4 Process Samples - Liquid</label>
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Lqd" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Lqd" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph4_Proc_Smpl_Lqd.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Lqd')">
+                      <a id="reset24" (click)="reset_inputctrl('_NUM_Ph4_Proc_Smpl_Lqd','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._NUM_Ph4_Proc_Smpl_Lqd.errors" class="invalid-feedback">
+                        <div *ngIf="f._NUM_Ph4_Proc_Smpl_Lqd.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._NUM_Ph4_Proc_Smpl_Lqd.errors?.max">Maximum number can be 5000.</div> 
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Number of Phase 4 Process Samples - Solid</label>
+                      <input type="text" class="form-control form-control-lg" id="_NUM_Ph4_Proc_Smpl_Solid" placeholder="0" formControlName="_NUM_Ph4_Proc_Smpl_Solid" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._NUM_Ph4_Proc_Smpl_Solid.errors }" (input)="updatebg('_NUM_Ph4_Proc_Smpl_Solid')">
+                      <a id="reset25" (click)="reset_inputctrl('_NUM_Ph4_Proc_Smpl_Solid','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                      <div *ngIf="submitted && f._NUM_Ph4_Proc_Smpl_Solid.errors" class="invalid-feedback">
+                        <div *ngIf="f._NUM_Ph4_Proc_Smpl_Solid.errors?.min">Minimum required number is 0.</div> 
+                        <div *ngIf="f._NUM_Ph4_Proc_Smpl_Solid.errors?.max">Maximum number can be 5000.</div> 
+                      </div>
+                  </div>
+                  
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>VOCs by GC/MS (Method 8260B)--Halogenated and Nonhalogenated VOCs</label>
+                  <input type="radio" formControlName="_VOC" value="N" id="_VOC" /> No <input
+                  type="radio" formControlName="_VOC" value="Y" id="_VOC" checked="checked" /> Yes
+                  <a id="reset26" (click)="reset_radioctrl('_VOC','Y')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>VOCs (Method 8260B; TO-14/TO-15)--Standard List includes Halogenated and Nonhalogenated VOCs with summa canister</label>
+                  <input type="radio" formControlName="_VOC_Gas" value="N" id="_VOC_Gas" checked="checked" /> No <input
+                  type="radio" formControlName="_VOC_Gas" value="Y" id="_VOC_Gas" /> Yes
+                  <a id="reset27" (click)="reset_radioctrl('_VOC_Gas','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>SVOCs (Method 8270) includes PAHs, Pesticides, PCBs, Herbicides, NDMA</label>
+                  <input type="radio" formControlName="_SVOC" value="N" id="_SVOC" checked="checked" /> No <input
+                  type="radio" formControlName="_SVOC" value="Y" id="_SVOC" /> Yes
+                  <a id="reset28" (click)="reset_radioctrl('_SVOC','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Polyaromatic Hydrocarbons (TO-13)</label>
+                  <input type="radio" formControlName="_SVOC_Gas" value="N" id="_SVOC_Gas" checked="checked" /> No <input
+                  type="radio" formControlName="_SVOC_Gas" value="Y" id="_SVOC_Gas" /> Yes
+                  <a id="reset29" (click)="reset_radioctrl('_SVOC_Gas','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Pesticides and Polychlorinated Biphenyls (PCBs) (Methods 8081/8082)</label>
+                  <input type="radio" formControlName="_PCB" value="N" id="_PCB" checked="checked" /> No <input
+                  type="radio" formControlName="_PCB" value="Y" id="_PCB" /> Yes
+                  <a id="reset30" (click)="reset_radioctrl('_PCB','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Organochlorine Pesticides/PCBs (TO-4)</label>
+                  <input type="radio" formControlName="_PCB_Gas" value="N" id="_PCB_Gas" checked="checked" /> No <input
+                  type="radio" formControlName="_PCB_Gas" value="Y" id="_PCB_Gas" /> Yes
+                  <a id="reset31" (click)="reset_radioctrl('_PCB_Gas','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Munitions Constituants - Explosive Compounds (Nitroaromatics and Nitramines (Method 8330))</label>
+                  <input type="radio" formControlName="_MC" value="N" id="_MC" checked="checked" /> No <input
+                  type="radio" formControlName="_MC" value="Y" id="_MC" /> Yes
+                  <a id="reset32" (click)="reset_radioctrl('_MC','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Inorganic Compounds (TAL Metals (6010/7000s))</label>
+                  <input type="radio" formControlName="_TAL_Mtl" value="N" id="_TAL_Mtl" checked="checked" /> No <input
+                  type="radio" formControlName="_TAL_Mtl" value="Y" id="_TAL_Mtl" /> Yes
+                  <a id="reset33" (click)="reset_radioctrl('_TAL_Mtl','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Professional Labor Phases for this ICER</label>
+                  <input type="radio" formControlName="_Phase3_Req" value="N" id="_Phase3_Req" /> No <input
+                  type="radio" formControlName="_Phase3_Req" value="Y" id="_Phase3_Req" checked="checked" /> Yes
+                  <a id="reset34" (click)="reset_radioctrl('_Phase3_Req','Y')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Professional Labor Phases for this ICER</label>
+                  <input type="radio" formControlName="_Phase4_Req" value="N" id="_Phase4_Req" /> No <input
+                  type="radio" formControlName="_Phase4_Req" value="Y" id="_Phase4_Req" checked="checked" /> Yes
+                  <a id="reset35" (click)="reset_radioctrl('_Phase4_Req','Y')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Professional Labor Phases for this ICER</label>
+                  <input type="radio" formControlName="_Phase6_Req" value="N" id="_Phase6_Req" checked="checked" /> No <input
+                  type="radio" formControlName="_Phase6_Req" value="Y" id="_Phase3_Req" /> Yes
+                  <a id="reset36" (click)="reset_radioctrl('_Phase6_Req','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Professional Labor Phases for this ICER</label>
+                  <input type="radio" formControlName="_Phase7_Req" value="N" id="_Phase7_Req" checked="checked"/> No <input
+                  type="radio" formControlName="_Phase7_Req" value="Y" id="_Phase7_Req" /> Yes
+                  <a id="reset37" (click)="reset_radioctrl('_Phase7_Req','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Include Land Use Controls</label>
+                  <input type="radio" formControlName="_Land_Use" value="N" id="_Land_Use" checked="checked"/> No <input
+                  type="radio" formControlName="_Land_Use" value="Y" id="_Land_Use" /> Yes
+                  <a id="reset38" (click)="reset_radioctrl('_Land_Use','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Engineering Controls (i.e., Fencing)</label>
+                  <input type="radio" formControlName="_Engr_Cntl" value="N" id="_Engr_Cntl" checked="checked"/> No <input
+                  type="radio" formControlName="_Engr_Cntl" value="Y" id="_Engr_Cntl" /> Yes
+                  <a id="reset39" (click)="reset_radioctrl('_Engr_Cntl','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Length of Fencing</label>
+                  <input type="text" class="form-control form-control-lg" id="_L_Ft_F_Input" placeholder="0" formControlName="_L_Ft_F_Input" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._L_Ft_F_Input.errors }" (input)="updatebg('_L_Ft_F_Input')">
+                  <a id="reset40" (click)="reset_inputctrl('_L_Ft_F_Input','0')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                  <div *ngIf="submitted && f._L_Ft_F_Input.errors" class="invalid-feedback">
+                    <div *ngIf="f._L_Ft_F_Input.errors?.min">Minimum required number is 100.</div> 
+                    <div *ngIf="f._L_Ft_F_Input.errors?.max">Maximum number can be 10000.</div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Prepare Remedial Action Completion Report (RACR) or Interim (I-RACR) or RACR Amendment</label>
+                  <input type="radio" formControlName="_RACR_YN" value="N" id="_RACR_YN" checked="checked"/> No <input
+                  type="radio" formControlName="_RACR_YN" value="Y" id="_RACR_YN" /> Yes
+                  <a id="reset41" (click)="reset_radioctrl('_RACR_YN','N')" prevent-default><img
+                    src="assets/images/arrow_refresh.png" id="img1" class="radioreseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Personal Protection Equipment (PPE) Level</label>
+                  <select class="form-control form-control-lg" id="_Prot_All" formControlName="_Prot_All"
+                    (input)="updatebg('_Prot_All')">
+                    <option value="" disabled selected hidden>-- Select Any --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                  </select>
+                  <a id="reset42" (click)="reset_selectctrl('_Prot_All',A)" prevent-default><img src="assets/images/arrow_refresh.png"
+                      id="img1" class="reseticon"></a>
+                </div>
+                <div class="form-group">
+                  <label>Cost Adjustment Factor</label>
+                  <input type="text" class="form-control form-control-lg" id="_CAF" placeholder="1" formControlName="_CAF" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._CAF.errors }" (input)="updatebg('_CAF')">
+                  <a id="reset43" (click)="reset_inputctrl('_CAF','1')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                  <div *ngIf="submitted && f._CAF.errors" class="invalid-feedback">
+                    <div *ngIf="f._CAF.errors?.min">Minimum required number is 0.5.</div> 
+                    <div *ngIf="f._CAF.errors?.max">Maximum number can be 2.0.</div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Year to which Base Year Cost is to be Escalated and Reported</label>
+                  <input type="text" class="form-control form-control-lg" id="_E_Yr" placeholder="2019" formControlName="_E_Yr" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._CAF.errors }" (input)="updatebg('_CAF')">
+                  <a id="reset44" (click)="reset_inputctrl('_E_Yr','2019')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="row nextbackbtn">
+          <div class="col-sm-6 text-left"><a href="#null" class="btn3" data-toggle="pill" (click)="validate_tab('req')"><i class="fa fa-chevron-left"></i> Back</a></div>
+          <div class="col-sm-6 text-right"><a href="#null" class="btn3" data-toggle="pill" (click)="validate_tab('ter')">Next <i class="fa fa-chevron-right"></i></a></div>	
+        </div>
+      </div>
+      <div class="tab-pane" id="tab_c">
+        <br/>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="stepwizard">
+                <div class="stepwizard-row">
+                    <div class="stepwizard-step">
+                        <span class="btn-circle">1</span>
+                        <p>Required</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span class="btn-circle">2</span>
+                        <p>Secondary</p>
+                    </div>
+                    <div class="stepwizard-step">
+                        <span  class="btn-circle active">3</span>
+                        <p>Tertiary</p>
+                    </div> 
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="tabbingformbox_padding">
+          <h4>Tertiary Section</h4>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label>Area Cost Factor - Value</label>
+                  <input type="text" class="form-control form-control-lg" id="_ACF_Val" placeholder="0.00" formControlName="_ACF_Val" onkeypress="return isNumberKey(event)"  (input)="updatebg('_ACF_Val')">
+                  <a id="reset45" (click)="reset_inputctrl('_ACF_Val','0.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                </div>
+                <div class="form-group">
+                  <label>Prime Markup (CLEAN)</label>
+                  <input type="text" class="form-control form-control-lg" id="_MK_01" placeholder="1.37" formControlName="_MK_01" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_01.errors }" (input)="updatebg('_MK_01')">
+                  <a id="reset46" (click)="reset_inputctrl('_MK_01','1.37')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                  <div *ngIf="submitted && f._MK_01.errors" class="invalid-feedback">
+                      <div *ngIf="f._MK_01.errors?.min">Minimum required number is 1.</div> 
+                      <div *ngIf="f._MK_01.errors?.max">Maximum number can be 5.</div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Prime Markup (RAC)</label>
+                  <input type="text" class="form-control form-control-lg" id="_MK_02" placeholder="1.32" formControlName="_MK_02" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_02.errors }" (input)="updatebg('_MK_02')">
+                  <a id="reset47" (click)="reset_inputctrl('_MK_02','1.32')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                  <div *ngIf="submitted && f._MK_02.errors" class="invalid-feedback">
+                      <div *ngIf="f._MK_02.errors?.min">Minimum required number is 1.</div> 
+                      <div *ngIf="f._MK_02.errors?.max">Maximum number can be 5.</div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Program Office</label>
+                  <input type="text" class="form-control form-control-lg" id="_MK_03" placeholder="1.08" formControlName="_MK_03" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_03.errors }" (input)="updatebg('_MK_03')">
+                  <a id="reset48" (click)="reset_inputctrl('_MK_03','1.08')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                  <div *ngIf="submitted && f._MK_03.errors" class="invalid-feedback">
+                      <div *ngIf="f._MK_03.errors?.min">Minimum required number is 1.</div> 
+                      <div *ngIf="f._MK_03.errors?.max">Maximum number can be 1.5.</div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>PCAS</label>
+                  <input type="text" class="form-control form-control-lg" id="_MK_04" placeholder="1.02" formControlName="_MK_04" onkeypress="return isNumberKey(event)" (input)="updatebg('_MK_04')">
+                  <a id="reset49" (click)="reset_inputctrl('_MK_04','1.02')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                </div>
+                <div class="form-group">
+                  <label>SIOH</label>
+                  <input type="text" class="form-control form-control-lg" id="_MK_05" placeholder="1.03" formControlName="_MK_05" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_05.errors }" (input)="updatebg('_MK_05')">
+                  <a id="reset50" (click)="reset_inputctrl('_MK_05','1.03')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                  <div *ngIf="submitted && f._MK_05.errors" class="invalid-feedback">
+                      <div *ngIf="f._MK_05.errors?.min">Minimum required number is 1.</div> 
+                      <div *ngIf="f._MK_05.errors?.max">Maximum number can be 1.2.</div> 
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Remedial Quality Assurance</label>
+                  <input type="text" class="form-control form-control-lg" id="_MK_06" placeholder="1.05" formControlName="_MK_06" onkeypress="return isNumberKey(event)" (input)="updatebg('_MK_06')">
+                  <a id="reset51" (click)="reset_inputctrl('_MK_06','1.05')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                </div> 
+                 
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                    <label>Contingency</label>
+                    <input type="text" class="form-control form-control-lg" id="_MK_07" placeholder="1.05" formControlName="_MK_07" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_07.errors }" (input)="updatebg('_MK_07')">
+                    <a id="reset52" (click)="reset_inputctrl('_MK_07','1.05')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                    <div *ngIf="submitted && f._MK_07.errors" class="invalid-feedback">
+                        <div *ngIf="f._MK_07.errors?.min">Minimum required number is 1.</div> 
+                        <div *ngIf="f._MK_07.errors?.max">Maximum number can be 3.</div> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Closure Report</label>
+                    <input type="text" class="form-control form-control-lg" id="_MK_08" placeholder="1.02" formControlName="_MK_08" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_08.errors }" (input)="updatebg('_MK_08')">
+                    <a id="reset53" (click)="reset_inputctrl('_MK_08','1.02')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                    <div *ngIf="submitted && f._MK_08.errors" class="invalid-feedback">
+                        <div *ngIf="f._MK_08.errors?.min">Minimum required number is 1.</div> 
+                        <div *ngIf="f._MK_08.errors?.max">Maximum number can be 1.2.</div> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>User Markup</label>
+                    <input type="text" class="form-control form-control-lg" id="_MK_09" placeholder="1.00" formControlName="_MK_09" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_09.errors }" (input)="updatebg('_MK_09')">
+                    <a id="reset54" (click)="reset_inputctrl('_MK_09','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                    <div *ngIf="submitted && f._MK_09.errors" class="invalid-feedback">
+                        <div *ngIf="f._MK_09.errors?.min">Minimum required number is 1.</div> 
+                        <div *ngIf="f._MK_09.errors?.max">Maximum number can be 1.5.</div> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Area Cost Factor</label>
+                    <input type="text" class="form-control form-control-lg" id="_MK_10" placeholder="1.00" formControlName="_MK_10" onkeypress="return isNumberKey(event)" (input)="updatebg('_MK_10')">
+                    <a id="reset55" (click)="reset_inputctrl('_MK_10','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                </div> 
+                <div class="form-group">
+                    <label>Escalation Factor</label>
+                    <input type="text" class="form-control form-control-lg" id="_MK_11" placeholder="1.00" formControlName="_MK_11" onkeypress="return isNumberKey(event)" (input)="updatebg('_MK_11')">
+                    <a id="reset56" (click)="reset_inputctrl('_MK_11','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                </div> 
+                <div class="form-group">
+                    <label>Other Markups</label>
+                    <input type="text" class="form-control form-control-lg" id="_MK_12" placeholder="1.00" formControlName="_MK_12" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f._MK_12.errors }" (input)="updatebg('_MK_12')"> 
+                    <a id="reset57" (click)="reset_inputctrl('_MK_12','1.00')"  prevent-default><img src="assets/images/arrow_refresh.png" id="img1" class="reseticon"></a>                          
+
+                    <div *ngIf="submitted && f._MK_12.errors" class="invalid-feedback">
+                        <div *ngIf="f._MK_12.errors?.min">Minimum required number is 1.</div> 
+                        <div *ngIf="f._MK_12.errors?.max">Maximum number can be 1.5.</div> 
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="row nextbackbtn">
+          <div class="col-sm-6 text-left" ><a href="#null" data-toggle="pill" class="btn3" (click)="validate_tab('sec')"> Back</a></div>
+        </div> 
+      </div>
+    </div><!-- tab content -->
+  </div>                    
+</div>
+</div>
+</form>
+</div>
+</section>
