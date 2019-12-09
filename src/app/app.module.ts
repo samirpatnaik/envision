@@ -28,6 +28,7 @@ import { SortingResultPipe } from './sorting-result.pipe';
 import { ViewRunDetailsComponent } from './view-run-details/view-run-details.component';
 import { Model1011Component } from './projectmodel/model1011/model1011.component';
 import { Model1012Component } from './projectmodel/model1012/model1012.component';
+import { Model1013Component } from './projectmodel/model1013/model1013.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { Model1012Component } from './projectmodel/model1012/model1012.component
     ViewRunDetailsComponent,
     Model1011Component,
     Model1012Component,
+    Model1013Component,
   ],
   imports: [
     BrowserModule,

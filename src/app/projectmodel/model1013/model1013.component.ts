@@ -8,11 +8,11 @@ declare function isNumberKey(evt:any): any;
 import $ from 'jquery';
 
 @Component({
-  selector: 'app-model1012',
-  templateUrl: './model1012.component.html',
-  styleUrls: ['./model1012.component.css']
+  selector: 'app-model1013',
+  templateUrl: './model1013.component.html',
+  styleUrls: ['./model1013.component.css']
 })
-export class Model1012Component implements OnInit {
+export class Model1013Component implements OnInit {
 
   multisiteForm: FormGroup;
   submitted = false;
@@ -39,45 +39,79 @@ export class Model1012Component implements OnInit {
             _P_Area: '',
             _ST: '',
             _WDepth:'',
+            _Reagent: '',
+            _No_Inj_Evnts: '',
+            _Cost_Obj_UOM: '',
+            _Cost_Obj_Qty: '',
+            _Usr_Reagent_UC: '',
+            _Usr_Yr: '',
             _AST: '',
             _W_Ft: '',
             _GWDepth: '',
             _Conf: 'N',
             _Unconsolid: 'N',
-            _SnglUse: '',      
-            _Ext_Well_YN: 'Y',
+            _Well_Type_Ext: '',
+
             _HC: '',
             _Ext_Well_Dia: '',
             _WNum_Ext_Well: '',
             _Ext_Well_Mthd:'',
-            _P_GPM: '',
-            _P_CFM_Ext: '',
-            _Inj_Well_YN: 'Y',
-            _GWInj_YN: 'N',
             _Inj_Well_Dia: '',
-            _WNum_Inj_Well: '',
             _Inj_Well_Mthd: '',      
+            _SnglUse: '',      
+            _Inj_Evnt_Factor: '',
+            _WNum_Inj_Well: '',
             _P_CFM_Inj: '',
-            _Ops_Yr: '',
             _YN_Equip_Encl: 'N',
             _YN_Trailr_Blw_Sys: 'Y',
+            _Incl_Perf_Samp: 'Y',
+            _Mon_Well_Dia: '',
+            _Mon_Well_Mthd: '',
+            _Well_Type_Mon: '',
+            _Num_Mon_Well_Usr: '',
+            _Num_Mon_Well: '',
+            _Ancil_Well_Mthd: '',
+            _WNum_Vad_Mon_Usr: '',
+            _WNum_Vad_Mon: '',
+            _Num_Air_Loc: '',
+            _Num_Mon_Well_Smpl: '',
+            _Num_SW_Points: '',
+            _Num_Surf_Loc: '',
+            _NUM_Surf_Per_Loc: '',
+            _Num_Sed_Points: '',
+            _Num_Soil_Borings: '',
+            _WNum_Vad_Mon_Smpl: '',
+            _NUM_Eco_Samp: '',
+            _Ops_Yr: '',
+            _Num_Samp_Event: '',
+            _NUM_Surf: '',
             _Process_Samp_YN: 'Y',      
-            _NUM_PH4_Proc_Smpl_Air: '',
+            _NUM_Ph4_Proc_Smpl_Air: '',
             _NUM_Ph4_Proc_Smpl_Lqd: '',
             _NUM_Ph4_Proc_Smpl_Solid: '',
             _NUM_Ph6_Proc_Smpl_Air: '',
             _NUM_Ph6_Proc_Smpl_Lqd: '',
             _NUM_Ph6_Proc_Smpl_Solid: '',
-
+            _E_Yr:'',
             _P_CFM: '',
-            _VOC: 'Y',
-            _VOC_Gas: 'Y',
-            _SVOC:'N',
-            _SVOC_Gas:'N',
+            _Num_Ports: '',
+            _NUM_Air: '',
+            _NUM_GW: '',
+            _NUM_SW: '',
+            _NUM_Soil: '',
+            _NUM_Soil_Gas: '',
+            _NUM_Sed: '',
+            _VOC: 'N',
+            _VOC_Gas: 'N',
+            _SVOC:'Y',
+            _SVOC_Gas:'Y',
             _PCB:'N',
             _PCB_Gas:'N',
             _MC:'N',
             _TAL_Mtl:'N',
+            _MNA:'N',
+            _NUM_MNA:'',
+            _Sum_Samp_Day:'',
             _Well_Drill_Dia: '',
             _Prcnt_NH_Drill_C:'',
             _Moist:'',
@@ -103,8 +137,6 @@ export class Model1012Component implements OnInit {
             _RACR_YN:'N',
             _Prot_All:'',
             _CAF:'',
-            _E_Yr:'',
-
             _ACF_Val:'',
             _MK_01:'',
             _MK_02:'',
@@ -120,7 +152,7 @@ export class Model1012Component implements OnInit {
             _MK_12:''
           };
           
-console.log(qinfo);
+          console.log(qinfo);
           var my_object = qinfo.input.argument[0].reduce(function(prev, curr) {
             prev[curr.inputId] = curr.value;
             return prev;
@@ -140,45 +172,79 @@ console.log(qinfo);
       _P_Area: ['', [ Validators.min(0.01)]],
       _ST: [''],
       _WDepth:['', [ Validators.min(11), Validators.max(210)]],
+      _Reagent: [''],
+      _No_Inj_Evnts: ['', [ Validators.min(0.01)]],
+      _Cost_Obj_UOM: [''],
+      _Cost_Obj_Qty: [''],
+      _Usr_Reagent_UC: [''],
+      _Usr_Yr: ['', [ Validators.min(2000), Validators.max(2050)]],
       _AST: ['', [ Validators.min(0), Validators.max(200)]],
       _W_Ft: ['', [ Validators.min(25), Validators.max(500)]],
       _GWDepth: ['', [ Validators.min(3), Validators.max(200)]],
       _Conf: ['N'],
-      _Unconsolid: ['N'],
-      _SnglUse: [''],      
-      _Ext_Well_YN: ['Y'],
+      _Unconsolid: ['Y'],
+      _Well_Type_Ext: [''],
       _HC: ['', [ Validators.min(5.00), Validators.max(500.00)]],
       _Ext_Well_Dia: ['', [ Validators.min(1), Validators.max(16)]],
       _WNum_Ext_Well: ['', [ Validators.min(0), Validators.max(200)]],
       _Ext_Well_Mthd:[''],
-      _P_GPM: ['', [ Validators.min(1.00), Validators.max(500.00)]],
-      _P_CFM_Ext: ['', [ Validators.min(20.00), Validators.max(5000.00)]],
-      _Inj_Well_YN: ['Y'],
-      _GWInj_YN: ['N'],
       _Inj_Well_Dia: ['', [ Validators.min(1.00), Validators.max(16.00)]],
-      _WNum_Inj_Well: ['', [ Validators.min(0), Validators.max(500.00)]],
       _Inj_Well_Mthd: [''],      
+      _SnglUse: [''],      
+      _Inj_Evnt_Factor: ['', [ Validators.min(0.01), Validators.max(5.00)]],
+      _WNum_Inj_Well: ['', [ Validators.min(0), Validators.max(500.00)]],
       _P_CFM_Inj: ['', [ Validators.min(20.00), Validators.max(5000.00)]],
-      _Ops_Yr: ['', [ Validators.min(0), Validators.max(30.00)]],
       _YN_Equip_Encl: ['N'],
       _YN_Trailr_Blw_Sys: ['Y'],
+      _Incl_Perf_Samp: ['Y'],
+      _Mon_Well_Dia: ['', [ Validators.min(1.00), Validators.max(16.00)]],
+      _Mon_Well_Mthd: [''],
+      _Well_Type_Mon: [''],
+      _Num_Mon_Well_Usr: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Num_Mon_Well: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Ancil_Well_Mthd: [''],
+      _WNum_Vad_Mon_Usr: ['', [ Validators.min(0.01), Validators.max(50.00)]],
+      _WNum_Vad_Mon: ['', [ Validators.min(0.01), Validators.max(50.00)]],
+      _Num_Air_Loc: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Num_Mon_Well_Smpl: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Num_SW_Points: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Num_Surf_Loc: ['', [ Validators.min(0.01), Validators.max(2500.00)]],
+      _NUM_Surf_Per_Loc: ['', [ Validators.min(0.01), Validators.max(2500.00)]],
+      _Num_Sed_Points: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Num_Soil_Borings: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _WNum_Vad_Mon_Smpl: ['', [ Validators.min(0.01), Validators.max(50.00)]],
+      _NUM_Eco_Samp: ['', [ Validators.min(0.01), Validators.max(200.00)]],
+      _Ops_Yr: ['', [ Validators.min(0), Validators.max(30.00)]],
+      _Num_Samp_Event: [''],
+      _NUM_Surf: ['', [ Validators.min(0.01), Validators.max(2500.00)]],
       _Process_Samp_YN: ['Y'],      
-      _NUM_PH4_Proc_Smpl_Air: ['', [Validators.min(0.01), Validators.max(5000.00)]],
+      _NUM_Ph4_Proc_Smpl_Air: ['', [Validators.min(0.01), Validators.max(5000.00)]],
       _NUM_Ph4_Proc_Smpl_Lqd: ['', [Validators.min(0.01), Validators.max(5000.00)]],
       _NUM_Ph4_Proc_Smpl_Solid: ['', [Validators.min(0.01), Validators.max(5000.00)]],
       _NUM_Ph6_Proc_Smpl_Air: ['', [Validators.min(0.01), Validators.max(5000.00)]],
       _NUM_Ph6_Proc_Smpl_Lqd: ['', [Validators.min(0.01), Validators.max(5000.00)]],
       _NUM_Ph6_Proc_Smpl_Solid: ['', [Validators.min(0.01), Validators.max(5000.00)]],
 
+      _E_Yr:[''],
       _P_CFM: ['', [Validators.min(200), Validators.max(5000)]],
-      _VOC: ['Y'],
-      _VOC_Gas: ['Y'],
-      _SVOC:['N'],
-      _SVOC_Gas:['N'],
+      _Num_Ports: ['', [Validators.min(0.01), Validators.max(20)]],
+      _NUM_Air: [''],
+      _NUM_GW: ['', [Validators.min(0.01), Validators.max(5000)]],
+      _NUM_SW: ['', [Validators.min(0.01), Validators.max(2500)]],
+      _NUM_Soil: ['', [Validators.min(0.01), Validators.max(5000)]],
+      _NUM_Soil_Gas: ['', [Validators.min(0.01), Validators.max(5000)]],
+      _NUM_Sed: ['', [Validators.min(0.01), Validators.max(2500)]],
+      _VOC: ['N'],
+      _VOC_Gas: ['N'],
+      _SVOC:['Y'],
+      _SVOC_Gas:['Y'],
       _PCB:['N'],
       _PCB_Gas:['N'],
       _MC:['N'],
       _TAL_Mtl:['N'],
+      _MNA:['N'],
+      _NUM_MNA:[''],
+      _Sum_Samp_Day:[''],
       _Well_Drill_Dia: ['', [Validators.min(1), Validators.max(16)]],
       _Prcnt_NH_Drill_C:[''],
       _Moist:[''],
@@ -204,7 +270,6 @@ console.log(qinfo);
       _RACR_YN:['N'],
       _Prot_All:[''],
       _CAF:['', [Validators.min(0.5), Validators.max(2.00)]],
-      _E_Yr:[''],
 
       _ACF_Val:[''],
       _MK_01:['', [Validators.min(1), Validators.max(5)]],
@@ -280,6 +345,32 @@ console.log(qinfo);
         let modelData = { "inputId": "_WDepth", "value" : this.multisiteForm.controls['_WDepth'].value };
         this.argument_array.push(modelData);
       }
+
+      if(this.multisiteForm.controls['_Reagent'] && this.multisiteForm.controls['_Reagent'].value){
+        let modelData = { 'inputId': "_Reagent", 'value' : this.multisiteForm.controls['_Reagent'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_No_Inj_Evnts'] && this.multisiteForm.controls['_No_Inj_Evnts'].value){
+        let modelData = { "inputId": "_No_Inj_Evnts", "value" : this.multisiteForm.controls['_No_Inj_Evnts'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Cost_Obj_UOM'] && this.multisiteForm.controls['_Cost_Obj_UOM'].value){
+        let modelData = { "inputId": "_Cost_Obj_UOM", "value" : this.multisiteForm.controls['_Cost_Obj_UOM'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Cost_Obj_Qty'] && this.multisiteForm.controls['_Cost_Obj_Qty'].value){
+        let modelData = { "inputId": "_Cost_Obj_Qty", "value" : this.multisiteForm.controls['_Cost_Obj_Qty'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Usr_Reagent_UC'] && this.multisiteForm.controls['_Usr_Reagent_UC'].value){
+        let modelData = { "inputId": "_Usr_Reagent_UC", "value" : this.multisiteForm.controls['_Usr_Reagent_UC'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Usr_Yr'] && this.multisiteForm.controls['_Usr_Yr'].value){
+        let modelData = { "inputId": "_Usr_Yr", "value" : this.multisiteForm.controls['_Usr_Yr'].value };
+        this.argument_array.push(modelData);
+      }
+
       if(this.multisiteForm.controls['_AST'] && this.multisiteForm.controls['_AST'].value){
         let modelData = { "inputId": "_AST", "value" : this.multisiteForm.controls['_AST'].value };
         this.argument_array.push(modelData);
@@ -300,12 +391,8 @@ console.log(qinfo);
         let modelData = { "inputId": "_Unconsolid", "value" : this.multisiteForm.controls['_Unconsolid'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_SnglUse'] && this.multisiteForm.controls['_SnglUse'].value){
-        let modelData = { "inputId": "_SnglUse", "value" : this.multisiteForm.controls['_SnglUse'].value };
-        this.argument_array.push(modelData);
-      }
-      if(this.multisiteForm.controls['_Ext_Well_YN'] && this.multisiteForm.controls['_Ext_Well_YN'].value){
-        let modelData = { "inputId": "_Ext_Well_YN", "value" : this.multisiteForm.controls['_Ext_Well_YN'].value };
+      if(this.multisiteForm.controls['_Well_Type_Ext'] && this.multisiteForm.controls['_Well_Type_Ext'].value){
+        let modelData = { "inputId": "_Well_Type_Ext", "value" : this.multisiteForm.controls['_Well_Type_Ext'].value };
         this.argument_array.push(modelData);
       }
       if(this.multisiteForm.controls['_HC'] && this.multisiteForm.controls['_HC'].value){
@@ -324,43 +411,28 @@ console.log(qinfo);
         let modelData = { "inputId": "_Ext_Well_Mthd", "value" : this.multisiteForm.controls['_Ext_Well_Mthd'].value };
         this.argument_array.push(modelData);
       }
-
-      if(this.multisiteForm.controls['_P_GPM'] && this.multisiteForm.controls['_P_GPM'].value){
-        let modelData = { "inputId": "_P_GPM", "value" : this.multisiteForm.controls['_P_GPM'].value };
-        this.argument_array.push(modelData);
-      }
-      if(this.multisiteForm.controls['_P_CFM_Ext'] && this.multisiteForm.controls['_P_CFM_Ext'].value){
-        let modelData = { "inputId": "_P_CFM_Ext", "value" : this.multisiteForm.controls['_P_CFM_Ext'].value };
-        this.argument_array.push(modelData);
-      }
-      if(this.multisiteForm.controls['_Inj_Well_YN'] && this.multisiteForm.controls['_Inj_Well_YN'].value){
-        let modelData = { "inputId": "_Inj_Well_YN", "value" : this.multisiteForm.controls['_Inj_Well_YN'].value };
-        this.argument_array.push(modelData);
-      }
-      if(this.multisiteForm.controls['_GWInj_YN'] && this.multisiteForm.controls['_GWInj_YN'].value){
-        let modelData = { "inputId": "_GWInj_YN", "value" : this.multisiteForm.controls['_GWInj_YN'].value };
-        this.argument_array.push(modelData);
-      }
-
       if(this.multisiteForm.controls['_Inj_Well_Dia'] && this.multisiteForm.controls['_Inj_Well_Dia'].value){
         let modelData = { "inputId": "_Inj_Well_Dia", "value" : this.multisiteForm.controls['_Inj_Well_Dia'].value };
-        this.argument_array.push(modelData);
-      }
-      if(this.multisiteForm.controls['_WNum_Inj_Well'] && this.multisiteForm.controls['_WNum_Inj_Well'].value){
-        let modelData = { "inputId": "_WNum_Inj_Well", "value" : this.multisiteForm.controls['_WNum_Inj_Well'].value };
         this.argument_array.push(modelData);
       }
       if(this.multisiteForm.controls['_Inj_Well_Mthd'] && this.multisiteForm.controls['_Inj_Well_Mthd'].value){
         let modelData = { "inputId": "_Inj_Well_Mthd", "value" : this.multisiteForm.controls['_Inj_Well_Mthd'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_P_CFM_Inj'] && this.multisiteForm.controls['_P_CFM_Inj'].value){
-        let modelData = { "inputId": "_P_CFM_Inj", "value" : this.multisiteForm.controls['_P_CFM_Inj'].value };
+      if(this.multisiteForm.controls['_SnglUse'] && this.multisiteForm.controls['_SnglUse'].value){
+        let modelData = { "inputId": "_SnglUse", "value" : this.multisiteForm.controls['_SnglUse'].value };
         this.argument_array.push(modelData);
       }
-
-      if(this.multisiteForm.controls['_Ops_Yr'] && this.multisiteForm.controls['_Ops_Yr'].value){
-        let modelData = { "inputId": "_Ops_Yr", "value" : this.multisiteForm.controls['_Ops_Yr'].value };
+      if(this.multisiteForm.controls['_Inj_Evnt_Factor'] && this.multisiteForm.controls['_Inj_Evnt_Factor'].value){
+        let modelData = { "inputId": "_Inj_Evnt_Factor", "value" : this.multisiteForm.controls['_Inj_Evnt_Factor'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_WNum_Inj_Well'] && this.multisiteForm.controls['_WNum_Inj_Well'].value){
+        let modelData = { "inputId": "_WNum_Inj_Well", "value" : this.multisiteForm.controls['_WNum_Inj_Well'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_P_CFM_Inj'] && this.multisiteForm.controls['_P_CFM_Inj'].value){
+        let modelData = { "inputId": "_P_CFM_Inj", "value" : this.multisiteForm.controls['_P_CFM_Inj'].value };
         this.argument_array.push(modelData);
       }
       if(this.multisiteForm.controls['_YN_Equip_Encl'] && this.multisiteForm.controls['_YN_Equip_Encl'].value){
@@ -371,12 +443,96 @@ console.log(qinfo);
         let modelData = { "inputId": "_YN_Trailr_Blw_Sys", "value" : this.multisiteForm.controls['_YN_Trailr_Blw_Sys'].value };
         this.argument_array.push(modelData);
       }
+      if(this.multisiteForm.controls['_Incl_Perf_Samp'] && this.multisiteForm.controls['_Incl_Perf_Samp'].value){
+        let modelData = { "inputId": "_Incl_Perf_Samp", "value" : this.multisiteForm.controls['_Incl_Perf_Samp'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Mon_Well_Dia'] && this.multisiteForm.controls['_Mon_Well_Dia'].value){
+        let modelData = { "inputId": "_Mon_Well_Dia", "value" : this.multisiteForm.controls['_Mon_Well_Dia'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Mon_Well_Mthd'] && this.multisiteForm.controls['_Mon_Well_Mthd'].value){
+        let modelData = { "inputId": "_Mon_Well_Mthd", "value" : this.multisiteForm.controls['_Mon_Well_Mthd'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Well_Type_Mon'] && this.multisiteForm.controls['_Well_Type_Mon'].value){
+        let modelData = { "inputId": "_Well_Type_Mon", "value" : this.multisiteForm.controls['_Well_Type_Mon'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Mon_Well_Usr'] && this.multisiteForm.controls['_Num_Mon_Well_Usr'].value){
+        let modelData = { "inputId": "_Num_Mon_Well_Usr", "value" : this.multisiteForm.controls['_Num_Mon_Well_Usr'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Mon_Well'] && this.multisiteForm.controls['_Num_Mon_Well'].value){
+        let modelData = { "inputId": "_Num_Mon_Well", "value" : this.multisiteForm.controls['_Num_Mon_Well'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Ancil_Well_Mthd'] && this.multisiteForm.controls['_Ancil_Well_Mthd'].value){
+        let modelData = { "inputId": "_Ancil_Well_Mthd", "value" : this.multisiteForm.controls['_Ancil_Well_Mthd'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_WNum_Vad_Mon_Usr'] && this.multisiteForm.controls['_WNum_Vad_Mon_Usr'].value){
+        let modelData = { "inputId": "_WNum_Vad_Mon_Usr", "value" : this.multisiteForm.controls['_WNum_Vad_Mon_Usr'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_WNum_Vad_Mon'] && this.multisiteForm.controls['_WNum_Vad_Mon'].value){
+        let modelData = { "inputId": "_WNum_Vad_Mon", "value" : this.multisiteForm.controls['_WNum_Vad_Mon'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Air_Loc'] && this.multisiteForm.controls['_Num_Air_Loc'].value){
+        let modelData = { "inputId": "_Num_Air_Loc", "value" : this.multisiteForm.controls['_Num_Air_Loc'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Mon_Well_Smpl'] && this.multisiteForm.controls['_Num_Mon_Well_Smpl'].value){
+        let modelData = { "inputId": "_Num_Mon_Well_Smpl", "value" : this.multisiteForm.controls['_Num_Mon_Well_Smpl'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_SW_Points'] && this.multisiteForm.controls['_Num_SW_Points'].value){
+        let modelData = { "inputId": "_Num_SW_Points", "value" : this.multisiteForm.controls['_Num_SW_Points'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Surf_Loc'] && this.multisiteForm.controls['_Num_Surf_Loc'].value){
+        let modelData = { "inputId": "_Num_Surf_Loc", "value" : this.multisiteForm.controls['_Num_Surf_Loc'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Surf_Per_Loc'] && this.multisiteForm.controls['_NUM_Surf_Per_Loc'].value){
+        let modelData = { "inputId": "_NUM_Surf_Per_Loc", "value" : this.multisiteForm.controls['_NUM_Surf_Per_Loc'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Sed_Points'] && this.multisiteForm.controls['_Num_Sed_Points'].value){
+        let modelData = { "inputId": "_Num_Sed_Points", "value" : this.multisiteForm.controls['_Num_Sed_Points'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Soil_Borings'] && this.multisiteForm.controls['_Num_Soil_Borings'].value){
+        let modelData = { "inputId": "_Num_Soil_Borings", "value" : this.multisiteForm.controls['_Num_Soil_Borings'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_WNum_Vad_Mon_Smpl'] && this.multisiteForm.controls['_WNum_Vad_Mon_Smpl'].value){
+        let modelData = { "inputId": "_WNum_Vad_Mon_Smpl", "value" : this.multisiteForm.controls['_WNum_Vad_Mon_Smpl'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Eco_Samp'] && this.multisiteForm.controls['_NUM_Eco_Samp'].value){
+        let modelData = { "inputId": "_NUM_Eco_Samp", "value" : this.multisiteForm.controls['_NUM_Eco_Samp'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Ops_Yr'] && this.multisiteForm.controls['_Ops_Yr'].value){
+        let modelData = { "inputId": "_Ops_Yr", "value" : this.multisiteForm.controls['_Ops_Yr'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Samp_Event'] && this.multisiteForm.controls['_Num_Samp_Event'].value){
+        let modelData = { "inputId": "_Num_Samp_Event", "value" : this.multisiteForm.controls['_Num_Samp_Event'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Surf'] && this.multisiteForm.controls['_NUM_Surf'].value){
+        let modelData = { "inputId": "_NUM_Surf", "value" : this.multisiteForm.controls['_NUM_Surf'].value };
+        this.argument_array.push(modelData);
+      }
       if(this.multisiteForm.controls['_Process_Samp_YN'] && this.multisiteForm.controls['_Process_Samp_YN'].value){
         let modelData = { "inputId": "_Process_Samp_YN", "value" : this.multisiteForm.controls['_Process_Samp_YN'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_NUM_PH4_Proc_Smpl_Air'] && this.multisiteForm.controls['_NUM_PH4_Proc_Smpl_Air'].value){
-        let modelData = { "inputId": "_NUM_PH4_Proc_Smpl_Air", "value" : this.multisiteForm.controls['_NUM_PH4_Proc_Smpl_Air'].value };
+      if(this.multisiteForm.controls['_NUM_Ph4_Proc_Smpl_Air'] && this.multisiteForm.controls['_NUM_Ph4_Proc_Smpl_Air'].value){
+        let modelData = { "inputId": "_NUM_Ph4_Proc_Smpl_Air", "value" : this.multisiteForm.controls['_NUM_Ph4_Proc_Smpl_Air'].value };
         this.argument_array.push(modelData);
       }
       if(this.multisiteForm.controls['_NUM_Ph4_Proc_Smpl_Lqd'] && this.multisiteForm.controls['_NUM_Ph4_Proc_Smpl_Lqd'].value){
@@ -399,8 +555,41 @@ console.log(qinfo);
         let modelData = { "inputId": "_NUM_Ph6_Proc_Smpl_Solid", "value" : this.multisiteForm.controls['_NUM_Ph6_Proc_Smpl_Solid'].value };
         this.argument_array.push(modelData);
       }
+
+      if(this.multisiteForm.controls['_E_Yr'] && this.multisiteForm.controls['_E_Yr'].value){
+        let modelData = { "inputId": "_E_Yr", "value" : this.multisiteForm.controls['_E_Yr'].value };
+        this.argument_array.push(modelData);
+      }
       if(this.multisiteForm.controls['_P_CFM'] && this.multisiteForm.controls['_P_CFM'].value){
         let modelData = { "inputId": "_P_CFM", "value" : this.multisiteForm.controls['_P_CFM'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Num_Ports'] && this.multisiteForm.controls['_Num_Ports'].value){
+        let modelData = { "inputId": "_Num_Ports", "value" : this.multisiteForm.controls['_Num_Ports'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Air'] && this.multisiteForm.controls['_NUM_Air'].value){
+        let modelData = { "inputId": "_NUM_Air", "value" : this.multisiteForm.controls['_NUM_Air'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_GW'] && this.multisiteForm.controls['_NUM_GW'].value){
+        let modelData = { "inputId": "_NUM_GW", "value" : this.multisiteForm.controls['_NUM_GW'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_SW'] && this.multisiteForm.controls['_NUM_SW'].value){
+        let modelData = { "inputId": "_NUM_SW", "value" : this.multisiteForm.controls['_NUM_SW'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Soil'] && this.multisiteForm.controls['_NUM_Soil'].value){
+        let modelData = { "inputId": "_NUM_Soil", "value" : this.multisiteForm.controls['_NUM_Soil'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Soil_Gas'] && this.multisiteForm.controls['_NUM_Soil_Gas'].value){
+        let modelData = { "inputId": "_NUM_Soil_Gas", "value" : this.multisiteForm.controls['_NUM_Soil_Gas'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_Sed'] && this.multisiteForm.controls['_NUM_Sed'].value){
+        let modelData = { "inputId": "_NUM_Sed", "value" : this.multisiteForm.controls['_NUM_Sed'].value };
         this.argument_array.push(modelData);
       }
       if(this.multisiteForm.controls['_VOC'] && this.multisiteForm.controls['_VOC'].value){
@@ -435,6 +624,20 @@ console.log(qinfo);
         let modelData = { "inputId": "_TAL_Mtl", "value" : this.multisiteForm.controls['_TAL_Mtl'].value };
         this.argument_array.push(modelData);
       }
+
+      if(this.multisiteForm.controls['_MNA'] && this.multisiteForm.controls['_MNA'].value){
+        let modelData = { "inputId": "_MNA", "value" : this.multisiteForm.controls['_MNA'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_NUM_MNA'] && this.multisiteForm.controls['_NUM_MNA'].value){
+        let modelData = { "inputId": "_NUM_MNA", "value" : this.multisiteForm.controls['_NUM_MNA'].value };
+        this.argument_array.push(modelData);
+      }
+      if(this.multisiteForm.controls['_Sum_Samp_Day'] && this.multisiteForm.controls['_Sum_Samp_Day'].value){
+        let modelData = { "inputId": "_Sum_Samp_Day", "value" : this.multisiteForm.controls['_Sum_Samp_Day'].value };
+        this.argument_array.push(modelData);
+      }
+
       if(this.multisiteForm.controls['_Well_Drill_Dia'] && this.multisiteForm.controls['_Well_Drill_Dia'].value){
         let modelData = { "inputId": "_Well_Drill_Dia", "value" : this.multisiteForm.controls['_Well_Drill_Dia'].value };
         this.argument_array.push(modelData);
@@ -544,11 +747,6 @@ console.log(qinfo);
         let modelData = { "inputId": "_CAF", "value" : this.multisiteForm.controls['_CAF'].value };
         this.argument_array.push(modelData);
       }
-      if(this.multisiteForm.controls['_E_Yr'] && this.multisiteForm.controls['_E_Yr'].value){
-        let modelData = { "inputId": "_E_Yr", "value" : this.multisiteForm.controls['_E_Yr'].value };
-        this.argument_array.push(modelData);
-      }
-      
       if(this.multisiteForm.controls['_ACF_Val'] && this.multisiteForm.controls['_ACF_Val'].value){
         let modelData = { "inputId": "_ACF_Val", "value" : this.multisiteForm.controls['_ACF_Val'].value };
         this.argument_array.push(modelData);
@@ -604,7 +802,7 @@ console.log(qinfo);
 
       let data = { "argument":this.argument_array };
       //console.log(data);
-      this.modelresponseService.submitModel(1012,data)
+      this.modelresponseService.submitModel(1013,data)
       .subscribe(result =>{
         setTimeout(() => {
           this.response = result;
