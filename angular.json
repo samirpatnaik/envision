@@ -35,6 +35,7 @@
               "src/assets/assets/css/paper-bootstrap-wizard.css",
               "src/assets/assets/css/demo.css",
               "src/assets/assets/css/themify-icons.css",
+              "src/assets/css/payment.css",
               "src/styles.css"
                       ],
             "scripts": [

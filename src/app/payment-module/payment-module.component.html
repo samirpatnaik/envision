@@ -1,0 +1,125 @@
+<!-- <form>
+  <input type="text" placeholder="Credit Card #" name="cardNumber">
+  <input type="text" placeholder="Expiration Month" name="expMonth">
+  <input type="text" placeholder="Expiration Year" name="expYear">
+  <input type="text" placeholder="CVC" name="cvc">
+  <button (click)="chargeCreditCard()">Submit</button>
+</form> -->
+<section id="ModelContainer" class="tw-contact-us bg-offwhite lessmargin">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="section-heading text-center">
+          <h3>Make Payment</h3>
+
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingTwo">
+            <h4 class="panel-title">
+              Yearly Premium Subscription
+            </h4>
+          </div>
+          <div class="panel-collapse collapse in">
+            <div class="panel-body subscription_content">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book.<br>
+                <br>
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages.<br>
+                <br>
+                And more recently with desktop publishing <a href="#">software like Aldus PageMaker</a> including
+                versions of Lorem Ipsum.</p>
+              <hr class="spacer30px" />
+
+              <table class="table" width="100%" cellpadding="0" cellspacing="0">
+                <tbody>
+                  <tr>
+                    <td><strong>John Smith</strong></td>
+                    <td align="right">AUD 105.30</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sub Total</strong></td>
+                    <td align="right">AUD 105.30</td>
+                  </tr>
+                  <tr>
+                    <td><strong>GST</strong></td>
+                    <td align="right">AUD 105.30</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Your Yearly Total</strong></td>
+                    <td align="right">AUD 105.30</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          
+          <form [formGroup]="paymentForm" (ngSubmit)="chargeCreditCard()">
+          <div class="panel-collapse collapse in">
+            <div class="error" style="text-align: center">{{strMessage}}</div>
+            <div class="panel-body subscription_content">
+              <div class="row">
+                <div class="col-md-12 fomrboxes">
+                  <label>Full Name on Card</label>
+                  <input type="text" class="form-control" formControlName="cardholder_name" [ngClass]="{ 'is-invalid': submitted && f.cardholder_name.errors }" placeholder="Your Name In Card">
+                  <div *ngIf="submitted && f.cardholder_name.errors" class="invalid-feedback">
+                    <div *ngIf="f.cardholder_name.errors.required">Full Name on Card is required</div>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 fomrboxes">
+                  <label>Card Number</label>
+                  <input type="text" class="form-control" formControlName="card_number" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f.card_number.errors }" placeholder="You Card Number">
+                  <div *ngIf="submitted && f.card_number.errors" class="invalid-feedback">
+                    <div *ngIf="f.card_number.errors.required">Card Number is required</div>
+                  </div>    
+                </div>
+                <div class="col-md-6 fomrboxes">
+                  <label>Card CVV</label>
+                  <input type="text" class="form-control" formControlName="card_cvv" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f.card_cvv.errors }" placeholder="Card CVV">
+                  <div *ngIf="submitted && f.card_cvv.errors" class="invalid-feedback">
+                    <div *ngIf="f.card_cvv.errors.required">Card CVV is required</div>
+                  </div>    
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 fomrboxes">
+                  <label>Card Expiry Month</label>
+                  <input type="text" class="form-control" formControlName="card_month" onkeypress="return isNumberKey(event)"  [ngClass]="{ 'is-invalid': submitted && f.card_month.errors }" placeholder="MM">
+                  <div *ngIf="submitted && f.card_month.errors" class="invalid-feedback">
+                    <div *ngIf="f.card_month.errors.required">Card Expiry Month is required</div>
+                  </div>   
+                </div>
+                <div class="col-md-6 fomrboxes">
+                  <label>Card Expiry Year</label>
+                  <input type="text" class="form-control" formControlName="card_year" onkeypress="return isNumberKey(event)" [ngClass]="{ 'is-invalid': submitted && f.card_year.errors }" placeholder="YYYY">
+                  <div *ngIf="submitted && f.card_year.errors" class="invalid-feedback">
+                    <div *ngIf="f.card_year.errors.required">Card Expiry Year is required</div>
+                  </div>   
+                </div>
+              </div>
+              <hr class="spacer20px" />
+              <div class="row">
+                <div class="col-md-12 fomrboxes">
+                  <button type="submit" class="btn" > Subscribe to Plan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

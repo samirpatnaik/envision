@@ -5,6 +5,7 @@ import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import {HttpModule} from '@angular/http'
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
@@ -29,6 +30,7 @@ import { ViewRunDetailsComponent } from './view-run-details/view-run-details.com
 import { Model1011Component } from './projectmodel/model1011/model1011.component';
 import { Model1012Component } from './projectmodel/model1012/model1012.component';
 import { Model1013Component } from './projectmodel/model1013/model1013.component';
+import { PaymentModuleComponent } from './payment-module/payment-module.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,7 @@ import { Model1013Component } from './projectmodel/model1013/model1013.component
     Model1011Component,
     Model1012Component,
     Model1013Component,
+    PaymentModuleComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { Model1013Component } from './projectmodel/model1013/model1013.component
     HttpClientModule,
     FormsModule,
     FilterPipeModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,39 @@
+
+.subscription_content{font-size:13px;}
+.subscription_content p{ font-size:13px; line-height:19px;}
+.subscription_content label{ display:block; margin-bottom:2px; font-weight:600;}
+.subscription_content .fomrboxes{ margin-bottom:10px;}
+.subscription_content .fomrboxes .form-control{ background-color:#fff; font-size:14px; height:35px;}
+.subscription_content .fomrboxes .btn{ border-radius:0px; background:#5d9817; border:none; color:#fff; display:inline-block; padding:10px 20px;}
+.subscription_content .fomrboxes .btn:hover{ background:#333; }
+
+
+
+
+@media only screen and (min-width:1201px) and (max-width:1400px) { 
+
+
+}
+
+@media only screen and (min-width:992px) and (max-width:1200px) {
+
+
+
+
+
+}
+@media only screen and (min-width:768px) and (max-width:991px) {
+
+
+
+}
+@media only screen and (min-width:480px) and (max-width:767px) {
+
+
+}
+@media only screen and (max-width:479px) {
+
+
+
+
+}

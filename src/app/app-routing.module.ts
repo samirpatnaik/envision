@@ -21,6 +21,7 @@ import { Model1012Component } from './projectmodel/model1012/model1012.component
 import { Model1013Component } from './projectmodel/model1013/model1013.component';
 
 import { ViewRunDetailsComponent } from './view-run-details/view-run-details.component';
+import { PaymentModuleComponent } from './payment-module/payment-module.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: 'projectrunreport/:mid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
   {path: 'viewrundetails/:pid', component: ViewRunDetailsComponent, canActivate: [AuthGuardService]},
   {path: 'projectresult', component: ProjectResultComponent, canActivate: [AuthGuardService]},
+  {path: 'subscribe', component: PaymentModuleComponent},
 ];
 
 @NgModule({
