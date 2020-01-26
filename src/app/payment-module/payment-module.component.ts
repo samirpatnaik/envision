@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Headers} from '@angular/http';
 import { environment } from '../../environments/environment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SessionStorageService } from 'angular-web-storage';
 declare function isNumberKey(evt:any): any;
 
 @Component({
@@ -14,7 +15,7 @@ export class PaymentModuleComponent implements OnInit {
   paymentForm: FormGroup;
   submitted = false;
   strMessage: string;
-  constructor(private formBuilder: FormBuilder,private http: Http) { }
+  constructor(private formBuilder: FormBuilder,private http: Http, private session: SessionStorageService) { }
 
   ngOnInit() {
     this.create_form();
@@ -56,8 +57,9 @@ export class PaymentModuleComponent implements OnInit {
   }
 
   chargeCard(token: string) {
-    const headers = new Headers({'token': token, 'amount': 100});
-    this.http.post(environment.apiUrl+'/payment/charge', {}, {headers: headers})
+    const headers = new Headers({'token': token, 'amount': 100, 'Authorization': 'Bearer ' + this.session.get('userToken')});
+
+    this.http.post(environment.apiUrl+'payment/charge', {}, {headers: headers})
       .subscribe(resp => {
         console.log(resp);
       })
