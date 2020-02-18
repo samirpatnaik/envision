@@ -38,7 +38,6 @@ export class PaymentModuleComponent implements OnInit {
     if (this.paymentForm.invalid) { 
       return;
     } else {
-      let form = document.getElementsByTagName("form")[0];
       (<any>window).Stripe.card.createToken({
         number: this.paymentForm.controls['card_number'].value,
         exp_month: this.paymentForm.controls['card_month'].value,

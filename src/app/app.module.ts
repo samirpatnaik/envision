@@ -31,6 +31,7 @@ import { Model1011Component } from './projectmodel/model1011/model1011.component
 import { Model1012Component } from './projectmodel/model1012/model1012.component';
 import { Model1013Component } from './projectmodel/model1013/model1013.component';
 import { PaymentModuleComponent } from './payment-module/payment-module.component';
+import { PackageModuleComponent } from './package-module/package-module.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { PaymentModuleComponent } from './payment-module/payment-module.componen
     Model1012Component,
     Model1013Component,
     PaymentModuleComponent,
+    PackageModuleComponent,
   ],
   imports: [
     BrowserModule,

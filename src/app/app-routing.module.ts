@@ -22,7 +22,7 @@ import { Model1013Component } from './projectmodel/model1013/model1013.component
 
 import { ViewRunDetailsComponent } from './view-run-details/view-run-details.component';
 import { PaymentModuleComponent } from './payment-module/payment-module.component';
-
+import { PackageModuleComponent } from './package-module/package-module.component';
 const routes: Routes = [
   {path: '', component: HomepageComponent},
   {path: 'models', component: ModelsComponent},
@@ -51,6 +51,7 @@ const routes: Routes = [
   {path: 'projectrunreport/:mid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
   {path: 'viewrundetails/:pid', component: ViewRunDetailsComponent, canActivate: [AuthGuardService]},
   {path: 'projectresult', component: ProjectResultComponent, canActivate: [AuthGuardService]},
+  {path: 'package', component: PackageModuleComponent},
   {path: 'subscribe', component: PaymentModuleComponent},
 ];
 

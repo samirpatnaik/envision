@@ -6016,4 +6016,13 @@ ul.navbar-nav li.nav-item > a{padding: 25px 15px 10px !important;}
 .btn-circle {width: 40px;height: 40px;text-align: center;padding: 6px 0;font-size: 16px;font-weight:bold;line-height: 30px;border-radius: 50%;background-color:#c8c8c8; display:inline-block;}
 .btn-circle.active{background-color:#00b60f; color:#fff;}
 
-
+.premium_boxes { }
+.premium_boxes_white{ background-color:#fff;padding:20px;box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);}
+.premium_boxes_white ul{ padding:0px; margin:0px 0px 0px 15px;}
+.premium_boxes_white ul li{ padding:0px; margin:0px 0px 10px 0px;}
+.premium_boxes_white_titlebox{ border-bottom:1px solid #ccc; padding-bottom:20px;}
+.premium_boxes_white_titlebox p{ margin:0px; font-size:14px;}
+.premium_boxes_white_titlebox h4{ margin:0px 0px 5px 0px;}
+.purchaseplanbtn{ display:block; padding:7px 20px; background-color:#00b70f; border-radius:5px; color:#fff; text-align:center; margin-top:20px;}
+.purchaseplanbtn:hover{background-color:#333; color:#fff;}
+.premium_boxes_white_content h5{ margin:30px 0px 5px 0px; text-align:left; font-weight:600; color:#6f6f6f;}
