@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SessionStorageService } from 'angular-web-storage';
 declare function isNumberKey(evt:any): any;
+import { ModelresponseService } from '../services/modelresponse.service';
 
 @Component({
   selector: 'app-payment-module',
@@ -15,10 +16,17 @@ export class PaymentModuleComponent implements OnInit {
   paymentForm: FormGroup;
   submitted = false;
   strMessage: string;
-  constructor(private formBuilder: FormBuilder,private http: Http, private session: SessionStorageService) { }
+  currentPakageValue: any;
+  selectedPackageType: any;
+
+  constructor(private modelresponseService: ModelresponseService,private formBuilder: FormBuilder,private http: Http, private session: SessionStorageService) { }
 
   ngOnInit() {
     this.create_form();
+    this.currentPakageValue = this.modelresponseService.getPackageValue();
+    this.selectedPackageType = this.modelresponseService.getPackageType();
+
+    console.log('this.currentPakageValue', this.currentPakageValue);
   }
 
   create_form(){
@@ -56,7 +64,7 @@ export class PaymentModuleComponent implements OnInit {
   }
 
   chargeCard(token: string) {
-    const headers = new Headers({'token': token, 'amount': 100, 'Authorization': 'Bearer ' + this.session.get('userToken')});
+    const headers = new Headers({'token': token, 'amount': this.currentPakageValue, 'Authorization': 'Bearer ' + this.session.get('userToken')});
 
     this.http.post(environment.apiUrl+'payment/charge', {}, {headers: headers})
       .subscribe(resp => {
