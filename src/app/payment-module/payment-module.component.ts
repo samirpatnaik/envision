@@ -24,8 +24,6 @@ export class PaymentModuleComponent implements OnInit {
   ngOnInit() {
     this.create_form();
     this.currentPakageValue = this.modelresponseService.getPackageValue();
-    this.selectedPackageType = this.modelresponseService.getPackageType();
-
     console.log('this.currentPakageValue', this.currentPakageValue);
   }
 

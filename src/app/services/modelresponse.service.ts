@@ -17,7 +17,6 @@ export class ModelresponseService {
   public apiData = new BehaviorSubject<any>(null);
   public apiData$ = this.apiData.asObservable();
   packageValue :any;
-  packageType : any;
 
   public submitModel(lid: number, body:any){
     return this.http.post(environment.apiUrl+'eep/'+`${lid}`,body,
@@ -77,17 +76,15 @@ export class ModelresponseService {
     }));;
   }
 
-  setPakageValue(pakage, pakageType){
-    this.packageValue  = pakage;
-    this.packageType = pakageType;
-  }
+  
 
+  setPakageValue(pakageDetails){
+    this.packageValue  = pakageDetails;
+  }
   getPackageValue ()
   {
     return  this.packageValue;
   }
 
-  getPackageType(){
-      return  this.packageType;
-  }
+ 
 }
