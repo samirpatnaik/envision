@@ -18,8 +18,8 @@ export class ModelresponseService {
   public apiData$ = this.apiData.asObservable();
   packageValue :any;
 
-  public submitModel(lid: number, body:any){
-    return this.http.post(environment.apiUrl+'eep/'+`${lid}`,body,
+  public submitModel(lid: number,projectID: any, body:any){
+    return this.http.post(environment.apiUrl+'eep/'+`${lid}`+'/'+`${projectID}`,body,
       {
         headers:new HttpHeaders({
           'Authorization': 'Bearer ' + this.session.get('userToken'),

@@ -456,7 +456,7 @@ export class Model1011Component implements OnInit {
 
       let data = { "argument":this.argument_array };
       //console.log(data);
-      this.modelresponseService.submitModel(1011,data)
+      this.modelresponseService.submitModel(1011,this.pid,data)
       .subscribe(result =>{
         setTimeout(() => {
           this.response = result;

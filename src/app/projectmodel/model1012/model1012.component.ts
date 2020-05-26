@@ -604,7 +604,7 @@ console.log(qinfo);
 
       let data = { "argument":this.argument_array };
       //console.log(data);
-      this.modelresponseService.submitModel(1012,data)
+      this.modelresponseService.submitModel(1012,this.pid,data)
       .subscribe(result =>{
         setTimeout(() => {
           this.response = result;
