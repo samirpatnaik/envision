@@ -18,6 +18,7 @@ export class Model1010Component implements OnInit {
   submitted = false;
   id : any;
   pid: any;
+  runflag: any;
   data : any;
   response: any;
   pagetitle: String;
@@ -26,9 +27,10 @@ export class Model1010Component implements OnInit {
 
   ngOnInit() {
     this.pid = +this.route.snapshot.paramMap.get('pid');
+    this.runflag = this.route.snapshot.paramMap.get('runflag');
     this.create_form();
     isNumberKey(event);
-    if(this.pid != ''){
+    if(this.pid != '' && this.runflag == ''){
       this.modelresponseService.viewrundetails(this.pid).subscribe(
         qinfo =>{
             const formObject ={
@@ -785,7 +787,6 @@ export class Model1010Component implements OnInit {
 
 
       let data = { "argument":this.argument_array };
-      
      //console.log(data);
       this.modelresponseService.submitModel(1010,this.pid,data)
       .subscribe(result =>{

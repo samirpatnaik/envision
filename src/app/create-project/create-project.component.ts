@@ -67,9 +67,12 @@ export class CreateProjectComponent  implements OnInit{
        };
         // console.log(registerdata);
         this.modelresponseService.saveproject(projectdata)
-        .subscribe(res=>{
-        if(res.statusText == 'OK'){
-          this.router.navigate(["/projectmodel/"+this.listmodelForm.controls['listoption'].value]); 
+        .subscribe(reponseObject=>{
+          let projectData = (reponseObject['body']['id']);
+          //console.log("Response1", reponseObject.body);
+          //console.log("Response2", projectData);
+        if(reponseObject.statusText == 'OK' && projectData){
+          this.router.navigate(["/projectmodel/"+this.listmodelForm.controls['listoption'].value+"/"+ projectData+"/newrun"]); 
         }
         }, err => {
         console.log(err);

@@ -37,15 +37,15 @@ const routes: Routes = [
 
   {path: 'createproject', component: CreateProjectComponent, canActivate: [AuthGuardService]},
 
-  {path: 'projectmodel/1009', component: Model1009Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1009/:pid/:runflag', component: Model1009Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1009/:pid', component: Model1009Component, canActivate: [AuthGuardService]},
-  {path: 'projectmodel/1010', component: Model1010Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1010/:pid/:runflag', component: Model1010Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1010/:pid', component: Model1010Component, canActivate: [AuthGuardService]},
-  {path: 'projectmodel/1011', component: Model1011Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1011/:pid/:runflag', component: Model1011Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1011/:pid', component: Model1011Component, canActivate: [AuthGuardService]},
-  {path: 'projectmodel/1012', component: Model1012Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1012/:pid/:runflag', component: Model1012Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1012/:pid', component: Model1012Component, canActivate: [AuthGuardService]},
-  {path: 'projectmodel/1013', component: Model1013Component, canActivate: [AuthGuardService]},
+  {path: 'projectmodel/1013/:pid/:runflag', component: Model1013Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1013/:pid', component: Model1013Component, canActivate: [AuthGuardService]},
 
   {path: 'projectrunreport/:mid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
