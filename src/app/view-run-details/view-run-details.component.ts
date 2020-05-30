@@ -20,6 +20,7 @@ export class ViewRunDetailsComponent implements OnInit {
   modelId: any;
   id: any;
   response: any;
+  projectId: any;
 
   ngOnInit() {
     this.id = +this.route.snapshot.paramMap.get('pid');
@@ -30,7 +31,7 @@ export class ViewRunDetailsComponent implements OnInit {
         //console.log(qinfo);
         //this.projectrunInfo = qinfo.output;
         this.modelId = qinfo.modelId;
-       
+        this.projectId = qinfo.projectId; 
         this.displaystring = this.sanitizer.bypassSecurityTrustHtml(qinfo.displayString);
   
         setTimeout(() => {

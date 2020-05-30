@@ -48,7 +48,7 @@ const routes: Routes = [
   {path: 'projectmodel/1013/:pid/:runflag', component: Model1013Component, canActivate: [AuthGuardService]},
   {path: 'projectmodel/1013/:pid', component: Model1013Component, canActivate: [AuthGuardService]},
 
-  {path: 'projectrunreport/:mid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
+  {path: 'projectrunreport/:pid', component: ProjectReportComponent, canActivate: [AuthGuardService]},
   {path: 'viewrundetails/:pid', component: ViewRunDetailsComponent, canActivate: [AuthGuardService]},
   {path: 'projectresult', component: ProjectResultComponent, canActivate: [AuthGuardService]},
   {path: 'package', component: PackageModuleComponent},

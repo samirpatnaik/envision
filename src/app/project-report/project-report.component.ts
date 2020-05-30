@@ -17,7 +17,7 @@ export class ProjectReportComponent implements OnInit {
   constructor(private _model:ModelresponseService, private spinner: NgxSpinnerService, private route: ActivatedRoute, private _router: Router) { }
 
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('mid');
+    this.id = +this.route.snapshot.paramMap.get('pid');
 
     this.spinner.show();
     this._model.rundetails(this.id).subscribe(

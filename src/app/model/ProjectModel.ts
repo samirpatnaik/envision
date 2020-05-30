@@ -7,4 +7,5 @@ export interface ProjectModel{
     displayString: any;
     modelDescription: any;
     modelId: any;
+    projectId: any;
 }
